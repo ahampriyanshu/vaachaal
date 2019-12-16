@@ -1,2 +1,3 @@
 # GNE-Gate-Forum
-Forum website ffor gate
+## Website for GATE forum
+
