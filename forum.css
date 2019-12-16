@@ -1,6 +1,7 @@
  body {
-        background: linear-gradient(to bottom, lightblue,orange);
-    }
+        background:transparent;
+        padding-top: 70px
+}
 .style1 {
 	color: #FFFFFF;
 	font-weight: bold;
@@ -163,3 +164,4 @@ a:visited {
 	font-weight: bold;
 	color:#FF0000 ;
 }
+
