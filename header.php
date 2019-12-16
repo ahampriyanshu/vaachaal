@@ -22,8 +22,7 @@
   border: none;
   cursor: pointer;
   font-weight: light;
-        font-family: 'Trebuchet MS', sans-serif;
-        border: none;
+        font-family:'Trebuchet MS', sans-serif;
         border-radius: 5%;
 }
 
@@ -55,17 +54,79 @@
 
 .dropdown a:hover {background-color: #ddd;}
 
+.dropbutton {
+  background-color: #1DB954;
+  color: white;
+  padding: 11px;
+  font-size: 11px;
+  border: none;
+  cursor: pointer;
+  font-family:'Trebuchet MS', sans-serif;
+        border-radius: 5%;
+}
+
+.dropd {
+  position: relative;
+  display: inline-block;
+}
+
+.dropd-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropd-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropd-content a:hover {background-color: #ddd;}
+
+.dropd:hover .dropd-content {display: block;}
+
+.dropd:hover .dropbutton {background-color: #3e8e41;}
+
 .show {display: block;}
 -->
 </style>
-<div class="top-bar">GNE GATE FORUM
-<div style="position: absolute; top:8%;left:90%;"class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">SignIn/SignUp</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="index.php">SignIn</a>
-    <a href="signup.php">SignUp</a>
+<div class="top-bar">
+<div style="position: absolute; top:8%;left:2%;"class="dropd">
+  <button class="dropbutton">HOME</button>
+  <div class="dropd-content">
+    <a href="#">About</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Download</a>
   </div>
 </div>
+<img style="position: absolute;top:2%;left:7%;" class="img-topbar" src="Topbar.png"  width="290px" height="45px" />
+  <?php
+  if(isset($_SESSION['login'])){
+    echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropdown\">
+  <button onclick=\"myFunction()\" class=\"dropbtn\">My Account</button>
+  <div id=\"myDropdown\" class=\"dropdown-content\">
+    <a href=\"index.php\">Home</a>
+    <a href=\"signout.php\">LogOut</a>
+    <a href=\"#blocked\">Change Password</a>
+  </div>
+</div>";}
+    else
+   {
+    echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropdown\">
+  <button onclick=\"myFunction()\" class=\"dropbtn\">SignIn/SignUp</button>
+  <div id=\"myDropdown\" class=\"dropdown-content\">
+    <a href=\"index.php\">SignIn</a>
+    <a href=\"signup.php\">SignUp</a>
+  </div>
+</div>";
+   }
+    ?>
+
 </div>
 <script>
 /* When the user clicks on the button, 
@@ -90,21 +151,5 @@ window.onclick = function(event) {
 </script>
   <?php @$_SESSION['login']; 
   error_reporting(1);
-  ?>
-  </td>
-    <td>
-	<?php
-	if(isset($_SESSION['login']))
-	{
-	 echo "<div align=\"right\"><strong><a href=\"index.php\"> Home </a>|<a href=\"signout.php\">Signout</a></strong></div>";
-	 }
-	 else
-	 {
-	 	echo "&nbsp;";
-	 }
-	?>
-	</td>
-	
-  </tr>
-  
+  ?>  
 </table>
