@@ -5,7 +5,7 @@ session_start();
 <html>
 <head>
 <title>GATE Forum</title>
-<link href="quiz.css" rel="stylesheet" type="text/css">
+<link href="forum.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <?php
@@ -42,21 +42,14 @@ if (isset($_SESSION[login]))
 
 ?>
 <table width="100%" border="0">
-  
-  
-    		<table align="center" border="0" WIDTH="50%" height="250">
-			<h1 class="text-center bg-warning">LOGIN PAGE</h1>
-		<form method="post" action="">
-		<center>
-		<img class="img-circle" src="1.jpg"  title="this is my profile pic" width="210px" height="200px" border="1" />
-		</center>	<br>
-	
-				<tr>
-					<th class="text-primary">LOGIN ID</th>
-					<th>
-					<input class="form-control"type="TEXT" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="10" size="25"  id="loginid2" name="loginid"/></tD>
-				</th>
-				<tr>
+<table align="center" border="0" WIDTH="50%" height="250">
+<h1 class="text-center bg-warning">LOGIN PAGE</h1>
+<form method="post" action=""><center>
+<img class="img-circle" src="1.jpg"  title="this is my profile pic" width="210px" height="200px" border="1" />
+</center><br><tr>
+<th class="text-primary">LOGIN ID</th><th>
+<input class="form-control"type="TEXT" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="10" size="25"  id="loginid2" name="loginid"/></tD>
+</th><tr>
 					<th class="text-primary">ENTER PASSWORD</th>
 					<th><input class="form-control" type="password"  placeholder="ENTER PASSWORD" name="pass" id="pass2"/></th>
 					</tr>
