@@ -1,0 +1,165 @@
+ body {
+        background: linear-gradient(to bottom, lightblue,orange);
+    }
+.style1 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.head1{
+	font-size:35px;
+}
+
+#box1{
+	background-color:rgba(211,211,211,0.5);
+	height:200px;
+	width:150px;
+	border-radius:15px;
+}
+.watermark
+{
+ position:relative;
+ bottom:200px;
+ left:150px;
+ opacity:0.2;
+ z-index:-1;
+ color:white;
+}
+
+.box{
+	width:70%;
+	margin-left:15%;
+	padding:0px;
+	justify-content: center;
+	height:400px;
+	background-color:rgba(211,211,211,0.5);
+	align-content: center;
+	border-radius:20px;
+}
+
+#f1{
+	padding-top:50px;
+	padding-right:60px;
+}
+
+.nextquestion{
+	height:35px;
+	width:120px;
+	border-radius:10px;
+	background-color: forestgreen;
+	color:white;
+	margin-top:20px;
+	font-size:16px;
+}
+
+.nextquestion:hover{
+	background-color: darkgreen;
+	box-shadow:0px 4px 5px darkgreen;
+}
+
+.button {
+	height:35px;
+	width:120px;
+	border-radius:10px;
+	background-color: forestgreen;
+	color:blue;
+	margin-top:20px;
+	font-size:16px;
+}
+
+.button:hover{
+	background-color: darkgreen;
+	box-shadow:0px 4px 5px darkgreen;
+}
+
+
+.style2 {
+	color: #c21919;
+	font-weight: bold;
+	font-size:35px;
+}
+
+.styleform{
+	margin-top:30px;
+	margin-left:20%;
+}
+.result{
+	height:35px;
+	width:120px;
+	border-radius:10px;
+	background-color: #3385ff;
+	color:white;
+	margin-top:20px;
+	font-size:16px;
+}
+.result:hover{
+	background-color: #1a75ff;
+	box-shadow: 2px 4px 4px #1a75ff;
+}
+.style4 {
+	color: #000000;
+	font-weight: bold;
+	font-size:25px;
+	margin-left: 10%;
+}
+.style5 {color: #990033}
+.style6 {color: #ECE9D8}
+.style7 {
+	color: #993300;
+	font-weight: bold;
+	font-size: 20px;
+}
+.style8 {
+	color:#d24dff;
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	margin-left: 20px;
+}
+a:link {
+	color: #330066;
+	text-decoration: none;
+}
+a:hover {
+	color: #FFCC00;
+	text-decoration: underline;
+}
+a:visited {
+	color: #330066;
+	text-decoration: none;
+}
+.head1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	color: #FF0000;
+	text-align: center;
+	font-weight: bold;
+}
+.errors {
+
+	color: #FF0000;
+	font-weight: bold;
+}
+.tot {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #000000;
+}
+.tot {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	
+}
+.tans {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color:#00CC66 ;
+}
+.fans {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color:#FF0000 ;
+}
