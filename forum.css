@@ -1,10 +1,69 @@
- body {
-        background:transparent;
-        padding-top: 70px
+ body { 
+        padding-top: 70px;
 }
 .style1 {
 	color: #FFFFFF;
 	font-weight: bold;
+}
+.logocircle{
+	border-radius: 50%;
+border: 0;
+}
+.submit {
+  background-color: #1DB954;
+  color: white;
+  padding: 11px;
+  font-size: 11px;
+  font:#833AB4; 
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+        font-family:'Trebuchet MS', sans-serif;
+        border-radius: 5%;
+}
+
+.submit:hover, .submit:focus {
+  background-color: #DB4437;
+}
+.submit2 {
+  background-color: #833AB4;
+  color: white;
+  padding: 11px;
+  font-size: 11px;
+  border: none;
+  cursor: pointer;
+  font-weight: light;
+        font-family:'Trebuchet MS', sans-serif;
+        border-radius: 5%;
+}
+
+.submit2:hover, .submit2:focus {
+  background-color: #DB4437;
+}
+.signinbox { 
+  	background: #fff;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px #888;
+    border-radius: 4px;
+    padding-top: 25px;
+    width: 280px;
+    position: absolute;
+    bottom: initial;
+    margin: auto;
+    overflow-y: hidden;
+    top: 10%;
+}
+.login_text_box {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.4;
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height: 32px;
+    margin-bottom: 8px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px #888;
+    border-radius: 4px;
 }
 
 .head1{

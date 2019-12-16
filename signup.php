@@ -81,58 +81,55 @@ function check()
 </script>
 <link href="forum.css" rel="stylesheet" type="text/css">
 </head>
-
-<body class="bg-success">
-<?php
+<body background="back.jpg" class="bg-success">
+  <?php
 include("header.php");
 ?>
+
+  <div class="signinbox" style="position: absolute; top:16%;right:5%;">
  <table width="100%" border="0">
-   <tr>
-     <h1 class="text-center bg-primary">NEW REGISTRATION</h1>
-   </tr>
    <tr>
      <td><form name="form1" method="post" action="signupuser.php" onSubmit="return check();">
        <center>
-		<img class="img-circle" src="1.jpg"  width="240px" height="190px" border="1" />
+		<img class="img-circle" src="1.png"  width="240px" height="190px" />
 		</center>	<br>
 			<table class=" table table-striped">
 		
          <tr>
            <td class="style7">LOGIN ID</div></td>
-           <td><input class="form-control"type="text" name="lid"></td>
+           <td><input class="login_text_box"type="text" name="lid"></td>
          </tr>
          <tr>
            <td class="style7">Password</td>
-           <td><input class="form-control"type="password" name="pass"></td>
+           <td><input class="login_text_box"type="password" name="pass"></td>
          </tr>
          <tr>
            <td class="style7" >Confirm Password </td>
-           <td><input class="form-control" name="cpass" type="password" id="cpass"></td>
+           <td><input class="login_text_box" name="cpass" type="password" id="cpass"></td>
          </tr>
          <tr>
            <td class="style7">Name</td>
-           <td><input class="form-control" name="name" type="text" id="name"></td>
+           <td><input class="login_text_box" name="name" type="text" id="name"></td>
          </tr>
          <tr>
            <td valign="top" class="style7">Address</td>
-           <td><textarea class="form-control" name="address" id="address"></textarea></td>
+           <td><textarea class="login_text_box" name="address" id="address"></textarea></td>
          </tr>
          <tr>
            <td valign="top" class="style7">City</td>
-           <td><input class="form-control" name="city" type="text" id="city"></td>
+           <td><input class="login_text_box" name="city" type="text" id="city"></td>
          </tr>
          <tr>
            <td valign="top" class="style7">Phone</td>
-           <td><input class="form-control" name="phone" type="text" id="phone"></td>
+           <td><input class="login_text_box" name="phone" type="text" id="phone"></td>
          </tr>
          <tr>
            <td valign="top" class="style7">E-mail</td>
-           <td><input class="form-control" name="email" type="text" id="email"></td>
+           <td><input class="login_text_box" name="email" type="text" id="email"></td>
          </tr>
          <tr>
-           <td>&nbsp;</td>
            <td><input class="btn btn-danger" type="submit" name="Submit" value="Signup">
-		   <a class="btn btn-success " href="index.php">Already a member</a></th>
+		   <a class="btn btn-success " href="index.php">Already a Member</a></th>
            </td>
          </tr>
        </table>
@@ -140,5 +137,6 @@ include("header.php");
    </tr>
  </table>
  <p>&nbsp; </p>
+</div>
 </body>
 </html>
