@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-<title>GATE Forum</title>
+<title>LogIn</title>
 <link href="forum.css" rel="stylesheet" type="text/css">
 </head>
 <body background="back.jpg">
@@ -49,13 +49,11 @@ if (isset($_SESSION[login]))
           </span></td>
        				<th class="errors">
 					<input class="submit" type="submit" name="submit" id="submit" Value="Login"/>
-				
         <a class="submit2" href="signup.php">New User?</a></th>
       </table>
     </form></td>
   </tr>
 </table>
 </div>
-
 </body>
 </html>
