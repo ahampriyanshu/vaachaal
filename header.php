@@ -65,6 +65,20 @@
         border-radius: 5%;
 }
 
+.addq{
+  background-color: #1DB954;
+  color: white;
+  padding: 11px;
+  font-size: 11px;
+  border: none;
+  cursor: pointer;
+  font-family:'Trebuchet MS', sans-serif;
+        border-radius: 5%;
+}
+
+.addq:hover{
+background-color: #DB4437;
+}
 .dropd {
   position: relative;
   display: inline-block;
@@ -99,9 +113,9 @@
 <div style="position: absolute; top:8%;left:2%;"class="dropd">
   <button class="dropbutton">HOME</button>
   <div class="dropd-content">
-    <a href="#">About</a>
+    <a href="index.php">About</a>
     <a href="#">Contact Us</a>
-    <a href="#">Download</a>
+    <a href="https://github.com/PriyanshuMay/GNE-Gate-Forum.git">Download</a>
   </div>
 </div>
 <img style="position: absolute;top:2%;left:7%;" class="img-topbar" src="Topbar.png"  width="290px" height="45px" />
@@ -126,8 +140,9 @@
 </div>";
    }
     ?>
-
+    <button style="position: absolute;right:10%;top:8%;" class="addq">Add Quesion</button>
 </div>
+
 <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
