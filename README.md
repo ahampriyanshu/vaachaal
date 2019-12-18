@@ -9,7 +9,6 @@ The purpose of this website is to make online forum in which user can either a q
 Paste the project folder in htdocs in XAMPP directory and start apache server and phpmyadmin.\
 Import the database file 'forum.sql'\
 Open index.php in web browser of your choice but FireFox is highly recommended\
-
 --
 
 ## FILES AND DESCRIPTION
