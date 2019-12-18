@@ -9,24 +9,24 @@
 	border-radius: 50%;
 border: 0;
 }
+
 .submit {
-  background-color: #1DB954;
+  background-color:#1DB954;
   color: white;
   padding: 11px;
   font-size: 11px;
   font:#833AB4; 
-  border: none;
   cursor: pointer;
   font-weight: bold;
-        font-family:'Trebuchet MS', sans-serif;
-        border-radius: 5%;
+  font-family:'Trebuchet MS', sans-serif;
+  border-radius: 5%;
 }
 
 .submit:hover, .submit:focus {
   background-color: #DB4437;
 }
 .submit2 {
-  background-color: #833AB4;
+  background-color:#833AB4;
   color: white;
   padding: 11px;
   font-size: 11px;
@@ -52,6 +52,17 @@ border: 0;
     margin: auto;
     overflow-y: hidden;
     top: 10%;
+}
+.signinbox2 { 
+  	background: #fff;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px #888;
+    border-radius: 4px;
+    width: 400px;
+    position: relative;
+    bottom: initial;
+    margin: auto;
+    overflow-y: hidden;
 }
 .login_text_box {
     width: 100%;
@@ -164,11 +175,6 @@ border: 0;
 }
 .style5 {color: #990033}
 .style6 {color: #ECE9D8}
-.style7 {
-	color: #993300;
-	font-weight: bold;
-	font-size: 20px;
-}
 .style8 {
 	color:#d24dff;
 	font-family: 'Roboto Slab', serif;
@@ -223,4 +229,3 @@ a:visited {
 	font-weight: bold;
 	color:#FF0000 ;
 }
-
