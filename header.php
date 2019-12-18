@@ -140,17 +140,22 @@ background-color: #DB4437;
 </div>";
    }
     ?>
-    <button onclick="checkLogin()" style="position: absolute;right:10%;top:8%;" class="addq">Add Quesion</button>
-</div>
+
+      <?php
+  if(isset($_SESSION['login'])){
+    echo "<div style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">
+  <a href=\"#blocked\">Add Question</a>
+</div>";}
+    else
+   {
+    echo "<div style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">
+  <a href=\"index.php\">Add Question</a>
+</div>";
+   }
+    ?>
+</div> 
 
 <script>
-function checkLogin(argument) {
-  <?php
-  if(isset($_SESSION['login'])){
-    
-  }
-?>
-}
 
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
