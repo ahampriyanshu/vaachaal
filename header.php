@@ -140,17 +140,22 @@ background-color: #DB4437;
 </div>";
    }
     ?>
-    <button style="position: absolute;right:10%;top:8%;" class="addq">Add Quesion</button>
+    <button onclick="checkLogin()" style="position: absolute;right:10%;top:8%;" class="addq">Add Quesion</button>
 </div>
 
 <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+function checkLogin(argument) {
+  <?php
+  if(isset($_SESSION['login'])){
+    
+  }
+?>
+}
+
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
