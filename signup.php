@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML 
 <html>
 <head>
 <title>Register</title>
-<link rel="stylesheet" href="css/bootstrap.min.css"/>
 <script language="javascript">
 function check()
 {
@@ -86,57 +85,48 @@ function check()
 include("header.php");
 ?>
 
-  <div class="signinbox" style="position: absolute; top:16%;right:5%;">
+  <div class="signinbox" style="position: absolute; top:10%;right:5%;">
  <table width="100%" border="0">
    <tr>
      <td><form name="form1" method="post" action="signupuser.php" onSubmit="return check();">
        <center>
-		<img class="img-circle" src="1.png"  width="240px" height="190px" />
+		<img class="img-circle" src="1.png"  width="200px" height="150px" />
 		</center>	<br>
-			<table class=" table table-striped">
-		
-         <tr>
-           <td class="style7">LOGIN ID</div></td>
-           <td><input class="login_text_box"type="text" name="lid"></td>
+			<center><table>
+        <tr>
+      
+           <td><input class="login_text_box" name="name" placeholder="Full Name" type="text" id="name"></td>
+         </tr>
+		  <tr>       
+           <td><input class="login_text_box"type="text" placeholder="Create Username" name="lid"></td>
          </tr>
          <tr>
-           <td class="style7">Password</td>
-           <td><input class="login_text_box"type="password" name="pass"></td>
+           <td><input class="login_text_box"type="password" placeholder="Create Password" name="pass"></td>
          </tr>
          <tr>
-           <td class="style7" >Confirm Password </td>
-           <td><input class="login_text_box" name="cpass" type="password" id="cpass"></td>
+           <td><input class="login_text_box" name="cpass" placeholder="Confirm Password" type="password" id="cpass"></td>
          </tr>
          <tr>
-           <td class="style7">Name</td>
-           <td><input class="login_text_box" name="name" type="text" id="name"></td>
+           <td><textarea class="login_text_box" name="address" placeholder="Full Address" id="address"></textarea></td>
          </tr>
          <tr>
-           <td valign="top" class="style7">Address</td>
-           <td><textarea class="login_text_box" name="address" id="address"></textarea></td>
+           <td><input class="login_text_box" name="city" placeholder="Your current City" type="text" id="city"></td>
          </tr>
          <tr>
-           <td valign="top" class="style7">City</td>
-           <td><input class="login_text_box" name="city" type="text" id="city"></td>
+           <td><input class="login_text_box" name="phone" placeholder="+91" type="text" id="phone"></td>
          </tr>
          <tr>
-           <td valign="top" class="style7">Phone</td>
-           <td><input class="login_text_box" name="phone" type="text" id="phone"></td>
+           <td><input class="login_text_box" name="email" type="text" placeholder="Enter valid e-mail" id="email"></td>
          </tr>
-         <tr>
-           <td valign="top" class="style7">E-mail</td>
-           <td><input class="login_text_box" name="email" type="text" id="email"></td>
-         </tr>
-         <tr>
-           <td><input class="btn btn-danger" type="submit" name="Submit" value="Signup">
-		   <a class="btn btn-success " href="index.php">Already a Member</a></th>
-           </td>
-         </tr>
+         <td>
+          <input class="submit" type="submit" name="Submit" value="Signup">
+		   <a class="submit2" href="index.php">Already a Member</a>
+    </td>   
        </table>
-     </form></td>
+     </form>
    </tr>
  </table>
- <p>&nbsp; </p>
+</center>
 </div>
 </body>
 </html>
