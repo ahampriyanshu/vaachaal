@@ -11,6 +11,7 @@ session_start();
 <?php
 include("header.php");
 include("database.php");
+include("about.php");
 extract($_POST);
 
 if(isset($submit))
@@ -43,7 +44,7 @@ if (isset($_SESSION[login]))
 					       <?php
 		  if(isset($found))
 		  {
-		  	echo "Invalid Username or Password";
+		  	echo '<p class="inva" style="font"><center>Invalid Username or Password</center></p>';
 		  }
 		  ?>
           </span></td>
