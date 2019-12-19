@@ -36,7 +36,6 @@ border: 0;
         font-family:'Trebuchet MS', sans-serif;
         border-radius: 5%;
 }
-
 .submit2:hover, .submit2:focus {
   background-color: #DB4437;
 }
