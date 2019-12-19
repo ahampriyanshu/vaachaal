@@ -39,7 +39,7 @@
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  max-width: 150px;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -113,7 +113,7 @@ background-color: #DB4437;
 <div style="position: absolute; top:8%;left:2%;"class="dropd">
   <button class="dropbutton">HOME</button>
   <div class="dropd-content">
-    <a href="index.php">About</a>
+    <a href="header.php">About</a>
     <a href="#">Contact Us</a>
     <a href="https://github.com/PriyanshuMay/GNE-Gate-Forum.git">Download</a>
   </div>
@@ -136,6 +136,7 @@ background-color: #DB4437;
   <div id=\"myDropdown\" class=\"dropdown-content\">
     <a href=\"index.php\">SignIn</a>
     <a href=\"signup.php\">SignUp</a>
+    <a href=\"admin.php\">Admin</a>
   </div>
 </div>";
    }
