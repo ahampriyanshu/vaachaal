@@ -13,7 +13,7 @@
 <form action="postque.php" method="POST">
 	<input type="text" name="name" placeholder="Your Name"><br>
 	<textarea name="quearea" cols="50" rows="3" placeholder="Enter Question"></textarea>
-	<input type="button" value="Quearea">
+	<input type="submit" value="Quearea">
 </form>
 </body>
 </html>
