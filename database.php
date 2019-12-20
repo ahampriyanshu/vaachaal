@@ -1,3 +1,8 @@
 <?php 
-$con=mysqli_connect("localhost","root","","forum") or die('Database not connected');
+$host="localhost"; // Host name 
+$username="root"; // Mysql username 
+$db_name="forum"; // Database name 
+
+$con=mysqli_connect("$host","$username","","$db_name") or die('Database not connected');
+
 ?>
