@@ -12,10 +12,18 @@ Open index.php in web browser of your choice but FireFox is highly recommended
 **
 
 ## FILES AND DESCRIPTION
-**
+
 ### index.php     
 ### database.php
 ### header.php
 ### signup.php
 ### signuser.php
 ### signout.php
+### addque.php
+### postque.php
+### chpass.php
+### about.php
+### addans.php
+### contact.php
+### dash.php
+### info.php
