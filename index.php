@@ -23,10 +23,10 @@ if(isset($submit))
 	}
 	else
 	{
-		$_SESSION[login]=$loginid;
+		$_SESSION['login']=$loginid;
 	}
 }
-if (isset($_SESSION[login]))
+if (isset($_SESSION['login']))
 {
 		exit;
 }
@@ -34,7 +34,7 @@ if (isset($_SESSION[login]))
 <div class="signinbox" style="position: absolute; top:16%;right:5%;">
 <table width="100%" border="0">
 <table align="center" border="0" WIDTH="50%" height="250">
-<form method="post" action="add.php">
+<form method="post" action="">
 <center><img class="logocircle" src="1.png"  title="logo" width="210px" height="200px" border="1" /></center><tr><th>
 					<input class="login_text_box"type="TEXT" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="10" size="25"  id="loginid2" name="loginid"/></td>
 				</th>
