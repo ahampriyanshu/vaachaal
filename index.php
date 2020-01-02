@@ -1,17 +1,16 @@
-<?php
-session_start();
-?>
+<?php include("header1.php"); ?>
+<?php include("essentials/database.php"); ?>
+<?php include("about.php"); ?>
+<?php // include("essentials/function.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>LogIn</title>
 <link href="forum.css" rel="stylesheet" type="text/css">
 </head>
-<body background="back.jpg">
+<body background="img/back.jpg">
+
 <?php
-include("header.php");
-include("database.php");
-include("about.php");
 extract($_POST);
 
 if(isset($submit))
@@ -28,7 +27,7 @@ if(isset($submit))
 }
 if (isset($_SESSION['login']))
 {
-		exit;
+	exit;
 }
 ?>
 <div class="signinbox" style="position: absolute; top:16%;right:5%;">
