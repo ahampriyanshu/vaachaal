@@ -1,6 +1,3 @@
-<?php
-include("database.php");
-?>
 <style type="text/css">
 <!--
 .top-bar{
@@ -85,41 +82,40 @@ background-color: #833AB4;
 .show {display: block;}
 -->
 </style>
+<script type="text/javascript">
+  function redirect() { alert('Login First'); 
+window.location.href = 'index.php';
+};
+</script>
 <div class="top-bar">
-<img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/Topbar.png"  title="header ima" width="230px" height="45px" />
+<img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/Topbar.png"  title="college logo" width="230px" height="45px" />
   <?php
   if (session_status() == PHP_SESSION_NONE){
-    echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
-  <button class=\"dropbutton\">My Account</button>
-  <div id=\"mydropd\" class=\"dropd-content\">
-    <a href=\"index.php\">Home</a>
-    <a href=\"signout.php\">LogOut</a>
-    <a href=\"chpass\">Change Password</a>
-  </div>
-</div>";}
-    else
-   {
-    echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
+echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
   <button class=\"dropbutton\">SignIn/SignUp</button>
   <div id=\"mydropd\" class=\"dropd-content\">
     <a href=\"index.php\">SignIn</a>
     <a href=\"signup.php\">SignUp</a>
     <a href=\"admin.php\">Admin</a>
   </div>
-</div>";
-   }
+</div>";}
+    else{
+       echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
+  <button class=\"dropbutton\">My Account</button>
+  <div id=\"mydropd\" class=\"dropd-content\">
+    <a href=\"index.php\">Home</a>
+    <a href=\"signout.php\">LogOut</a>
+    <a href=\"chpass.php\">Change Password</a>
+  </div>
+</div>";}
+    
 ?>
       <?php
-  if(isset($_SESSION['login'])){
-    echo "<div style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">
-  <a href=\"add.php\">Add Question</a>
-</div>";}
+  if (session_status() == PHP_SESSION_NONE){
+    echo "<button onclick=\"redirect();\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">Ask Question</button>";}
     else
    {
-    echo "<div style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">
-  <a href=\"index.php\">Add Question</a>
-</div>";
-   }
+    echo "<button onclick=\"window.location.href = 'add.php';\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">Ask Question</button>";}
     ?>
 </div> 
 </table>
