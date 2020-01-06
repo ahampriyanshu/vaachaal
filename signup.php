@@ -37,16 +37,16 @@ function check()
 	document.form1.name.focus();
 	return false;
   }
-  if(document.form1.address.value=="")
+  if(document.form1.name.value=="")
   {
-    alert("Plese Enter Address");
-	document.form1.address.focus();
+    alert("Plese Enter name");
+	document.form1.name.focus();
 	return false;
   }
-  if(document.form1.city.value=="")
+  if(document.form1.security.value=="")
   {
-    alert("Plese Enter City Name");
-	document.form1.city.focus();
+    alert("Plese Enter security Name");
+	document.form1.security.focus();
 	return false;
   }
   if(document.form1.phone.value=="")
@@ -57,7 +57,7 @@ function check()
   }
   if(document.form1.email.value=="")
   {
-    alert("Plese Enter your Email Address");
+    alert("Plese Enter your Email ID");
 	document.form1.email.focus();
 	return false;
   }
@@ -80,37 +80,33 @@ function check()
 </script>
 <link href="forum.css" rel="stylesheet" type="text/css">
 </head>
-<body background="back.jpg" class="bg-success">
+<body background="img/back.jpg" class="bg-success">
   <?php
 include("header.php");
 ?>
-
-  <div class="signinbox" style="position: absolute; top:10%;right:5%;">
+<div class="signinbox" style="position: absolute; top:10%;right:5%;">
+  <center>
+  <img class="img-circle" src="img/1.png"  width="200px" height="150px" style="position: relative; top:0%;"/>
+  </center>
  <table width="100%" border="0">
-   <tr>
-     <td><form name="form1" method="post" action="signupuser.php" onSubmit="return check();">
-       <center>
-		<img class="img-circle" src="1.png"  width="200px" height="150px" />
-		</center>	<br>
-			<center><table>
-        <tr>
-      
-           <td><input class="login_text_box" name="name" placeholder="Full Name" type="text" id="name"></td>
-         </tr>
-		  <tr>       
-           <td><input class="login_text_box"type="text" placeholder="Create Username" name="lid"></td>
+  <tr><td>
+  <form name="form1" method="post" action="signupuser.php" onSubmit="return check();">
+	<center>
+    <table>
+		  <tr><td><input class="login_text_box" type="text" placeholder="Create Username" name="username" ></td>
          </tr>
          <tr>
-           <td><input class="login_text_box"type="password" placeholder="Create Password" name="pass"></td>
+           <td><input class="login_text_box" type="password" placeholder="Create Password" name="pass"></td>
          </tr>
          <tr>
            <td><input class="login_text_box" name="cpass" placeholder="Confirm Password" type="password" id="cpass"></td>
          </tr>
          <tr>
-           <td><textarea class="login_text_box" name="address" placeholder="Full Address" id="address"></textarea></td>
+           <td><input class="login_text_box" type="text" name="name" placeholder="Full name" id="name"></textarea></td>
          </tr>
          <tr>
-           <td><input class="login_text_box" name="city" placeholder="Your current City" type="text" id="city"></td>
+           <td><input class="login_text_box" name="security" type="text" id="security"
+            placeholder="Name of your childhood freind"></td>
          </tr>
          <tr>
            <td><input class="login_text_box" name="phone" placeholder="+91" type="text" id="phone"></td>
@@ -118,9 +114,9 @@ include("header.php");
          <tr>
            <td><input class="login_text_box" name="email" type="text" placeholder="Enter valid e-mail" id="email"></td>
          </tr>
-         <td>
-          <input class="submit" type="submit" name="Submit" value="Signup">
-		   <a class="submit2" href="index.php">Already a Member</a>
+         <td>&emsp;
+          <input class="submit" type="submit" name="Submit" value="Signup">&emsp;&emsp;&emsp;
+		   <button class="submit2" onclick="window.location.href = 'index.php';" >Already a Member</button>
     </td>   
        </table>
      </form>
