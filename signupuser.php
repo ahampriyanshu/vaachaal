@@ -1,32 +1,32 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>User Signup</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link href="quiz.css" rel="stylesheet" type="text/css">
-</head>
-<body background="back.jpg">
-	<?php 
-	include("header.php"); ?>
-	<div class="signinbox" style="position: absolute; top:16%;right:5%;">
+<?php 
+	include("header.php");
+	include("database.php"); ?>
 <?php
-extract($_POST);
-include("database.php");
-$rs=mysqli_query($con,"select * from mst_user where login='$lid'");
-if (mysqli_num_rows($rs)>0)
-{
-	echo "<br><br><br><div class=head1>Login Id Already Exists</div>";
-	exit;
+$newuser = $_POST['username'];
+$pass = $_POST['pass'];
+$name  = $_POST['name'];
+$secu  = $_POST['security'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+
+$sql = "INSERT INTO userbase(username,password,name,security,phone,email)
+VALUES ('$newuser','$pass','$name','$secu','$phone','$email')";
+$q = "select * from userbase where username = '$newuser'";
+$result = mysqli_query($con,$q);
+$num = mysqli_num_rows($result);
+if ($num == 1) {
+	echo "<script>
+    alert('Username already taken');
+    document.location='signup.php';
+</script>";
+} 
+else {
+	$qy = "INSERT INTO userbase(username,password,name,security,phone,email) VALUES ('$a$newuser','$pass','$name','$secu','$phone','$email')";
+	mysqli_query($con,$qy);
+	echo "<script>
+    alert('Login ID successfully created');
+document.location='index.php';
+</script>";
+	 
 }
-$query="insert into mst_user(user_id,login,pass,username,address,city,phone,email) values('$uid','$lid','$pass','$name','$address','$city','$phone','$email')";
-$rs=mysqli_query($con,$query)or die("Could Not Perform the Query");
-echo "<br><br><br><div class=head1>Your Login ID  $lid Created Sucessfully</div>";
-echo "<br><div class=head1>Please Login using your Login ID to take Quiz</div>";
-echo "<br><div class=head1><a href=index.php>Login</a></div>";
-?>
-</div>
-
-
-</body>
-</html>
-
+?>	
