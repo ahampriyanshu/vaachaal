@@ -51,7 +51,24 @@
 <link href="forum.css" rel="stylesheet" type="text/css">
 </head>
 <body background="img/back.jpg">	
-<?php 
+<?php include("essentials/database.php"); ?>
+<?php
+extract($_POST);
+
+if(isset($submit))
+{
+  $rs=mysqli_query($con,"select * from userbase where username='$username' and password='$password'");
+  if(mysqli_num_rows($rs)<1)
+  {
+    $found="N";
+  }
+  else
+  {
+    session_start();
+    $_SESSION["loggedin"] = $username ; 
+    header('location:viewque.php');
+  }
+}
 echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:5%;\">
   <img class=\"img-circle\" style=\"position: absolute; top:1%;left:5%;\" src=\"img/IIS.jpg\"  width=\"200px\" height=\"150px\" />
     </center>
@@ -66,7 +83,7 @@ echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:5%;\">
 ?>			
   <div class="signinbox" style="position: absolute; top:16%;right:5%;">
     <table align="center" border="0" WIDTH="90%" height="250">
-	 <form method="post" name="login_form" action="check.php" onSubmit="return check();">
+	 <form method="post" name="login_form" action="" onSubmit="return check();">
 	<center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="1" /></center>
 	<tr>
 	<th><input class="login_text_box" type="TEXT" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="10" size="25"  id="loginid2" name="username"/></th>
@@ -74,24 +91,19 @@ echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:5%;\">
 	<tr> 	
     <th><input class="login_text_box" type="password"  placeholder="ENTER PASSWORD" name="password" id="pass2"/></th>
 	</tr>
-	<?php
-	     extract($_POST);
-
-      if(isset($submit))
-          {  
-		  if(isset($found))
-		  {
-		  	echo '<p class="inva" style="font"><center>Invalid Username or password</center></p>';
-		  }
-		}
+	<?php  
+	     if(isset($found))
+	     {
+		    echo '<p class="inva" style="font"><center>Invalid Username or password</center></p>';
+	     }
 	?>
 	<tr>		  
     <td>&emsp;&emsp;<input class="submit" type="submit" name="submit" id="submit" Value="Login"/>
-			&emsp;&emsp;
+			&emsp;&emsp;</form>
     	<button class="submit2" onclick="window.location.href = 'signup.php';" >New User?</button>
     </td>
 	</tr>
+</table>
   </div>
-  </form>
 </body>
 </html>
