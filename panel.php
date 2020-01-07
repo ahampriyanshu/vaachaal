@@ -1,27 +1,44 @@
 <?php
-include("database.php");
+include("essentials/database.php");
 ?>
 <style type="text/css">
 
 <!--
-.panel{
-    position: absolute;
-    top: 8%;
+.sidebar {
+    position: fixed;
+    top: 0%;
     left: 0;
-    width: 17%;
+    width: 11%;
     z-index: 5050;
-    background-color: #fafafb;
-    transition: box-shadow 0px 8px 16px 0px rgba(0,0,0,0.2);
     height: 100%;
     box-sizing: border-box;
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-    border-right: 2px solid lightgrey;
+    background-color:#f1f1f1;
+}
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+Question Title: sduiofjkl asdkjfsadhfjksdhfhk
 
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
 }
 
 -->
 </style>   
-<div class="panel">
-
+<div class="sidebar">
+<a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
 </div> 
 
