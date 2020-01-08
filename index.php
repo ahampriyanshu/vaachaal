@@ -66,7 +66,7 @@ if(isset($submit))
   {
     session_start();
     $_SESSION["loggedin"] = $username ; 
-    header('location:viewque.php');
+    header('location:home.php');
   }
 }
 echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:5%;\">
@@ -92,10 +92,10 @@ echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:5%;\">
     <th><input class="login_text_box" type="password"  placeholder="ENTER PASSWORD" name="password" id="pass2"/></th>
 	</tr>
 	<?php  
-	     if(isset($found))
-	     {
-		    echo '<p class="inva" style="font"><center>Invalid Username or password</center></p>';
-	     }
+		  if(isset($found))
+		  {
+		  	echo '<p class="inva" style="font"><center>Invalid Username or password</center></p>';
+		  }
 	?>
 	<tr>		  
     <td>&emsp;&emsp;<input class="submit" type="submit" name="submit" id="submit" Value="Login"/>
