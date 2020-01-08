@@ -36,14 +36,14 @@ $result = $con->query($sql);
 
 if ($result->num_rows > 0) 
         while($row = $result->fetch_assoc()) :?> 
-        <div class="question_box">
+        <div class="question_box" style="padding-left: 30px;">
             <form >
-                <br> Question Content:<?php echo $row["content"]; ?> 
-                <br> Asked by: <?php echo $row["username"]; ?> 
-                <br> Asked by: <?php echo $row["level"]; ?> 
-                <br> Asked by: <?php echo $row["tym"]; ?> 
-                <br> Email: <?php echo $row["branch"]; ?> 
-                <br> Asked by: <?php echo $row["datetym"]; ?>
+                <br><?php echo $row["content"]; ?> 
+                <br> Asked by <?php echo $row["username"]; ?> 
+                <br> Difficulty level estimated is <?php echo $row["level"]; ?> 
+                <br>  Time alloted is <?php echo $row["tym"]; ?> 
+                <br> Question comes under <?php echo $row["branch"]; ?> branch
+                <br> Posted On <?php echo $row["datetym"]; ?>
                 <br><br>
             </form>
         </div><br><br>
@@ -68,7 +68,7 @@ endwhile;
               <option value="5-10 Min">5-10 Min</option>min
             </select>
           </div>
-<input type="hidden" name="qid" value="<?php echo $ID;?>"><br><?php echo $ID; ?> <br>
+<input type="hidden" name="qid" value="<?php echo $ID;?>"><br>
 <button type="submit" class="submit2">ANSWER</button>
   </form>
 </div>
