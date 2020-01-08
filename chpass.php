@@ -1,6 +1,7 @@
+<?php  session_start(); ?>
 <?php
 include("header.php");
-include("database.php");
+include("essentials/database.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,19 +21,19 @@ if(document.passform.cpass.value!=document.passform.npass.value)
 	}
 </script>
 </head>
-<body background="back.jpg">
+<body background="img/back.jpg">
 <div class="signinbox" style="position: absolute; top:16%;right:40%;">
-	<center><img class="logocircle" src="1.png"  title="logo" width="210px" height="200px" border="1" /></center>
+	<center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="1" /></center>
     <center>
     	<table> 
     		<form action="passbackend.php" name="passform" method="POST" onSubmit="return check();">
 			<tr><th>
-	<input class="login_text_box"  type="text" name="loginid" placeholder="Username"></th></tr>
+	<input class="login_text_box"  type="text" name="loginid" placeholder="Username" required></th></tr>
     			<tr><th>
-	<input class="login_text_box"  type="password" name="pass" placeholder="Current Password"></th></tr>
-	<tr><th><input class="login_text_box" type="password" name="npass" placeholder="New Password"></th></tr>
-	<tr><th><input class="login_text_box" type="password" name="cpass" placeholder="Confirm Password"></th></tr></table>
-	<tr><th><input class="submit" type="submit" value="Change Password"></th></tr><br><br>
+	<input class="login_text_box"  type="password" name="pass" placeholder="Current Password" required></th></tr>
+	<tr><th><input class="login_text_box" type="password" name="npass" placeholder="New Password" required></th></tr>
+	<tr><th><input class="login_text_box" type="password" name="cpass" placeholder="Confirm Password" required></th></tr></table>
+	<tr><th><button class="submit" type="submit">Change Password</button></th></tr><br><br>
 	</form></center>
 </div>
 </body>
