@@ -36,9 +36,7 @@ Question Title: sduiofjkl asdkjfsadhfjksdhfhk
 -->
 </style>   
 <div class="sidebar">
-<a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+<a class="active" href="home.php">Home</a>
+  <a href="contact.php">Contact</a>
+  <a href="about.php">About</a>
 </div> 
-
