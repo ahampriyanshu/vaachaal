@@ -25,13 +25,31 @@
     margin: auto;
     overflow-y: hidden;
 }
+#answerbox{
+  padding-left: 230px;
+}
+#submitans {
+  padding-left: 300px;
+  background-color:#833AB4;
+  color: white;
+  padding: 11px;
+  font-size: 11px;
+  border: none;
+  cursor: pointer;
+  font-weight: light;
+        font-family:'Trebuchet MS', sans-serif;
+        border-radius: 5%;
+}
+#submitans:hover, #submitans:focus {
+  background-color: #DB4437;
+}
 </style>
 </head>
 <body >
 <?php
 $ID = $_POST['id'];
 
-$sql = "SELECT id,title,content,level,tym,branch,username,datetym FROM questions WHERE id = '$ID'";
+$sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions WHERE id = '$ID'";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) 
@@ -50,6 +68,7 @@ if ($result->num_rows > 0)
         <?php 
 endwhile;
      ?>
+     <div class="answerbox" id="answerbox" >
 <form name="addform" action="postans.php" method="POST">
 <textarea name="content" class="input_text" cols="50" rows="3" placeholder="Enter the solution" required></textarea>
         <div class="form-group">
@@ -58,9 +77,7 @@ endwhile;
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
               <option value="High">High</option>
-            </select>
-          </div>
-          <div class="form-group">
+            </select>&emsp;&emsp;
             <label>Time Required</label>
             <select name="tym" class="form-control">
               <option value="0-2 min">0-2 Min</option>
@@ -69,8 +86,9 @@ endwhile;
             </select>
           </div>
 <input type="hidden" name="qid" value="<?php echo $ID;?>"><br>
-<button type="submit" class="submit2">ANSWER</button>
+<button type="submit" id="submitans">ANSWER</button>
   </form>
+</div>
 </div>
 </div>
 </body>
