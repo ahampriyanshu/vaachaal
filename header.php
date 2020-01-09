@@ -105,7 +105,7 @@ echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
   <div id=\"mydropd\" class=\"dropd-content\">
     <a href=\"index.php\">Home</a>
     <a href=\"signout.php\">LogOut</a>
-    <a href=\"chpass.php\">Change Password</a>
+    <a href=\"changepassword.php\">Change Password</a>
   </div>
 </div>";}
     
@@ -115,7 +115,7 @@ echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
     echo "<button onclick=\"redirect();\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">Ask Question</button>";}
     else
    {
-    echo "<button onclick=\"window.location.href = 'add.php';\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">Ask Question</button>";}
+    echo "<button onclick=\"window.location.href = 'addque.php';\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">Ask Question</button>";}
     ?>
 </div> 
 </table>
