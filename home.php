@@ -29,7 +29,7 @@ body{
     position: relative;
     bottom: initial;
     margin: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 .collapsible {
   background-color: white;
@@ -41,19 +41,20 @@ body{
   box-shadow: 0 0 5px #888;
   border-radius: 4px;
   text-align: left;
-  outline: ;
   font-size: 15px;
 }
 
 .active, .collapsible:hover {
-  background-color: #555;
+  background-color: #888;
+  font-size: 110%;
+  color: white;
 }
 
 .content {
   padding: 0 18px;
   display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
+  overflow: auto;
+  background-color:;
 }
 #answer_button {
     position:relative;
@@ -63,6 +64,7 @@ body{
   padding: 11px;
   font-size: 11px;
   border: none;
+  font-weight: bold;
   cursor: pointer;
   font-weight: light;
         font-family:'Trebuchet MS', sans-serif;
@@ -71,6 +73,20 @@ body{
 #answer_button:hover, #answer_button:focus {
   background-color: #DB4437;
 }
+#title{
+  font-size: 30px;  
+  font-family: Courier new ;
+
+}
+
+#line{
+  border: 1px solid red;
+}
+ #specs{
+  font-family: Bookman Old Style ;
+  font-weight: bold;
+  color: red;
+ }
 </style>
 </head>
 <body >
@@ -84,8 +100,8 @@ if ($result->num_rows > 0)
             <form method="post" action="addans.php">
               <b><input style="position: right:10%;" type="submit"
                 id="answer_button" value="Have a better answer?" /></b>
-                 <?php echo $row["content"]; ?><br><br>
-                asked is by &nbsp;<?php echo $row["username"]; ?> &emsp;
+     <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
+ <span id="specs">is asked by </span>&nbsp;<?php echo $row["username"]; ?> &emsp;
                difficulty level estimated is&nbsp;<?php echo $row["level"]; ?> &emsp;
                  time alloted is &nbsp;<?php echo $row["tym"]; ?> &emsp;
                  question comes under &nbsp;<?php echo $row["branch"]; ?> branch <br>
@@ -95,21 +111,23 @@ if ($result->num_rows > 0)
                 
             </form>
         </button>
+
         <?php
+        echo '<div class="content">';
         $queid = $row["id"];
         $ql = "SELECT * FROM answers WHERE id = '$queid'";
 $resul = $con->query($ql);
 
 if ($resul->num_rows > 0) {
-    while($ro = $resul->fetch_assoc()) {
-        echo "<div class=\"content\" style=\"padding: 10px; \">";
-        echo "<form><b> Solution </b> ". $ro["content"] . "<b> Time taken by the user </b> " . $ro ["tym"] . "<b> Difficlty Level according to user:</b> ". $ro["level"] ."<b> Answered by:</b> " . $ro["username"] . "<b> answered on :</b> " . $ro["datetym"] ."" ;
-        echo "</form></div>";
+  while($ro = $resul->fetch_assoc()) {
+     echo "<div id='ansr'>
+    <b><br>  </b> ". $ro["content"] . "<b> <br>Time taken by the user </b> " . $ro ["tym"] . "<b> Difficlty Level according to user:</b> ". $ro["level"] ."<b> Answered by:</b> " . $ro["username"] . "<b> answered on :</b> " . $ro["datetym"] ."</div>";
     }
 } else {
-        echo "<div class=\"content\" style=\"padding: 10px; \">";
-        echo "Be the first to answer</div>";
+        
+        echo "<div id='ansr'> Be the first to answer</div>";
 } 
+echo '<br><br></div>';
 endwhile; ?>
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -125,7 +143,8 @@ for (i = 0; i < coll.length; i++) {
       content.style.display = "block";
     }
   });
-}
-</script>               
-        </body>
+}    
+</script> 
+<br><br><br><br>              
+</body>
 </html>
