@@ -1,3 +1,8 @@
+<?php session_start(); ?>
+<?php 
+    if(!isset($_SESSION['loggedin'])){
+    header('location:index.php');}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,23 +36,29 @@
 
 -->
 </style>
-<body background="back.jpg">
+<body background="img/back.jpg">
 <?php
 include("header.php");
+include("panel.php");
   
   echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:20%;\">
-  <img class=\"img-circle\" style=\"position: absolute; top:2%;left:5%;\" src=\"Octocat.png\"  width=\"200px\" height=\"150px\" />
-    </center>
-    <img class=\"img-circle\" style=\"position: absolute; top:35%;left:7%;\" src=\"Gmail.png\"  width=\"160px\" height=\"150px\" />
-    </center>
-    <img class=\"img-circle\" style=\"position: absolute; bottom:4%;left:6%;\" src=\"Word.png\"  width=\"180px\" height=\"150px\" />
-    </center>
+
+ <a href=\"https://github.com/PriyanshuMay\"> <img class=\"img-circle\" 
+  style=\"position: absolute; top:2%;left:5%;\" src=\"img/Octocat.png\"  width=\"200px\" height=\"150px\" />
+    </a>
+
+     <a  href=\"https://github.com/PriyanshuMay/GNE-Gate-Forum/archive/master.zip\"><img class=\"img-circle\" style=\"position: absolute; top:25%;right:7%;\" src=\"img/download.png\" width=\"140px\" height=\"140px\" />
+    </a>
+
+ <a  href=\"https://gndec.ac.in\"><img class=\"img-circle\" style=\"position: absolute; top:52%;left:7%;\" src=\"img/gnelogo.png\"  width=\"160px\" height=\"140px\" />
+    </a>
+
+
+ <a  href=\"https://narratingstories.wordpress.com\"><img class=\"img-circle\" style=\"position: absolute; top:73%;right:7%;\" src=\"img/Word.png\"  width=\"140px\" height=\"130px\" />
+    </a>
+
 </div>";
 ?>
 </script>
-  <?php @$_SESSION['login']; 
-  error_reporting(1);
-  ?>  
-
 </body>
 </html>
