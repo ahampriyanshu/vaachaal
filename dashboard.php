@@ -72,11 +72,16 @@ include("essentials/database.php");
 }
 
 .setting a:hover:not(.active) {
-  background-color: #833AB4;
   color: #888;
 }
 #set{
   opacity: 0.5;
+}
+#changeopt:hover{
+  font-size: 150%;
+}
+#setopt{
+  font-size: 150%;
 }
 </style>
 <body background="img/back.jpg">
@@ -103,13 +108,13 @@ if ($result->num_rows > 0)
 
 <div class="setting" >
   <img class="logocircle" id="set" src="img/setting.png" width="60px" height="60px" border="" style="position: absolute; top:1%; left:25%;" />
-  <a class="active"  >Setting</a>  
-  <a href="changepassword.php">Change Password</a>
-  <a href="changeusername.php">Change Username</a>
-   <a href="changemobile.php">Change Mobile</a>
-  <a href="changemail.php">Change E-mail</a>
-   <a href="viewque.php">Question added</a>
-  <a href="viewans.php">Question answered</a>
+  <a id="setopt" class="active"  >Settings</a>  
+  <a id="changeopt" href="changepassword.php">Change Password</a>
+  <a id="changeopt" href="changeusername.php">Change Username</a>
+   <a id="changeopt" href="changemobile.php">Change Mobile</a>
+  <a id="changeopt" href="changemail.php">Change E-mail</a>
+   <a id="changeopt" href="viewque.php">Question added</a>
+  <a id="changeopt" href="viewans.php">Question answered</a>
 </div> 
 </body>
 </html>
