@@ -26,17 +26,26 @@ include("essentials/database.php");
   background-color: #4CAF50;
   color: white;
 }
-Question Title: sduiofjkl asdkjfsadhfjksdhfhk
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
+  background-color: #888;
   color: white;
 }
 
+#copyright{
+  font-weight: lighter;
+  color: ;
+  font-family: courier new;
+  font-size: 10px;
+}
 -->
 </style>   
 <div class="sidebar">
+  <div id="copyright" style="position: absolute; left: 3%;bottom: 2%;">
+  &#x24B8 all rights reserved
+</div>
 <a class="active" href="home.php">Home</a>
   <a href="contact.php">Contact</a>
   <a href="about.php">About</a>
 </div> 
+
