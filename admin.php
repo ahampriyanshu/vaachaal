@@ -1,7 +1,4 @@
-<?php include("header.php"); ?>
 <?php include("essentials/database.php"); ?>
-<?php // include("about.php"); ?>
-<?php // include("essentials/function.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +48,6 @@
 <link href="forum.css" rel="stylesheet" type="text/css">
 </head>
 <body background="img/back.jpg">	
-<?php include("essentials/database.php"); ?>
 <?php
 extract($_POST);
 
@@ -64,6 +60,8 @@ if(isset($submit))
   }
   else
   {
+    session_start();
+    $_SESSION["admin"] = $username;
     header('location:adminhome.php');
   }
 }
@@ -96,9 +94,9 @@ echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:5%;\">
 		  }
 	?>
 	<tr>		  
-    <td>&emsp;&emsp;<input class="submit2" type="submit" name="submit" id="submit" Value="Login"/>
-			&emsp;&emsp;</form>
-    	<button class="submit2" onclick="window.location.href = 'index.php';" >Already a user?</button>
+    <td>&emsp;&emsp;<input class="submit2" type="submit" name="submit" id="submit" Value="Admin Login"/>
+			&emsp;</form>
+    	<button class="submit2" onclick="window.location.href = 'index.php';" >User Login</button>
     </td>
   </tr>  
   <tr>
