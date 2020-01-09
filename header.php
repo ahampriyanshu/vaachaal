@@ -103,7 +103,7 @@ echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
        echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
   <button class=\"dropbutton\">My Account</button>
   <div id=\"mydropd\" class=\"dropd-content\">
-    <a href=\"index.php\">Home</a>
+    <a href=\"dashboard.php\">Dashboard</a>
     <a href=\"signout.php\">LogOut</a>
     <a href=\"changepassword.php\">Change Password</a>
   </div>
@@ -112,10 +112,10 @@ echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
 ?>
       <?php
   if (session_status() == PHP_SESSION_NONE){
-    echo "<button onclick=\"redirect();\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">Ask Question</button>";}
+    echo "<button onclick=\"redirect();\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
     else
    {
-    echo "<button onclick=\"window.location.href = 'addque.php';\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\">Ask Question</button>";}
+    echo "<button onclick=\"window.location.href = 'addque.php';\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
     ?>
 </div> 
 </table>
