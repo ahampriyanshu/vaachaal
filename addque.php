@@ -1,6 +1,9 @@
 <?php  session_start(); ?>
 <?php 
-  include("essentials/script.php");
+    if(!isset($_SESSION['loggedin'])){
+    header('location:index.php');}
+?>
+<?php 
 	include("header.php");
   include("panel.php");
 ?>
@@ -19,7 +22,7 @@ html, body {
 	<div class="jumbotron">
     <h1>Add New Question </h1>
 <form name="addform" action="postque.php" method="POST">
-<input type="text" class="input_text" name="title" placeholder="Question Title" required><br><br>
+<br>
 <textarea name="content" class="input_text" cols="50" rows="3" placeholder="Enter Question" required></textarea>
 
         <div class="form-group">
@@ -50,7 +53,6 @@ html, body {
                 </select>
           </div>
 <input type="submit" value="submit">
-
 </form>
 </div>
 </body>
