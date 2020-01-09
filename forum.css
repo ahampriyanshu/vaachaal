@@ -177,32 +177,6 @@ border: 0;
 	background-color: #1a75ff;
 	box-shadow: 2px 4px 4px #1a75ff;
 }
-.style4 {
-	color: #000000;
-	font-weight: bold;
-	font-size:25px;
-	margin-left: 10%;
-}
-.style5 {color: #990033}
-.style6 {color: #ECE9D8}
-.style8 {
-	color:#d24dff;
-	font-family: 'Roboto Slab', serif;
-	font-weight: bold;
-	margin-left: 20px;
-}
-a:link {
-	color: #330066;
-	text-decoration: none;
-}
-a:hover {
-	color: #FFCC00;
-	text-decoration: underline;
-}
-a:visited {
-	color: #330066;
-	text-decoration: none;
-}
 .head1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 24px;
