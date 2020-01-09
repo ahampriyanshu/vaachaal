@@ -33,6 +33,7 @@ body{
   color: black;
   cursor: pointer;
   width: 100%;
+  padding: 40px;
   border: 1px solid #e2e2e2;
   box-shadow: 0 0 5px #888;
   border-radius: 4px;
@@ -56,26 +57,23 @@ body{
 </head>
 <body >
     <?php
-$sql = "SELECT id,title,content,level,tym,branch,username,datetym FROM questions";
+$sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) 
         while($row = $result->fetch_assoc()) :?>
-                <br><br>
-        <div class="collapsible" >
+        <button type="button" class="collapsible">
             <form method="post" action="addans.php">
-              <br>
-                <b><center><?php echo $row["title"]; ?></center></b><br>
                  <?php echo $row["username"]; ?> 
                  <?php echo $row["level"]; ?> 
                  <?php echo $row["tym"]; ?> 
                  <?php echo $row["branch"]; ?> 
                  <?php echo $row["datetym"]; ?><br><br>
                  <?php echo $row["content"]; ?>
-                <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/><br>
-                <button type="submit" class="submit2" >ANSWER</button><br><br>
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
+                <b><input style="position: right:10%;" type="submit" class="submit2" value="Have a better answer" /></b>
             </form>
-        </div>
+        </button>
         <?php
         $queid = $row["id"];
         $ql = "SELECT * FROM answers WHERE id = '$queid'";
@@ -83,17 +81,34 @@ $resul = $con->query($ql);
 
 if ($resul->num_rows > 0) {
     while($ro = $resul->fetch_assoc()) {
-        echo "<div  style=\"padding: 10px; \">";
+        echo "<div class=\"content\" style=\"padding: 10px; \">";
         echo "<form>";
-        echo "<br><b> Solution </b> ". $ro["content"] . "<br><b> Time taken by the user </b> " . $ro ["tym"] . "<br><b> Difficlty Level according to user:</b> ". $ro["level"] ."<br><b> Answered by:</b> " . $ro["username"] . "<br><b> answered on :</b> " . $ro["datetym"] ."<br>" ;
-        echo "<br></form></div>";
+        echo "<b> Solution </b> ". $ro["content"] . "<b> Time taken by the user </b> " . $ro ["tym"] . "<b> Difficlty Level according to user:</b> ". $ro["level"] ."<b> Answered by:</b> " . $ro["username"] . "<b> answered on :</b> " . $ro["datetym"] ."" ;
+        echo "</form></div>";
     }
 } else {
-
-    echo "<br><br>Be the first to give answer";
+echo "<div class=\"content\" style=\"padding: 10px; \">";
+        echo "Be the first to answer</div>";
 }
      
 endwhile;
-     ?><br><br>
-</body>
+     ?>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>               
+        </body>
 </html>
