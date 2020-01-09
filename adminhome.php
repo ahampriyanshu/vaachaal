@@ -1,10 +1,11 @@
 <?php session_start(); ?> 
 <?php 
-       // include("essentials/security.php");
-          include("essentials/script.php");
-          include("header.php");
+    if(!isset($_SESSION['admin'])){
+    header('location:index.php');}
+?>
+<?php 
+          include("adminpanel.php");
           include("essentials/database.php");
-          include("panel.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,7 @@ p {
 
 </style>
 </head>
-<body >
+<body background="img/back.jpg">
 <?php
 $sql = "SELECT user_id,username,password,name,security,phone,email,datetym FROM userbase";
 $result = $con->query($sql);
@@ -58,6 +59,5 @@ if ($result->num_rows > 0)
         <br><br>
 <?php endwhile; ?>
 </div>
-              
-        </body>
+</body>
 </html>
