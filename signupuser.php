@@ -9,9 +9,10 @@ $name  = $_POST['name'];
 $secu  = $_POST['security'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
+$date = date('m/d/Y h:i:s', time());
 
-$sql = "INSERT INTO userbase (username,password,name,security,phone,email) VALUES 
-('$newuser','$pass','$name','$secu','$phone','$email')";
+$sql = "INSERT INTO userbase (username,password,name,security,phone,email,datetym) VALUES 
+('$newuser','$pass','$name','$secu','$phone','$email','$date')";
 $q = "select * from userbase where username = '$newuser'";
 $result = mysqli_query($con,$q);
 $num = mysqli_num_rows($result);
@@ -22,12 +23,11 @@ if ($num == 1) {
 </script>";
 } 
 else {
-	$qy = "INSERT INTO userbase(username,password,name,security,phone,email) VALUES ('$a$newuser','$pass','$name','$secu','$phone','$email')";
+	$qy = "INSERT INTO userbase(username,password,name,security,phone,email,datetym) VALUES ('$a$newuser','$pass','$name','$secu','$phone','$email','$date')";
 	mysqli_query($con,$qy);
 	echo "<script>
     alert('Login ID successfully created');
 document.location='index.php';
-</script>";
-	 
+</script>";	 
 }
 ?>	
