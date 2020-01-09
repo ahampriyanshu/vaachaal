@@ -86,7 +86,7 @@ echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:5%;\">
 	 <form method="post" name="login_form" action="" onSubmit="return check();">
 	<center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="1" /></center>
 	<tr>
-	<th><input class="login_text_box" type="TEXT" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="10" size="25"  id="loginid2" name="username"/></th>
+	<th><input class="login_text_box" type="TEXT" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="20" size="25"  id="loginid2" name="username"/></th>
 	</tr>
 	<tr> 	
     <th><input class="login_text_box" type="password"  placeholder="ENTER PASSWORD" name="password" id="pass2"/></th>
@@ -98,9 +98,14 @@ echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:5%;\">
 		  }
 	?>
 	<tr>		  
-    <td>&emsp;&emsp;<input class="submit" type="submit" name="submit" id="submit" Value="Login"/>
+    <td>&emsp;&emsp;<input class="submit2" type="submit" name="submit" id="submit" Value="Login"/>
 			&emsp;&emsp;</form>
-    	<button class="submit2" onclick="window.location.href = 'signup.php';" >New User?</button>
+    	<button class="submit2" onclick="window.location.href = 'forgot.php';" >Forgot Password?</button>
+    </td>
+  </tr>  
+  <tr>
+      <td>&nbsp;&emsp;&emsp;&emsp;&emsp;
+      <button class="submit2" onclick="window.location.href = 'signup.php';" >New User?</button>
     </td>
 	</tr>
 </table>
