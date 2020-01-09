@@ -1,4 +1,4 @@
-# GNE-Gate-Forum
+# GNE_GATE_FORUM
 **
 ![home](https://drive.google.com/uc?export=view&id=11Ixx49SUrY6-r1YYtKTgl8LoKope1soR)
 Website for GATE forum\
@@ -12,7 +12,10 @@ Open index.php in web browser of your choice.
 
 ## FILES AND DESCRIPTION
 
-### index.php     
+### index.php 
+### home.php
+### panel.php
+### script.php
 ### database.php
 ### header.php
 ### signup.php
@@ -20,9 +23,13 @@ Open index.php in web browser of your choice.
 ### signout.php
 ### addque.php
 ### postque.php
-### chpass.php
+### addans.php
+### postque.php
+### forgot.php
+### changepassword.php
 ### about.php
 ### addans.php
 ### contact.php
-### dash.php
-### info.php
+### dashborad.php
+### adminpanel.php
+### viewqueans.php
