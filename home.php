@@ -1,26 +1,25 @@
-<?php session_start(); ?> 
-<?php 
-    if(!isset($_SESSION['loggedin'])){
-    header('location:index.php');}
+<?php session_start(); ?>
+<?php
+if(!isset($_SESSION['loggedin'])){
+header('location:index.php');}
 ?>
-<?php 
-          include("essentials/script.php");
-          include("header.php");
-          include("essentials/database.php");
-          include("panel.php");
+<?php
+include("essentials/script.php");
+include("header.php");
+include("essentials/database.php");
+include("panel.php");
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Home</title>
-  <link href="forum.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-  
-body{
+  <head>
+    <title>Homeff</title>
+    <link href="forum.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    body{
     background-color: ;
     padding-left: 200px;
-  }
-  .question_box { 
+    }
+    .question_box {
     background: #f1f1f1;
     border: 2px solid #e2e2e2;
     box-shadow: 0 0 5px #888;
@@ -29,122 +28,147 @@ body{
     position: relative;
     bottom: initial;
     margin: auto;
-    overflow-y: auto;
-}
-.collapsible {
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  width: 100%;
-  padding: 40px;
-  border: 1px solid #e2e2e2;
-  box-shadow: 0 0 5px #888;
-  border-radius: 4px;
-  text-align: left;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color: #888;
-  font-size: 110%;
-  color: white;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: auto;
-  background-color:;
-}
-#answer_button {
+    overflow-x: auto;
+    }
+    .collapsible {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    padding: 28px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px #888;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 15px;
+    }
+    .active, .collapsible:hover {
+    background-color: #e6ffff;
+    font-size: 110%;
+    color: red;
+    }
+    .content {
+    padding: 0 18px;
+    display: none;
+    overflow: auto;
+    background-color:;
+    }
+    #answer_button {
     position:relative;
-    left: 70%;
-  background-color:#833AB4;
-  color: white;
-  padding: 11px;
-  font-size: 11px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  font-weight: light;
-        font-family:'Trebuchet MS', sans-serif;
-        border-radius: 5%;
-}
-#answer_button:hover, #answer_button:focus {
-  background-color: #DB4437;
-}
-#title{
-  font-size: 30px;  
-  font-family: Courier new ;
-
-}
-
-#line{
-  border: 1px solid red;
-}
- #specs{
-  font-family: Bookman Old Style ;
-  font-weight: bold;
-  color: red;
- }
-</style>
-</head>
-<body >
+    left: 40%;
+    background-color:#833AB4;
+    color: white;
+    padding-bottom: 3px;
+    padding: 11px;
+    font-size: 11px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-weight: light;
+    font-family:'Trebuchet MS', sans-serif;
+    border-radius: 5%;
+    }
+    #answer_button:hover, #answer_button:focus {
+    background-color: #DB4437;
+    }
+    #title{
+    line-height: 1.5;
+    color: #333;
+    tab-size: 4;
+    word-break: break-word;
+    text-align: left;
+    direction: ltr;
+    user-select: text;
+    font-size: 25px;
+    font-family: Courier new ;
+    }
+    #anstitle{
+    line-height: 1.5;
+    color: black;
+    tab-size: 4;
+    word-break: break-word;
+    text-align: left;
+    direction: ltr;
+    user-select: text;
+    font-size: 15px;
+    font-family: Courier new ;
+    }
+    #line{
+    border: 0px solid red;
+    }
+    #specs{
+    font-size:12px;
+    font-family: courier new ;
+    font-weight: bold;
+    color: #833AB4;
+    }
+    #details{
+    font-weight: bold;
+    color: red;
+    font-size:12px;
+    }
+    #answer_box{
+    padding:10px;
+    padding-bottom: 20px;
+    box-shadow: 0 0 5px #888;
+    background-color: #d6d6c2;
+    width: 97%;
+    height: auto;
+    border: 2px solid #d6d6c2;
+    }
+     #answer_box:hover {
+     background-color: #e0e0d1;
+    }
+    </style>
+  </head>
+  <body >
     <?php
-$sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions";
-$result = $con->query($sql);
-
-if ($result->num_rows > 0) 
-        while($row = $result->fetch_assoc()) :?>
-        <button type="button" class="collapsible">
-            <form method="post" action="addans.php">
-              <b><input style="position: right:10%;" type="submit"
-                id="answer_button" value="Have a better answer?" /></b>
-     <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
- <span id="specs">is asked by </span>&nbsp;<?php echo $row["username"]; ?> &emsp;
-               difficulty level estimated is&nbsp;<?php echo $row["level"]; ?> &emsp;
-                 time alloted is &nbsp;<?php echo $row["tym"]; ?> &emsp;
-                 question comes under &nbsp;<?php echo $row["branch"]; ?> branch <br>
-                 posted on &nbsp;<?php echo $row["datetym"]; ?>&emsp;
-                 
-                <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
-                
-            </form>
-        </button>
-
-        <?php
-        echo '<div class="content">';
-        $queid = $row["id"];
-        $ql = "SELECT * FROM answers WHERE id = '$queid'";
-$resul = $con->query($ql);
-
-if ($resul->num_rows > 0) {
-  while($ro = $resul->fetch_assoc()) {
-     echo "<div id='ansr'>
-    <b><br>  </b> ". $ro["content"] . "<b> <br>Time taken by the user </b> " . $ro ["tym"] . "<b> Difficlty Level according to user:</b> ". $ro["level"] ."<b> Answered by:</b> " . $ro["username"] . "<b> answered on :</b> " . $ro["datetym"] ."</div>";
-    }
-} else {
-        
-        echo "<div id='ansr'> Be the first to answer</div>";
-} 
-echo '<br><br></div>';
-endwhile; ?>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
+    $sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions ORDER BY datetym DESC";
+    $result = $con->query($sql);
+    if ($result->num_rows > 0)
+    while($row = $result->fetch_assoc()) :?>
+    <button type="button" class="collapsible">
+    <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
+    <span id="specs">Asked by </span>&nbsp;<span id="details"><?php echo $row["username"]; ?></span> &emsp;
+    <span id="specs">time alloted is</span> &nbsp;<span id="details"><?php echo $row["tym"]; ?></span> &emsp;
+    <span id="specs">difficulty level estimated is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["level"]; ?></span> &emsp;
+    <span id="specs">question comes under</span> &nbsp;<span id="details"><?php echo $row["branch"]; ?></span><span id="specs"> branch</span>&emsp;
+    <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["datetym"]; ?></span><br>
+    <form method="post" action="addans.php"><br>
+      <input  type="submit"id="answer_button" value="Have a better answer?"/>
+      <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
+    </form>
+    </button>
+    <?php
+    echo '<div class="content">';
+      $queid = $row["id"];
+      $ql = "SELECT * FROM answers WHERE id = '$queid' ORDER BY datetym DESC ";
+      $resul = $con->query($ql);
+      if ($resul->num_rows > 0) {
+      while($ro = $resul->fetch_assoc()) {
+      echo "<br><div id='answer_box'>
+        <span id='anstitle'><br>&emsp;  ". $ro["content"] . "</span><br><span id='specs'> <br>&emsp;&emsp;&emsp;Time required is </span>&nbsp;<span id='details'> " . $ro ["tym"] . "&emsp;&emsp;<span id='specs'> Difficulty Level according to user is </span>&nbsp; ". $ro["level"] ."&emsp;&emsp;<span id='specs'> Answered by </span>&nbsp; " . $ro["username"] . "&emsp;&emsp;<span id='specs'> answered on </span>&nbsp; " . $ro["datetym"] ."</span></div>";
+        }
+        } else {
+        echo "<br><div id='answer_box'><span id='anstitle'>Be the first to answer</span></div>";
+        }
+      echo '<br><br></div>';
+      endwhile; ?>
+      <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+      for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
       content.style.display = "none";
-    } else {
+      } else {
       content.style.display = "block";
-    }
-  });
-}    
-</script> 
-<br><br><br><br>              
-</body>
-</html>
+      }
+      });
+      }
+      </script>
+      <br><br><br><br>
+    </body>
+  </html>
