@@ -31,12 +31,14 @@ if(document.passform.cpass.value!=document.passform.npass.value)
 	<center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="1" /></center><br>
     <center>
     	<table> 
-    		<form action="passbackend.php" name="passform" method="POST" onSubmit="return check();">
-    			<tr><th>
-	<input class="login_text_box"  type="password" name="pass" placeholder="Current Password" required></th></tr>
-	<tr><th><input class="login_text_box" type="password" name="npass" placeholder="New Password" required></th></tr>
-	<tr><th><input class="login_text_box" type="password" name="cpass" placeholder="Confirm Password" required></th></tr></table><br>
-	<tr><th><button class="submit2" type="submit">Change Password</button></th></tr><br><br>
+    		<form action="userbackend.php" name="passform" method="POST" >
+    <tr><th>
+	<input class="login_text_box"  type="password" name="pass" placeholder="Password" required></th></tr>
+	<tr>
+		<th>&emsp;</th>
+	</tr>
+	<tr><th><input class="login_text_box" type="text" name="newmail" placeholder="New E-mail" required></th></tr></table><br>
+	<tr><th><button class="submit2" type="submit">Change Password</button></th></tr><br><br><br>
 	</form></center>
 </div>
 </body>
