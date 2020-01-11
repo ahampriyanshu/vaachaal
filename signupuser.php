@@ -28,5 +28,6 @@ echo "<script>
 alert('Login ID successfully created');
 document.location='index.php';
 </script>";
+
 }
 ?>
