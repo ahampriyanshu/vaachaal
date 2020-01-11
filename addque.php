@@ -14,46 +14,99 @@
 <link href="forum.css" rel="stylesheet" type="text/css">
 <style>
 html, body {
-    padding-left: 200px;
+    padding-left: 150px;
+}
+.question_text{
+    width: 80%;
+    font-size: 15px;
+    line-height: 1.4;
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height: 32px;
+    margin-bottom: 8px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px #888;
+    border-radius: 4px;
+}
+.select {
+  position: relative;
+  letter-spacing: 0px;
+  font-family: courier;
+  color: red;
+}
+.select option{
+  font-family: courier;
+  color: white;
+  font-weight: bold;
+}
+.option{
+  font-family: courier;
+  color: white;
+  font-weight: bold;
+  background-color:#833AB4;
+  padding: 5px; 
+ 
+}
+.title{
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-family: courier;
+  color: #888;
+ }
+ #submit {
+  background-color:#4CAF50;
+  color: white;
+  font-weight: bold;
+  padding: 11px;
+  font-size: 11px;
+  border: none;
+  cursor: pointer;
+  font-weight: light;
+  font-family:'Trebuchet MS', sans-serif;
+  border-radius: 5%;
+}
+
+#submit:hover, #submit:focus {
+  background-color: #833AB4;
 }
 </style>
 </head>
-<body>
-	<div class="jumbotron">
-    <h1>Add New Question </h1>
+<body><br>
 <form name="addform" action="postque.php" method="POST">
-<br>
-<textarea name="content" class="input_text" cols="50" rows="3" placeholder="Enter Question" required></textarea>
-
-        <div class="form-group">
-            <label>Difficulty level</label>
-            <select name="level" class="form-control">
+<h class="title">Post New Question</h> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+<input type="submit" id="submit" value="Get answer"><br><br><br>
+<textarea name="content" class="question_text" cols="100" rows="10" placeholder="Enter Question" required></textarea>
+<br><br>
+        <div class="select">
+          &emsp;
+            <label>Level of hardness</label>&nbsp;&nbsp;
+            <select name="level" class="option">
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
               <option value="High">High</option>
             </select>
-          </div>
-          <div class="form-group">
-            <label>Time Required</label>
-            <select name="tym" class="form-control">
+           &emsp;&emsp;
+            <label>Time Required</label>&nbsp;&nbsp;
+            <select name="tym" class="option">
               <option value="0-2 min">0-2 Min</option>
               <option value="2-5 Min">2-5 Min</option>
               <option value="5-10 Min">5-10 Min</option>min
             </select>
-          </div>
-          <div class="form-group">
-            <label>Branch</label>
-            <select name="branch" class="form-control">
+       &emsp;&emsp;
+          
+            <label>Branch</label>&nbsp;&nbsp;
+            <select name="branch" class="option">
               <option value="CSE/IT">CSE/IT</option>
               <option value="ME">ME</option>
               <option value="EE">EE</option>
               <option value="Civil">Civil</option>
               <option value="ECE">ECE</option>
               <option value="PE">PE</option>
+              <option value="Misc">Misc</option>
                 </select>
-          </div>
-<input type="submit" value="submit">
+          </div><br><br>
+
 </form>
-</div>
+
 </body>
 </html>
