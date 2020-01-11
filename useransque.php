@@ -1,9 +1,11 @@
-<?php session_start(); ?> 
+<?php session_start(); ?>
 <?php 
-       // include("essentials/security.php");
-          include("header.php");
+    if(!isset($_SESSION['admin'])){
+    header('location:index.php');}
+?> 
+<?php 
           include("essentials/database.php");
-          include("panel.php");
+          include("adminpanel.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +16,7 @@
   body{
     background-color: ;
     padding-left: 200px;}
+    
   .question_box { 
     background: #f1f1f1;
     border: 2px solid #e2e2e2;
@@ -45,8 +48,8 @@
 }
 </style>
 </head>
-<body >
-  <centre><h><b>Question asked by the user</b></h></centre>
+<body background="img/back.jpg">
+  <h><b><centre>Question asked by the user</centre></b></h>
   <br><br>
 <?php
 $USR = $_POST['usr'];
