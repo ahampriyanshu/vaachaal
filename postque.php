@@ -19,6 +19,6 @@ header('location:home.php');
 }
 else
 {
-	header('location:add.php');
+	header('location:addque.php');
 echo "<script>alert('SORRY,some error occured!Please try again');</script>";
 }

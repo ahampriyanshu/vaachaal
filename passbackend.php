@@ -1,26 +1,36 @@
+<?php session_start(); ?>
+<?php 
+    if(!isset($_SESSION['loggedin'])){
+    header('location:index.php');}
+?>
 <?php
-session_start();
-include("header.php");
-include("database.php");
+include("essentials/database.php");
 
-$username = $_POST['loginid'];
+       $username = $_SESSION['loggedin'];
         $password = $_POST['pass'];
         $newpassword = $_POST['npass'];
-        $confirmnewpassword = $_POST['cpass'];
-        $result = mysqli_query($con,"SELECT pass FROM mst_user WHERE 
-login='$username'");
-        if(!$result)
-        {
-        echo "The username you entered does not exist";
-        }
-        else if($newpassword=$confirmnewpassword)
-        $sql=mysqli_query($con,"UPDATE mst_user SET pass='$newpassword' where login='$username'");
-        if($sql)
-        {
-        echo '<h1 style="position: absolute; top:16%;right:60%;" >Congratulations You have successfully changed your password</h1>';
-        }
-       else
-        {
-       echo '<h1 style="position: absolute; top:16%;right:60%;" >Passwords did not match</h1>';
-       }
-      ?>
+        
+        $sql = "INSERT INTO userbase (username,password)
+VALUES ('$username','$password')";
+
+$q = "select * from userbase where username = '$username' && password = '$password' ";
+
+$result = mysqli_query($con,$q);
+$num = mysqli_num_rows($result);
+
+if ($num == 1) {
+
+    $sql=mysqli_query($con,"UPDATE userbase SET password = '$newpassword' WHERE username='$username'");
+   echo "<script>
+    alert('Password successfully changed');
+document.location='signout.php';
+</script>";
+    
+} else {
+    echo "<script>
+    alert('Incorrect details! Please try again');
+    document.location='changepassword.php';
+</script>";  
+}
+
+?>
