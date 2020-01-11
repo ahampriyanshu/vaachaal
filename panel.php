@@ -2,7 +2,6 @@
 include("essentials/database.php");
 ?>
 <style type="text/css">
-
 <!--
 .sidebar {
     position: fixed;
@@ -23,6 +22,7 @@ include("essentials/database.php");
 }
  
 .sidebar a.active {
+  box-shadow: 0 0 5px #888;
   background-color: #4CAF50;
   color: white;
 }
@@ -33,6 +33,7 @@ include("essentials/database.php");
 }
 
 #copyright{
+
   font-weight: lighter;
   color: ;
   font-family: courier new;
@@ -41,7 +42,7 @@ include("essentials/database.php");
 -->
 </style>   
 <div class="sidebar">
-  <div id="copyright" style="position: absolute; left: 3%;bottom: 2%;">
+  <div id="copyright" style="position: absolute; left: 3%;bottom: 1%;">
   &#x24B8 all rights reserved
 </div>
 <a class="active" href="home.php">Home</a>

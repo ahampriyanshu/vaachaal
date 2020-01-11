@@ -7,12 +7,11 @@
     left: 0;
     width: 100%;
     z-index: 5050;
+    box-shadow: 0 0 5px #888;
     background-color: #fafafb;
-    transition: box-shadow 0px 8px 16px 0px rgba(0,0,0,0.2);
-    height: 50px;
+    height: 53px;
     box-sizing: border-box;
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-    border-top: 3px solid #4CAF50;
     border-bottom: 1px solid lightgrey;
   }
 .dropdown {
@@ -66,7 +65,7 @@ background-color: #833AB4;
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 95px;
+  max-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -91,7 +90,7 @@ window.location.href = 'index.php';
 <a href="home.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/Topbar.png"  title="college logo" width="230px" height="45px" /></a>
   <?php
   if (session_status() == PHP_SESSION_NONE){
-echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
+echo "<div style=\"position: absolute; top:12%;right:2%;\" class=\"dropd\">
   <button class=\"dropbutton\">SignIn/SignUp</button>
   <div id=\"mydropd\" class=\"dropd-content\">
     <a href=\"index.php\">SignIn</a>
@@ -100,22 +99,22 @@ echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
   </div>
 </div>";}
     else{
-       echo "<div style=\"position: absolute; top:8%;right:2%;\" class=\"dropd\">
+       echo "<div style=\"position: absolute; top:12%;right:2%;\" class=\"dropd\">
   <button class=\"dropbutton\">My Account</button>
   <div id=\"mydropd\" class=\"dropd-content\">
     <a href=\"dashboard.php\">Dashboard</a>
     <a href=\"signout.php\">LogOut</a>
-    <a href=\"changepassword.php\">Change Password</a>
+    
   </div>
 </div>";}
     
 ?>
       <?php
   if (session_status() == PHP_SESSION_NONE){
-    echo "<button onclick=\"redirect();\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
+    echo "<button onclick=\"redirect();\" style=\"position: absolute; top:12%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
     else
    {
-    echo "<button onclick=\"window.location.href = 'addque.php';\" style=\"position: absolute; top:8%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
+    echo "<button onclick=\"window.location.href = 'addque.php';\" style=\"position: absolute; top:12%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
     ?>
 </div> 
 </table>
