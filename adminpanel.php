@@ -8,7 +8,8 @@
     width: 100%;
     z-index: 5050;
     background-color: #fafafb;
-    transition: box-shadow 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px #888;
     height: 50px;
     box-sizing: border-box;
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
@@ -66,7 +67,7 @@ background-color: #833AB4;
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 95px;
+  max-width: 90px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -90,13 +91,22 @@ window.location.href = 'index.php';
 <div class="top-bar">
 <img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/Topbar.png"  title="college logo" width="230px" height="45px" />
   <?php
-       echo "<div style=\"position: absolute; top:8%;right:3%;\" class=\"dropd\">
-  <button class=\"dropbutton\">Admin</button>
+  if (session_status() == PHP_SESSION_NONE){
+    echo "<div style=\"position: absolute; top:8%;right:3%;\" class=\"dropd\">
+  <button class=\"dropbutton\">&emsp;Admin&emsp;</button>
+  <div id=\"mydropd\" class=\"dropd-content\">
+    <a href=\"index.php\">SignIn</a>
+    <a href=\"signup.php\">SignUp</a>
+  </div>
+</div>";
+  }
+  else{       echo "<div style=\"position: absolute; top:8%;right:3%;\" class=\"dropd\">
+  <button class=\"dropbutton\">&emsp;Admin&emsp;</button>
   <div id=\"mydropd\" class=\"dropd-content\">
     <a href=\"adminhome.php\">Home</a>
     <a href=\"signout.php\">LogOut</a>
   </div>
-</div>";
+</div>"; }
     
 ?>
 </div> 

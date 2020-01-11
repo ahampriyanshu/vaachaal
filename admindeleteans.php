@@ -1,11 +1,10 @@
 <?php  session_start(); ?>
 <?php
-if(!isset($_SESSION['loggedin'])){
+if(!isset($_SESSION['admin'])){
 header('location:index.php');}
 ?>
 <?php
-include("header.php");
-include("panel.php");
+include("adminpanel.php");
 include("essentials/database.php");
 ?>
 <!DOCTYPE html>
@@ -85,7 +84,7 @@ include("essentials/database.php");
   </style>
   <body background="img/back.jpg">
     <?php
-    $USR = $_SESSION['loggedin'];
+    $USR = $_SESSION['user'];
     $sql = "SELECT * FROM answers WHERE username = '$USR' ORDER BY datetym DESC ";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
@@ -95,7 +94,7 @@ include("essentials/database.php");
       <span id="specs">time required is</span> &nbsp;<span id="details"><?php echo $row["tym"]; ?></span> &emsp;
       <span id="specs">difficulty level according to user is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["level"]; ?></span> &emsp;
       <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["datetym"]; ?></span><br>
-      <form method="post" action="delansbyuser.php"><br>
+      <form method="post" action="delansbyadmin.php"><br>
         <input  type="submit"  id="answer_button" value="Delete Answer"/>
         <input type="hidden" name="aid" value="<?php echo $row['aid']; ?>"/>
       </form>
