@@ -49,7 +49,7 @@ $table2 = " select * from questions";
 
     $create2 = "CREATE TABLE questions (
     id   int(50) NOT NULL AUTO_INCREMENT,
-    content   varchar(10000) NOT NULL,
+    content   text(10000) NOT NULL,
     level     varchar(50) NOT NULL,
     tym       varchar(50) NOT NULL,
     branch    varchar(50) NOT NULL,
@@ -71,7 +71,7 @@ $table3 = " select * from answers";
     $create3 = "CREATE TABLE answers (
     aid   int(50) NOT NULL AUTO_INCREMENT,
     id    int(50) NOT NULL,
-    content    varchar(10000) NOT NULL,
+    content    text(10000) NOT NULL,
     username   varchar(50) NOT NULL,
     datetym    varchar(50) NOT NULL,
     tym        varchar(50) NOT NULL,
