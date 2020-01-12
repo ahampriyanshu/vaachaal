@@ -45,7 +45,7 @@ include("essentials/database.php");
     color: red;
     }
     #verify:hover, #verify:focus {
-    background-color: red;
+    background-color: #333;
     }
     #verify:hover #set {
     transform: scale(1.2);
@@ -151,19 +151,10 @@ include("essentials/database.php");
           </tr>
         </table>
         <div class="setting_admin" >
-          <img  id="set" src="img/lock.png" width="300px" height="300px" border="none" style="position: absolute; top:-2%; left:18%;"   />
-<script type="text/javascript">
-  var img = document.getElementById('set');
-img.onmouseout = function () {
-   this.src = 'img/lock.png';
-};
-
-img.onmouseover = function () {
-   this.src = 'img/unlock.png';
-};
-</script>
+          <img  id="set" src="img/lock.png" onmouseover="this.src='img/unlock.png';" onmouseout="this.src='img/lock.png';"
+          width="300px" height="300px" border="none" style="position: absolute; top:-2%; left:18%;"   />
           <input type="hidden" name="user" value="<?php echo $row['username']; ?>"/>
-          <input style="position:relative; top:320px; right:-35%;" type="submit" id="verify" value="View user ans & quetion" />
+          <input style="position:relative; top:320px; right:-35%;" type="submit" id="verify" value="Modify User Information" />
         </div>
       </div>
     </form>

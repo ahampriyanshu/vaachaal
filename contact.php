@@ -69,7 +69,7 @@ header('location:index.php');}
       <a  href=\"https://narratingstories.wordpress.com\"><img id=\"contact_img\" style=\"position: absolute; top:70%;right:7%;\" src=\"img/Word.png\"  width=\"140px\" height=\"130px\" /></a>
       <div  style='position: absolute; top:15%; left:30%;' id='contact_show'>College's Website<div id='contact_hide'>&emsp;visit GNDEC official website&emsp;</div></div>
       <div  style='position: absolute; top:38%; right:30%;' id='contact_show'>Download Source Code<div id='contact_hide'>&emsp;Download zip file</div></div>
-      <div  style='position: absolute; top:62%; left:33%;' id='contact_show'>My Github<div id='contact_hide'>&emsp;&emsp;visit my github profile&emsp;&emsp;</div></div>
+      <div  style='position: absolute; top:62%; left:33%;' id='contact_show'>My Github<div id='contact_hide'>&emsp;&emsp;fork this website's repository &emsp;&emsp;</div></div>
       <div  style='position: absolute; top:80%; right:28%;' id='contact_show'>My blog
         <div id='contact_hide'>&emsp;visit my wordpress site&emsp;</div></div>
       </div>";
