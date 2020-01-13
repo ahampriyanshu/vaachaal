@@ -26,7 +26,7 @@ include("essentials/database.php");
 			<table>
 				<form action="verifyadmin.php" name="passform" method="POST" >
 					<tr><th>
-					<input class="login_text_box"  type="password" name="pass" placeholder="Password" required></th></tr>
+					<input class="login_text_box"  type="password" name="superpass" placeholder="Super Password" required></th></tr>
 					<tr>
 						<th>&emsp;</th>
 					</tr>

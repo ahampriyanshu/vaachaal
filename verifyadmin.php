@@ -7,11 +7,11 @@
 include("essentials/database.php");
 
         $username = $_SESSION['admin'];
-        $pass = $_POST['pass'];
+        $superpass = $_POST['superpass'];
         
-        $sql = "INSERT INTO admin (login_id,password) VALUES ('$username','$pass')";
+        $sql = "INSERT INTO admin (login_id,superpassword) VALUES ('$username','$superpass')";
 
-$q = "select * from admin where login_id = '$username' && password = '$pass' ";
+$q = "select * from admin where login_id = '$username' && superpassword = '$superpass' ";
 
 $result = mysqli_query($con,$q);
 $num = mysqli_num_rows($result);
@@ -24,7 +24,7 @@ document.location='adminusersetting.php';
     
 } else {
     echo "<script>
-    alert('Incorrect Password!');
+    alert('Incorrect Password!Login again');
     document.location='signout.php';
 </script>";  
 }
