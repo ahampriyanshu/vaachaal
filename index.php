@@ -14,16 +14,18 @@ header('location:home.php');}
     border-radius: 4px;
     padding-top: 25px;
     width: 850px;
-    height: 525px;
+    height: 500px;
     position: absolute;
     bottom: initial;
     margin: auto;
-    overflow-y: hidden;
-    top: 10%;
+    overflow: hidden;
+    top: 9%;
     }
 .sub{
   font-family: 'Trebuchet MS', sans-serif;
 }
+.cover{
+  }
     </style>
     <title>Index</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
@@ -45,22 +47,21 @@ header('location:home.php');}
     header('location:home.php');
     }
     }
-    echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:5%;\">
-      <img class=\"img-circle\" style=\"position: absolute; top:2%;left:8%;\" src=\"img/IIT_B.png\"  width=\"170px\" height=\"130px\" />
-      </center>
-      <img class=\"img-circle\" style=\"position: absolute; top:3%;left:40%;\" src=\"img/IITD.png\"  width=\"170px\" height=\"130px\" />
-      </center>
-      <img class=\"img-circle\" style=\"position: absolute; top:3%;right:8%;\" src=\"img/IITM.png\"  width=\"160px\" height=\"130px\" />
-      </center>
-      <h1 style=\"position:absolute;top:26%; color:#333; left:9%;font-family:courier;\" class=\"heading\"><center>GRADUATE APTITUDE TEST IN ENGINEERING</center></h1>
-      <h style=\"position:absolute;top:38%; left: 3%;right: 3%;\" class=\"sub\">GATE is a computer-based exam conducted at the national level with an aim to examine the understanding of various Engineering and Science UG subjects.GATE exam consists of 65 MCQs and numerical question over a 3 hour duration.GATE 2020 is being conducted by IIT-D in Febuary.GATE score is valid for 3 years and enables students to gain admission to various PG programs such as ME,BE and PhD in IITs,IISc and several other prestigious universities.Top rank holders also get direct interview calls for prestigious government jobs in PSUs</h>
-      <img class=\"img-circle\" style=\"position: absolute; bottom:2%;left:5%;\" src=\"img/PSU.png\"  width=\"750px\" height=\"220px\" />
-    </div>";
+    echo '<div class="abt" style="position: absolute; top:12%;left:5%; ">
+    <img class="cover" src="img/bulb.png"  alt="logo" width="500px" height="500px;" style="position:absolute; top:-5%; left:17% ; height="400px" border="" />
+    <img class=" " src="img/php.png"  style="position:absolute; left:12% ; bottom:3%; " title="logo" width="75px" height="60px" border="" />
+    <img class=" " src="img/css.png"  style="position:absolute; left:32% ; bottom:3%; " title="logo" width="50px" height="60px" border="" />
+    <img class=" " src="img/mysql.png"  style="position:absolute; left:47% ; bottom:3%; " title="logo" width="60px" height="60px" border="" />
+    <img class=" " src="img/html.png"  style="position:absolute; left:62% ; bottom:3%; " title="logo" width="60px" height="60px" border="" />
+    <img class=" " src="img/js.png"  style="position:absolute; left:77% ; bottom:3%; " title="logo" width="60px" height="60px" border="" />
+
+ 
+    </div>';
     ?>
     <div class="signinbox" style="position: absolute; top:16%;right:5%;">
       <table align="center" border="0" WIDTH="90%" height="250">
         <form method="post" name="login_form" action="" onSubmit="return check();">
-          <center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="1" /></center>
+          <center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="" /></center>
           <tr>
             <th><input class="login_text_box" type="TEXT" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="20" size="25"   name="username" required /></th>
           </tr>
