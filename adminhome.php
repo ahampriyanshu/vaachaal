@@ -10,6 +10,11 @@ include("essentials/database.php");
 <!DOCTYPE html>
 <html>
   <head>
+      <meta charset="UTF-8">
+  <meta name="description" content="GNDEC GATE FORUM">
+  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
+  <meta name="author" content="PriyanshuMay,priyanshumay">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Home</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
     <style type="text/css">
@@ -112,7 +117,7 @@ include("essentials/database.php");
     font-family:courier new;
     border-radius: 5%;
     }
-    
+ 
     </style>
   </head>
   <body background="img/back.jpg">
