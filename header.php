@@ -1,7 +1,23 @@
 <style type="text/css">
 <!--
 
-.top_bar_header{
+
+
+.top_bar_header_web{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5050;
+    box-shadow: 0 0 5px #888;
+    background-color: #fafafb;
+    height: 53px;
+    box-sizing: border-box;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    border-bottom: 1px solid lightgrey;
+  }
+  .top_bar_header_mob{
 
     position: fixed;
     top: 0;
@@ -68,7 +84,8 @@ background-color: #833AB4;
 window.location.href = 'index.php';
 };
 </script>
-<div class="top_bar_header">
+
+<div class="top_bar_header_web">
 <a href="home.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/Topbar.png"  title="college logo" width="230px" height="45px" /></a>
   <?php
   if (session_status() == PHP_SESSION_NONE){
@@ -99,4 +116,7 @@ echo "<div style=\"position: absolute; top:12%;right:2%;\" class=\"dropdown_head
     echo "<button onclick=\"window.location.href = 'addque.php';\" style=\"position: absolute; top:12%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
     ?>
 </div> 
-</table>
+
+
+
+</table> 

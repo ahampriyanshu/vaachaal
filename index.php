@@ -6,7 +6,6 @@ header('location:home.php');}
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8">
   <meta name="description" content="GNDEC GATE FORUM">
   <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
   <meta name="author" content="PriyanshuMay,priyanshumay">
@@ -21,14 +20,12 @@ header('location:home.php');}
         width: 100%;
         overflow: hidden;
       }
-
     @media all and (max-width: 480px)
     {
     .abt_index {
     display: none;
     }
     }
-
     @media all and (max-width: 480px)
     {
     .signinbox_index_mob {
@@ -38,7 +35,6 @@ header('location:home.php');}
     display: none;
     }
     }
-
     @media all and (min-width: 481px)
     {
     .signinbox_index_web {
@@ -116,7 +112,6 @@ header('location:home.php');}
       <img class=" tech_used" src="img/html.png"  style="position:absolute; left:62% ; bottom:3%; " title="HTML5" width="60px" height="60px" border="" />
       <img class=" tech_used" src="img/js.png"  style="position:absolute; left:77% ; bottom:3%; " title="JS" width="60px" height="60px" border="" />
     </div>
-
     <div class="signinbox_index_web" style="position: absolute; top:16%;right:5%;">
       <table align="center" border="0" WIDTH="90%" height="250">
         <form method="post" name="login_form" action="" onSubmit="return check();">
@@ -146,7 +141,6 @@ header('location:home.php');}
       </tr>
     </table>
   </div >
-
    <div class="signinbox_index_mob" >
       <table align="center" border="0" WIDTH="90%" height="250">
         <form method="post" name="login_form" action="" onSubmit="return check();">
@@ -176,6 +170,5 @@ header('location:home.php');}
       </tr>
     </table>
   </div >
-
 </body>
 </html>
