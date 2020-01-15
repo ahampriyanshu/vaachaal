@@ -20,30 +20,6 @@ header('location:home.php');}
         width: 100%;
         overflow: hidden;
       }
-    @media all and (max-width: 480px)
-    {
-    .abt_index {
-    display: none;
-    }
-    }
-    @media all and (max-width: 480px)
-    {
-    .signinbox_index_mob {
-     display: block;
-    }
-     .signinbox_index_web {
-    display: none;
-    }
-    }
-    @media all and (min-width: 481px)
-    {
-    .signinbox_index_web {
-    display: block;
-    }
-    .signinbox_index_mob {
-     display: none;
-    }
-    }
     
     .abt_index {
     background: #fff;
@@ -59,13 +35,16 @@ header('location:home.php');}
     background-repeat: no-repeat;
     background-size: contain;
     }
+    
     .tech_used:hover{
     transform: scale(1.2);
     }
+
     #bulb_index:hover{
     transform: scale(1.01);
     }
-    .signinbox_index_web {
+
+    #signinbox_index_web {
     background: #fff;
     border: 1px solid #e2e2e2;
     box-shadow: 0 0 5px #888;
@@ -74,12 +53,15 @@ header('location:home.php');}
     width: 280px;
     position: absolute;
     }
-    .signinbox_index_mob {
+
+    #signinbox_index_mob {
     background: #fff;
     width: 100%;
     height: 100%;
     position: absolute;
+    display: none;  
     }
+
     </style>
     <title>Index</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
@@ -112,7 +94,8 @@ header('location:home.php');}
       <img class=" tech_used" src="img/html.png"  style="position:absolute; left:62% ; bottom:3%; " title="HTML5" width="60px" height="60px" border="" />
       <img class=" tech_used" src="img/js.png"  style="position:absolute; left:77% ; bottom:3%; " title="JS" width="60px" height="60px" border="" />
     </div>
-    <div class="signinbox_index_web" style="position: absolute; top:16%;right:5%;">
+
+    <div id="signinbox_index_web" style="position: absolute; top:16%;right:5%;">
       <table align="center" border="0" WIDTH="90%" height="250">
         <form method="post" name="login_form" action="" onSubmit="return check();">
           <center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="" /></center>
@@ -141,8 +124,9 @@ header('location:home.php');}
       </tr>
     </table>
   </div >
-   <div class="signinbox_index_mob" >
-      <table align="center" border="0" WIDTH="90%" height="250">
+
+   <div id="signinbox_index_mob" >
+      <table align="center" width ="70%" height="50%">
         <form method="post" name="login_form" action="" onSubmit="return check();">
           <center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="" /></center>
           <tr>
@@ -170,5 +154,34 @@ header('location:home.php');}
       </tr>
     </table>
   </div >
+    <script>
+function myFunction(x) {
+
+  if (x.matches) {
+   document.getElementById("abt_visibility").style.display = "none";
+   }else{
+   document.getElementById("abt_visibility").style.display = "block";
+   }
+}
+ var x = window.matchMedia("(max-width: 420px)")
+ myFunction(x) 
+ x.addListener(myFunction)
+</script>
+    <script>
+function myFunction(y) {
+
+  if (y.matches) {
+   document.getElementById("signinbox_index_web").style.display = "none";
+   document.getElementById("signinbox_index_mob").style.display = "block";
+   }else{
+   document.getElementById("signinbox_index_web").style.display = "block";
+   document.getElementById("signinbox_index_mob").style.display = "none";
+   }
+}
+ var y = window.matchMedia("(max-width: 420px)")
+ myFunction(y) 
+ y.addListener(myFunction)
+</script>
+
 </body>
 </html>
