@@ -17,10 +17,10 @@ $result = mysqli_query($con,$q);
 $num = mysqli_num_rows($result);
 
 if ($num == 1) {
-
+	$_SESSION["superadmin"] = $superpass;
    echo "<script>
-document.location='adminusersetting.php';
-</script>";
+   document.location='adminusersetting.php';
+   </script>";
     
 } else {
     echo "<script>
