@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php 
-    if(!isset($_SESSION['admin'])){
+    if(!isset($_SESSION['superadmin'])){
     header('location:index.php');}
 ?>
 <?php
