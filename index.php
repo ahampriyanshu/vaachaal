@@ -18,7 +18,6 @@ header('location:home.php');}
       body{
         height: 100%;
         width: 100%;
-        overflow: hidden;
       }
     
     .abt_index {
@@ -35,7 +34,7 @@ header('location:home.php');}
     background-repeat: no-repeat;
     background-size: contain;
     }
-    
+
     .tech_used:hover{
     transform: scale(1.2);
     }
@@ -60,6 +59,11 @@ header('location:home.php');}
     height: 100%;
     position: absolute;
     display: none;  
+    }
+    .inva{
+      font-family: courier new;
+      font-weight: bold;
+      color:#333;
     }
 
     </style>
@@ -88,7 +92,7 @@ header('location:home.php');}
     <div class="abt_index" id ="abt_visibility" style="position: absolute; top:12%;left:5%; ">
       <img  id="bulb_index" src="img/bulb_on.png"   alt="logo"  width="500px"   height="500px;"
       onmouseover="this.src='img/bulb_on.png';"  onmouseout="this.src='img/bulb_off.png';" style="position:relative; top:-11%; left:21% ;  border="" />
-      <img class=' tech_used ' src='img/php.png'  style="position:absolute; left:13% ; bottom:3%; " title="php" width="75px" height="60px" border="" />
+      <img class=' tech_used ' src='img/php.png'  style="position:absolute; left:13% ; bottom:3%;" title="php" width="75px" height="60px" border="" />
       <img class=" tech_used" src="img/css.png"  style="position:absolute; left:32% ; bottom:3%; " title="CSS3" width="50px" height="60px" border="" />
       <img class=" tech_used" src="img/mysql.png"  style="position:absolute; left:47% ; bottom:3%; " title="mysql" width="60px" height="60px" border="" />
       <img class=" tech_used" src="img/html.png"  style="position:absolute; left:62% ; bottom:3%; " title="HTML5" width="60px" height="60px" border="" />
@@ -108,7 +112,7 @@ header('location:home.php');}
           <?php
           if(isset($found))
           {
-          echo '<span class="inva" style="color:red;"><center>Invalid Username or password</center></span>';
+          echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
           }
           ?>
           <tr>
@@ -126,7 +130,7 @@ header('location:home.php');}
   </div >
 
    <div id="signinbox_index_mob" >
-      <table align="center" width ="70%" height="50%">
+      <table align="center" border="0"  width ="75%" height="50%">
         <form method="post" name="login_form" action="" onSubmit="return check();">
           <center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="" /></center>
           <tr>
@@ -138,44 +142,36 @@ header('location:home.php');}
           <?php
           if(isset($found))
           {
-          echo '<span class="inva" style="color:red;"><center>Invalid Username or password</center></span>';
+          echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
           }
           ?>
           <tr>
-            <td>&emsp;&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>
-          &emsp;&emsp;</form>
-          <button class="submit2" onclick="window.location.href = 'forgot.php';" >Forgot Password?</button>
+            <td>&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>
+          &emsp;</form>
+          <button class="submit2" onclick="window.location.href = 'signup.php';" >New User ?</button>
         </td>
       </tr>
       <tr>
-        <td>&nbsp;&emsp;&emsp;&emsp;&emsp;
-          <button  class="submit2" onclick="window.location.href = 'signup.php';" >New User?</button>
+        <td>&emsp;&emsp;
+          <button  class="submit2" onclick="window.location.href = 'forgot.php';" >Forgot password</button>
         </td>
       </tr>
     </table>
   </div >
-    <script>
-function myFunction(x) {
 
-  if (x.matches) {
-   document.getElementById("abt_visibility").style.display = "none";
-   }else{
-   document.getElementById("abt_visibility").style.display = "block";
-   }
-}
- var x = window.matchMedia("(max-width: 420px)")
- myFunction(x) 
- x.addListener(myFunction)
-</script>
     <script>
 function myFunction(y) {
 
   if (y.matches) {
+   document.getElementById("abt_visibility").style.display = "none";
    document.getElementById("signinbox_index_web").style.display = "none";
    document.getElementById("signinbox_index_mob").style.display = "block";
+   document.body.style.background = "none";
    }else{
    document.getElementById("signinbox_index_web").style.display = "block";
    document.getElementById("signinbox_index_mob").style.display = "none";
+   document.getElementById("abt_visibility").style.display = "block";
+   document.body.style.background = "url(img/back.jpg)";
    }
 }
  var y = window.matchMedia("(max-width: 420px)")
