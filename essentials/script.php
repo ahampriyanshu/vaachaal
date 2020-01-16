@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>checking my alert box</title>
+
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
         <script type="text/javascript">
         $(function() {
@@ -58,4 +55,3 @@
             </script>
         </div>
     </body>
-</html>
