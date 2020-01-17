@@ -33,7 +33,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `login_id` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `superpassword` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -44,8 +45,8 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`login_id`, `password`) VALUES
-('gne', 'gate');
+INSERT INTO `admin` (`login_id`, `password`,`superpassword`) VALUES
+('gne', 'gate','phpislit');
 
 -- --------------------------------------------------------
 
