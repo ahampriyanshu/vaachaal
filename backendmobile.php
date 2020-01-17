@@ -32,5 +32,4 @@ document.location='home.php';
     document.location='changemobile.php';
 </script>";  
 }
-
 ?>
