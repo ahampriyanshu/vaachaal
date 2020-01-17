@@ -1,7 +1,5 @@
-<?php
-if(isset($_SESSION['loggedin'])){
-header('location:home.php');}
-?><?php include("header.php"); ?>
+<?php   session_start(); ?>
+<?php include("header.php"); ?>
 <?php include("essentials/database.php"); ?>
 <!DOCTYPE html>
 <html>
@@ -89,7 +87,6 @@ header('location:home.php');}
     }
     else
     {
-    session_start();
     $_SESSION["loggedin"] = $username ;
     header('location:index.php');
     }
