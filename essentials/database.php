@@ -92,7 +92,8 @@ $table4 = " select * from admin";
 
     $create4 = "CREATE TABLE admin (
     login_id varchar(50) NOT NULL,
-    password varchar(50) NOT NULL )";
+    password varchar(50) NOT NULL,
+    superpassword varchar(50) NOT NULL";
     $ok4 = mysqli_query($con,$create4);
     if (!$ok4) {
       echo 'error dark';
