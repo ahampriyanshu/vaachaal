@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php 
     if(!isset($_SESSION['admin'])){
-    header('location:index.php');}
+    header('location:admin.php');}
 ?>
 <?php
 include("essentials/database.php");
