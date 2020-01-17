@@ -45,7 +45,7 @@ include("essentials/database.php");
   <div id="copyright" style="position: absolute; left: 3%;bottom: 1%;">
   &#x24B8 all rights reserved
 </div>
-<a class="active" href="home.php">Home</a>
+<a class="active" href="index.php">Home</a>
   <a href="contact.php">Contact</a>
   <a href="about.php">About</a>
 </div> 

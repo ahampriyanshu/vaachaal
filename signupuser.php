@@ -26,7 +26,7 @@ $qy = "INSERT INTO userbase(username,password,name,security,phone,email,datetym)
 mysqli_query($con,$qy);
 echo "<script>
 alert('Login ID successfully created');
-document.location='index.php';
+document.location='login.php';
 </script>";
 
 }

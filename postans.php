@@ -15,7 +15,7 @@ $level = $_POST['level'];
 $sql = "INSERT INTO answers (id,content,username,datetym,tym,level) VALUES ('$qid','$content','$username','$date','$tym','$level')";
 if ( $con -> query ($sql) === TRUE)
 {
-header('location:home.php');
+header('location:index.php');
 }
 else
 {

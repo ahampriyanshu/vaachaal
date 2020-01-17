@@ -105,7 +105,7 @@ include("header.php");
          <td><input class="login_text_box" name="email" type="text" placeholder="Enter valid e-mail" id="email" required></td>
       </tr>
         <td>&emsp;<input class="submit" type="submit" name="Submit" value="Signup">&emsp;</form>
-		    <button class="submit2" onclick="window.location.href = 'index.php';" >Already a Member</button></td>   
+		    <button class="submit2" onclick="window.location.href = 'login.php';" >Already a Member</button></td>   
       </tr>
       </table>
 </center>

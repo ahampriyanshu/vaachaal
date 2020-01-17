@@ -15,7 +15,7 @@ $date = date('m/d/Y h:i:s', time());
 $sql = "INSERT INTO questions(content,level,tym,branch,username,datetym) VALUES ('$content','$level','$tym','$branch','$username','$date')";
 if ($con->query($sql) === TRUE)
 {
-header('location:home.php');
+header('location:index.php');
 }
 else
 {

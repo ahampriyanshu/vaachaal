@@ -30,7 +30,8 @@ border-bottom: 1px solid lightgrey;
 background-color: #4CAF50;
 color: white;
 padding: 11px;
-font-size: 11px;
+font-size: 12px;
+font-weight: bolder;
 border: none;
 cursor: pointer;
 font-family:'Trebuchet MS', sans-serif;
@@ -74,7 +75,7 @@ display: block;
 -->
 </style>
 <script type="text/javascript">
-function redirect() { alert('Login to ask Questions');
+function redirect() {
 window.location.href = 'login.php';
 };
 </script>
@@ -83,7 +84,7 @@ window.location.href = 'login.php';
   <?php
   if(!isset($_SESSION['loggedin'])){
   echo "<div style=\"position: absolute; top:12%;right:2%;\" class=\"dropdown_header\">
-    <button class=\"dropbutton_header\">Login</button>
+    <button class=\"dropbutton_header\">&emsp;&nbsp;Login&nbsp;&emsp;</button>
     <div class=\"dropdown_content_header\">
       <a href=\"login.php\">Login</a>
       <a href=\"signup.php\">SignUp</a>
