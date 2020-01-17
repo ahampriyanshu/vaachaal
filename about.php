@@ -1,9 +1,5 @@
 <?php  session_start(); ?>
 <?php 
-    if(!isset($_SESSION['loggedin'])){
-    header('location:index.php');}
-?>
-<?php 
   include("header.php");
   include("panel.php");
 ?>

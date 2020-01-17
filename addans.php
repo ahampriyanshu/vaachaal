@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php
 if(!isset($_SESSION['loggedin'])){
-header('location:index.php');}
+header('location:login.php');}
 ?>
 <?php
 include("header.php");
