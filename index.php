@@ -7,11 +7,11 @@ include("panel.php");
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta name="description" content="GNDEC GATE FORUM">
+        <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
+        <meta name="author" content="PriyanshuMay,priyanshumay">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link href="forum.css" rel="stylesheet" type="text/css">
         <style type="text/css">
@@ -107,9 +107,31 @@ include("panel.php");
         #answer_box:hover {
         background-color: #e0e0d1;
         }
+        #top_button_index {
+        font-family:bold;
+        display: none;
+        align-content: center;
+        box-shadow: 0 0 5px gray;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 25px;
+        border: none;
+        outline: none;
+        background-color:  #4CAF50;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        font-family:courier new;
+        border-radius: 50%;
+        }
+        #top_button_index:hover {
+        background-color:  #833AB4;
         </style>
     </head>
     <body >
+        <button onclick="topFunction()" id="top_button_index" title="Go to top">UP</button>
         <?php
         $sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions ORDER BY datetym DESC";
         $result = $con->query($sql);
@@ -143,5 +165,20 @@ include("panel.php");
             echo '<br><br></div>';
             endwhile; ?>
             <br><br><br><br>
+            <script>
+            var mybutton = document.getElementById("top_button_index");
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+            } else {
+            mybutton.style.display = "none";
+            }
+            }
+            function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            }
+            </script>
         </body>
     </html>
