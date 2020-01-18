@@ -131,7 +131,6 @@ include("panel.php");
         </style>
     </head>
     <body >
-        <button onclick="topFunction()" id="top_button_index" title="Go to top">UP</button>
         <?php
         $sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions ORDER BY datetym DESC";
         $result = $con->query($sql);
@@ -164,8 +163,22 @@ include("panel.php");
                 }
             echo '<br><br></div>';
             endwhile; ?>
-            <br><br><br><br>
+            <button onclick="topFunction()" id="top_button_index" title="Go to top">UP</button>
             <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+            }
+            });
+            }
+
             var mybutton = document.getElementById("top_button_index");
             window.onscroll = function() {scrollFunction()};
             function scrollFunction() {
@@ -179,6 +192,9 @@ include("panel.php");
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
             }
+
             </script>
+            <br><br>
         </body>
     </html>
+   
