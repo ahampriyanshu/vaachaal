@@ -1,8 +1,4 @@
 <?php session_start(); ?>
-<?php
-if(!isset($_SESSION['loggedin'])){
-header('location:index.php');}
-?>
 <!DOCTYPE html>
 <html>
   <head>
