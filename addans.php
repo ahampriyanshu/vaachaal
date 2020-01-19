@@ -137,7 +137,10 @@ include("panel.php");
           &emsp;&emsp;&emsp;&emsp;<button type="submit" id="submitans">Post Your Answer</button>
         </div>
         
-        
+ <script src="essentials/ckeditor/ckeditor.js" ></script>    
+ <script type="text/javascript">
+     CKEDITOR.replace('content');
+ </script>   
       </form>
     </div>
   </div>

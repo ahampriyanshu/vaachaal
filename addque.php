@@ -111,6 +111,9 @@ html, body {
           </div><br><br>
 
 </form>
-
+ <script src="essentials/ckeditor/ckeditor.js" ></script>    
+ <script type="text/javascript">
+     CKEDITOR.replace('content');
+ </script>
 </body>
 </html>
