@@ -15,7 +15,7 @@ include("panel.php");
   <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
   <meta name="author" content="PriyanshuMay,priyanshumay">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Add answer</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
     <style type="text/css">
     body{
@@ -32,8 +32,8 @@ include("panel.php");
     }
     #answerbox{
     position: relative;
-    padding-left: 230px;
-    width: 120%;
+    padding-left: 130px;
+    width: 80%;
     }
     #submitans {
     background-color:#833AB4;
@@ -81,7 +81,6 @@ include("panel.php");
     
     }
     #specs{
-    
     font-size:12px;
     font-family: courier new ;
     font-weight: bold;
@@ -117,9 +116,9 @@ include("panel.php");
     endwhile;
     ?>
     <div id="answerbox" >
-      <form name="addform" action="postans.php" method="POST">
+    <form name="addform" action="postans.php" method="POST">
         <input type="hidden" name="qid" value="<?php echo $ID;?>">
-        <textarea name="content" class="input_text" cols="100" rows="7" placeholder="Enter the solution" required></textarea>
+        <textarea name="content" class="input_text" id="content" placeholder="Enter the solution" cols="100" rows="10" required></textarea>
         <div class="select">
           <br>
           <label>Difficulty level</label>
@@ -134,9 +133,9 @@ include("panel.php");
             <option value="2-5 Min">2-5 Min</option>
             <option value="5-10 Min">5-10 Min</option>
           </select>
-          &emsp;&emsp;&emsp;&emsp;<button type="submit" id="submitans">Post Your Answer</button>
+          &emsp;&emsp;&emsp;&emsp;<button type="submit" name="submit" class="submit" id="submitans" >Post Your Answer</button>
         </div>
-        
+ 
  <script src="essentials/ckeditor/ckeditor.js" ></script>    
  <script type="text/javascript">
      CKEDITOR.replace('content');

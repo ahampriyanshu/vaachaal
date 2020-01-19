@@ -18,15 +18,15 @@
 <link href="forum.css" rel="stylesheet" type="text/css">
 <style>
 html, body {
-    padding-left: 150px;
+  overflow-x: hidden;
+    padding-left: 100px;
 }
 .question_text{
-    width: 80%;
+    position: relative;
+    width: 50%;
     font-size: 15px;
     line-height: 1.4;
-    padding-left: 8px;
-    padding-right: 8px;
-    min-height: 32px;
+    min-height: 30px;
     margin-bottom: 8px;
     border: 1px solid #e2e2e2;
     box-shadow: 0 0 5px #888;
@@ -69,6 +69,11 @@ html, body {
   font-family:'Trebuchet MS', sans-serif;
   border-radius: 5%;
 }
+#questionbox{
+    position: relative;
+    padding-left: 10px;
+    width: 80%;
+    }
 
 #submit:hover, #submit:focus {
   background-color: #833AB4;
@@ -76,10 +81,11 @@ html, body {
 </style>
 </head>
 <body><br>
-<form name="addform" action="postque.php" method="POST">
+  <div id="questionbox" >
+<form name="addform" action="postque.php" method="POST" required>
 <h class="title">Post New Question</h> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
 <input type="submit" id="submit" value="Get answer"><br><br><br>
-<textarea name="content" class="question_text" cols="100" rows="10" placeholder="Enter Question" required></textarea>
+<textarea name="content" class="question_text" cols="80" rows="10" placeholder="Enter Question" required></textarea>
 <br><br>
         <div class="select">
           &emsp;
@@ -110,7 +116,7 @@ html, body {
                 </select>
           </div><br><br>
 
-</form>
+</form></div>
  <script src="essentials/ckeditor/ckeditor.js" ></script>    
  <script type="text/javascript">
      CKEDITOR.replace('content');
