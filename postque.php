@@ -6,7 +6,7 @@ header('location:index.php');}
 <?php
 include 'essentials/database.php';
 date_default_timezone_set('Asia/Kolkata');
-$content = $_POST['content'];
+$content = mysqli_real_escape_string($con,$_POST['content']);
 $level = $_POST['level'];
 $tym = $_POST['tym'];
 $branch = $_POST['branch'];

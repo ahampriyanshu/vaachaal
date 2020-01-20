@@ -7,7 +7,7 @@
 include("essentials/database.php");
 
        $username = $_SESSION['loggedin'];
-        $password = $_POST['pass'];
+        $password = mysqli_real_escape_string($con, $_POST['pass']);
         
         $sql = "INSERT INTO userbase (username,password)
 VALUES ('$username','$password')";

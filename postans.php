@@ -7,8 +7,8 @@ header('location:index.php');}
 include 'essentials/database.php';
 date_default_timezone_set('Asia/Kolkata');
 $qid = $_POST['qid'];
-$content = $_POST['content'];
-$username = $_SESSION["loggedin"];
+$content = mysqli_real_escape_string($con,$_POST['content']);
+$username = mysqli_real_escape_string($con,$_SESSION["loggedin"]);
 $date = date('m/d/Y h:i:s', time());
 $tym = $_POST['tym'];
 $level = $_POST['level'];
