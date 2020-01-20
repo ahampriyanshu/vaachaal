@@ -7,12 +7,10 @@
 include("essentials/database.php");
 
        $username = $_SESSION['loggedin'];
-        $password = $_POST['pass'];
-        $newpassword = $_POST['newmob'];
+       $password = $_POST['pass'];
+       $newpassword = $_POST['newmob'];
         
-        $sql = "INSERT INTO userbase (username,password)
-VALUES ('$username','$password')";
-
+$sql = "INSERT INTO userbase (username,password) VALUES ('$username','$password') ";
 $q = "select * from userbase where username = '$username' && password = '$password' ";
 
 $result = mysqli_query($con,$q);

@@ -8,6 +8,7 @@ include("panel.php");
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <meta name="description" content="GNDEC GATE FORUM">
         <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
         <meta name="author" content="PriyanshuMay,priyanshumay">

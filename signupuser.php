@@ -1,5 +1,5 @@
 <?php
-	include("header.php");
+include("header.php");
 include("essentials/database.php"); ?>
 <?php
 date_default_timezone_set('Asia/Kolkata');

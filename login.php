@@ -143,7 +143,7 @@ header('location:index.php');}
           <th><input class="login_text_index" type="TEXT" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="20" size="25"   name="username" required /></th>
         </tr>
         <tr>
-          <th><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password"  required /></th>
+          <th><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password" required /></th>
         </tr>
         <?php
         if(isset($found))

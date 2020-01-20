@@ -11,6 +11,7 @@ include("panel.php");
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
   <meta name="description" content="GNDEC GATE FORUM">
   <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
   <meta name="author" content="PriyanshuMay,priyanshumay">
@@ -21,7 +22,6 @@ include("panel.php");
     body{
     padding-top: 100px;
     overflow-x: hidden;
-    background-color: ;
     padding-left: 130px;
     }
     .question_display {
