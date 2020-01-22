@@ -50,3 +50,27 @@ include("essentials/database.php");
   <a href="about.php">About</a>
 </div> 
 
+
+
+
+<div class="Box-sc-9env3-0 display__Flex-sc-12j253u-2 bPkukc Box-sc-9env3-0 position__PositionBase-xruywh-0 position__Relative-xruywh-2 djHZTP"><span class="Box-sc-9env3-0 display__InlineBlock-sc-12j253u-1 IconWrapper___StyledInlineBlock-sc-1c5guci-0 dGYrNt"><svg width="24px" height="24px" viewBox="0 0 24 24"><g id="small_close" class="icon_svg-stroke" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke="#666666" stroke-width="1.5"><path d="M12,6 L12,18" transform="translate(12.000000, 12.000000) rotate(45.000000) translate(-12.000000, -12.000000) "></path><path d="M18,12 L6,12" transform="translate(12.000000, 12.000000) rotate(45.000000) translate(-12.000000, -12.000000) "></path></g></svg></span></div>
+
+document.querySelector("#root > div > div > div.Box-sc-9env3-0.cyUdtN > div > div > div.Box-sc-9env3-0.DGPjA > div > div:nth-child(38) > div > div > div > div > div.Box-sc-9env3-0.cyUdtN > div > div > div > div.Box-sc-9env3-0.display__Flex-sc-12j253u-2.gbrhUZ > div.Box-sc-9env3-0.ctHDJl > div > div > div > div > div > div > div > div > div > div")
+
+direction: ltr;
+white-space: nowrap;
+color: inherit;
+-webkit-tap-highlight-color: rgba(255, 255, 255, 0.6);
+text-align: center;
+cursor: pointer;
+font: inherit;
+user-select: none;
+position: relative;
+box-sizing: border-box;
+display: flex;
+-webkit-box-align: center;
+align-items: center;
+border-width: initial;
+border-style: none;
+border-color: initial;
+border-image: initial;

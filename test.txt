@@ -1,0 +1,52 @@
+<li class="hsg-nav__group-item hsg-nav__group-item--login" style="display: inline-block;">
+                  
+                    
+                    
+                    
+                    <a class="cta--secondary cta--small" data-logged-in-text="done" data-logged-in-href="//app.hubspot.com/home" href="//app.hubspot.com/login">Log in</a>
+                  
+                 </li>
+
+
+
+                 -webkit-font-smoothing: antialiased;
+list-style: none;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+color: inherit;
+font-family: inherit;
+position: relative;
+display: inline-block;
+
+<input type="search" class="blog-sticky-navigation__search-input" data-id="hsg-nav__search-input" placeholder="search..." data-config="{&quot;contexts&quot;:[{&quot;selected&quot;:false,&quot;id&quot;:&quot;website&quot;,&quot;cx&quot;:&quot;009219321729865762236:z9gsnksfc30&quot;,&quot;label&quot;:&quot;Search HubSpot.com&quot;},{&quot;selected&quot;:true,&quot;id&quot;:&quot;blog&quot;,&quot;cx&quot;:&quot;009219321729865762236:fzizmixjdmi&quot;,&quot;label&quot;:&quot;Search the blog&quot;}],&quot;loadMoreButton&quot;:&quot;Load More Results&quot;,&quot;noResults&quot;:[&quot;That's odd...&quot;,&quot;couldn't find quite the right match.&quot;,&quot;Don't worry, try searching again up top.&quot;]}">
+
+-webkit-font-smoothing: antialiased;
+list-style: none;
+box-sizing: border-box;
+font-family: "AvenirNext","Helvetica Neue",Helvetica,Arial,sans-serif;
+-webkit-appearance: none;
+color: #33475b;
+line-height: 1.375;
+border-radius: .1875rem;
+width: 100%;
+background-image: url("//cdn2.hubspot.net/hubfs/53/assets/hubspot.com/_style-guide/sword-sprocket/search%20icon.png");
+background-repeat: no-repeat;
+background-size: 1rem;
+font-size: 0.75rem;
+font-weight: 500;
+text-transform: lowercase;
+cursor: pointer;
+background-color: transparent;
+background-position: 0.25rem center;
+text-align: left;
+border: 0;
+transition: max-width 0.3s ease-out;
+max-height: 2rem;
+min-height: 1rem;
+max-width: 0;
+padding: 0.25rem 0.5rem 0.25rem 1.75rem;
