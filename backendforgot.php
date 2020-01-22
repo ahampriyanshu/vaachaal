@@ -1,10 +1,10 @@
 <?php 
 include("essentials/database.php");
 
-$username = mysqli_real_escape_string($con,$_POST['username']);
-$phone  =mysqli_real_escape_string($con,$_POST['phone']);
-$secu  = mysqli_real_escape_string($con,$_POST['security']);
-$newpassword = mysqli_real_escape_string($con,$_POST['npass']);
+$username = $_POST['username'];
+$phone  = $_POST['phone'];
+$secu  = $_POST['security'];
+$newpassword = $_POST['npass'];
 
 $sql = "INSERT INTO userbase (username,phone,security)
 VALUES ('$username','$phone','$secu')";

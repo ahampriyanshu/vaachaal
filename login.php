@@ -79,7 +79,7 @@ header('location:index.php');}
     <title>Index</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
   </head>
-  <body background="img/gndec.jpg">
+  <body background="img/back.jpg">
     <?php
     extract($_POST);
     if(isset($submit))

@@ -5,6 +5,7 @@ header('location:index.php');}
 ?>
 <?php
 include("header.php");
+include("panel.php");
 include("essentials/database.php");
 ?>
 <!DOCTYPE html>

@@ -6,6 +6,7 @@ header('location:login.php');}
 <?php
 include("header.php");
 include("essentials/database.php");
+include("panel.php");
 ?>
 <!DOCTYPE html>
 <html>

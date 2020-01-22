@@ -3,12 +3,12 @@ include("header.php");
 include("essentials/database.php"); ?>
 <?php
 date_default_timezone_set('Asia/Kolkata');
-$newuser = mysqli_real_escape_string($con, $_POST['username']);
-$pass = mysqli_real_escape_string($con, $_POST['pass']);
-$name  =mysqli_real_escape_string($con, $_POST['name']); 
-$secu  =mysqli_real_escape_string($con, $_POST['security']); 
-$phone = mysqli_real_escape_string($con, $_POST['phone']);
-$email = mysqli_real_escape_string($con, $_POST['email']);
+$newuser = $_POST['username'];
+$pass = $_POST['pass'];
+$name  = $_POST['name'];
+$secu  = $_POST['security'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
 $date = date('m/d/Y h:i:s', time());
 $sql = "INSERT INTO userbase (username,password,name,security,phone,email,datetym) VALUES
 ('$newuser','$pass','$name','$secu','$phone','$email','$date')";

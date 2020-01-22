@@ -7,7 +7,8 @@
 include("essentials/database.php");
 
         $username = $_SESSION['admin'];
-        $superpass = mysqli_real_escape_string($con,$_POST['superpass']);      
+        $superpass = $_POST['superpass'];
+        
         $sql = "INSERT INTO admin (login_id,superpassword) VALUES ('$username','$superpass')";
 
 $q = "select * from admin where login_id = '$username' && superpassword = '$superpass' ";

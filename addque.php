@@ -84,8 +84,7 @@ html, body {
 <body><br>
   <div id="questionbox" >
 <form name="addform" action="postque.php" method="POST" required>
-<h class="title">Post New Question</h> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-<input type="file" id="myFile" name="filename">
+<h class="title">Post New Question</h> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
 <input type="submit" id="submit" value="Get answer"><br><br><br>
 <textarea name="content" class="question_text" cols="80" rows="10" placeholder="Enter Question" required></textarea>
 <br><br>

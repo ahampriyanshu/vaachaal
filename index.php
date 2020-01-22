@@ -1,7 +1,9 @@
+<?php session_start(); ?>
 <?php
 include("essentials/script.php");
 include("header.php");
 include("essentials/database.php");
+include("panel.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,13 +15,10 @@ include("essentials/database.php");
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link href="forum.css" rel="stylesheet" type="text/css">
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <style type="text/css">
         body{
-        background-color: #f1f1f1 ;
-        padding-bottom: 70px;
-        padding-left: 75px;
-        padding-right:75px;
+        background-color: ;
+        padding-left: 200px;
         }
         .collapsible {
         background-color: white;
@@ -133,13 +132,11 @@ include("essentials/database.php");
         </style>
     </head>
     <body >
-        <br><br>
-        <?php 
+        <?php
         $sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions ORDER BY datetym DESC";
         $result = $con->query($sql);
         if ($result->num_rows > 0)
         while($row = $result->fetch_assoc()) :?>
-            <?php echo '<br>'; ?>
         <button type="button" class="collapsible">
         <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
         <span id="specs">Asked by </span>&nbsp;<span id="details"><?php echo $row["username"]; ?></span> &emsp;
@@ -165,7 +162,7 @@ include("essentials/database.php");
                 } else {
                 echo "<br><div id='answer_box'><span id='anstitle'>Be the first to answer</span></div>";
                 }
-            echo '</div>';
+            echo '<br><br></div>';
             endwhile; ?>
             <button onclick="topFunction()" id="top_button_index" title="Go to top">UP</button>
             <script>
@@ -182,7 +179,6 @@ include("essentials/database.php");
             }
             });
             }
-
 
             var mybutton = document.getElementById("top_button_index");
             window.onscroll = function() {scrollFunction()};

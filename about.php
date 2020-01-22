@@ -1,6 +1,7 @@
 <?php  session_start(); ?>
 <?php 
   include("header.php");
+  include("panel.php");
 ?>
 <!DOCTYPE html>
 <html>
