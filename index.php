@@ -3,7 +3,6 @@
 include("essentials/script.php");
 include("header.php");
 include("essentials/database.php");
-include("panel.php");
 ?>
 <!DOCTYPE html>
 <html>
