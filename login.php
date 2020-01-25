@@ -79,7 +79,7 @@ header('location:index.php');}
     <title>Index</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
   </head>
-  <body background="img/back.jpg">
+  <body background="img/backgne.jpg">
     <?php
     extract($_POST);
     if(isset($submit))
@@ -97,16 +97,8 @@ header('location:index.php');}
     }
     echo '';
     ?>
-    <div class="abt_index" id ="abt_visibility" style="position: absolute; top:12%;left:5%; ">
-      <img  id="bulb_index" src="img/bulb_on.png"   alt="logo"  width="500px"   height="500px;"
-      onmouseover="this.src='img/bulb_on.png';"  onmouseout="this.src='img/bulb_off.png';" style="position:relative; top:-11%; left:21% ;  border="" />
-      <img class=' tech_used ' src='img/php.png'  style="position:absolute; left:13% ; bottom:3%;" title="php" width="75px" height="60px" border="" />
-      <img class=" tech_used" src="img/css.png"  style="position:absolute; left:32% ; bottom:3%; " title="CSS3" width="50px" height="60px" border="" />
-      <img class=" tech_used" src="img/mysql.png"  style="position:absolute; left:47% ; bottom:3%; " title="mysql" width="60px" height="60px" border="" />
-      <img class=" tech_used" src="img/html.png"  style="position:absolute; left:62% ; bottom:3%; " title="HTML5" width="60px" height="60px" border="" />
-      <img class=" tech_used" src="img/js.png"  style="position:absolute; left:77% ; bottom:3%; " title="JS" width="60px" height="60px" border="" />
-    </div>
-    <div id="signinbox_index_web" style="position: absolute; top:16%;right:5%;">
+    
+    <div id="signinbox_index_web" style="position: absolute; top:16%;right:40%;">
       <table align="center" border="0" WIDTH="90%" height="250">
         <form method="post" name="login_form" action="" onSubmit="return check();">
           <center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="" /></center>
