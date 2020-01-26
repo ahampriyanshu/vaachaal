@@ -5,7 +5,6 @@
 ?>
 <?php 
 	include("header.php");
-  include("panel.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,8 +18,9 @@
 <link href="forum.css" rel="stylesheet" type="text/css">
 <style>
 html, body {
+  background-color: #d6d6c2;
   overflow-x: hidden;
-    padding-left: 100px;
+  padding-left: 100px;
 }
 .question_text{
     position: relative;
@@ -47,16 +47,17 @@ html, body {
 .option{
   font-family: courier;
   color: white;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 15px;
   background-color:#833AB4;
-  padding: 5px; 
+  padding: 7px; 
  
 }
 .title{
-  font-size: 30px;
-  letter-spacing: 2px;
+  font-size: 40px;
+  letter-spacing: 1px;
   font-family: courier;
-  color: #888;
+  color: white;
  }
  #submit {
   background-color:#4CAF50;
@@ -84,7 +85,8 @@ html, body {
 <body><br>
   <div id="questionbox" >
 <form name="addform" action="postque.php" method="POST" required>
-<h class="title">Post New Question</h> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+<h class="title">Post New Question</h> &emsp; &emsp; &emsp; &emsp; &emsp; 
+<input type="file" name="file">
 <input type="submit" id="submit" value="Get answer"><br><br><br>
 <textarea name="content" class="question_text" cols="80" rows="10" placeholder="Enter Question" required></textarea>
 <br><br>
@@ -116,7 +118,6 @@ html, body {
               <option value="Misc">Misc</option>
                 </select>
           </div><br><br>
-
 </form></div>
  <script src="essentials/ckeditor/ckeditor.js" ></script>    
  <script type="text/javascript">

@@ -16,8 +16,13 @@ include("essentials/database.php");
         <link href="forum.css" rel="stylesheet" type="text/css">
         <style type="text/css">
         body{
-        background-color: ;
-        padding-left: 200px;
+        overflow-y: scroll;
+        background-color:#d6d6c2 ;
+        padding-left: 80px;
+        padding-right: 80px;
+        }
+        body::-webkit-scrollbar {
+        display: none;
         }
         .collapsible {
         background-color: white;
@@ -98,14 +103,12 @@ include("essentials/database.php");
         #answer_box{
         padding:10px;
         padding-bottom: 20px;
-        box-shadow: 0 0 5px #888;
-        background-color: #d6d6c2;
+        background-color: white;
         width: 97%;
         height: auto;
-        border: 2px solid #d6d6c2;
         }
         #answer_box:hover {
-        background-color: #e0e0d1;
+        background-color: white;
         }
         #top_button_index {
         font-family:bold;

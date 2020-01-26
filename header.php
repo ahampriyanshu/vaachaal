@@ -8,7 +8,7 @@ width: 100%;
 z-index: 5050;
 box-shadow: 0 0 5px #888;
 background-color: #fafafb;
-height: 53px;
+height: 65px;
 box-sizing: border-box;
 font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 border-bottom: 1px solid lightgrey;
@@ -80,7 +80,7 @@ window.location.href = 'login.php';
 };
 </script>
 <div class="top_bar_header_web">
-  <a href="home.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/Topbar.png"  title="college logo" width="230px" height="45px" /></a>
+  <a href="index.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/Topbar.png"  title="college logo" width="230px" height="45px" /></a>
   <?php
   if(!isset($_SESSION['loggedin'])){
   echo "<div style=\"position: absolute; top:12%;right:2%;\" class=\"dropdown_header\">

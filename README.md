@@ -16,7 +16,7 @@ Linux - Go to /opt/lampp in terminal and run _./xampp start_
 ***
 ## FILES AND DESCRIPTION
 
-**index.php**    - Login page\ 
+**index.php**    - Login Page\\ 
 **home.php**     - Home page\
 **panel.php**    - Responsive sidebar\
 **script.php**   - Alert about cookies and session policy\

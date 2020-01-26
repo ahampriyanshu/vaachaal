@@ -3,7 +3,6 @@
 if(isset($_SESSION['loggedin'])){
 header('location:index.php');}
 ?>
-<?php include("header.php"); ?>
 <?php include("essentials/database.php"); ?>
 <!DOCTYPE html>
 <html>
@@ -14,27 +13,13 @@ header('location:index.php');}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     html,body{
-    margin: 0;
-    padding: 0;
-    }
-    body{
-    height: 100%;
+    padding: 0px;
+    height: 85%;
     width: 100%;
-    }
-    
-    .abt_index {
-    background: #fff;
-    border: 1px solid #e2e2e2;
-    box-shadow: 0 0 5px #888;
-    border-radius: 4px;
-    padding-top: 25px;
-    width: 850px;
-    height: 500px;
-    position: absolute;
     overflow: hidden;
-    top: 9%;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-size:     cover;               
+    background-repeat:   no-repeat;
+    background-position: center;
     }
     .tech_used:hover{
     transform: scale(1.2);
@@ -44,11 +29,9 @@ header('location:index.php');}
     }
     #signinbox_index_web {
     background: #fff;
-    border: 1px solid #e2e2e2;
-    box-shadow: 0 0 5px #888;
     border-radius: 4px;
     padding-top: 2px;
-    width: 280px;
+    width: 380px;
     position: absolute;
     }
     #signinbox_index_mob {
@@ -76,7 +59,7 @@ header('location:index.php');}
     border-radius: 4px;
     }
     </style>
-    <title>Index</title>
+    <title>Login</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
   </head>
   <body background="img/backgne.jpg">
@@ -98,8 +81,8 @@ header('location:index.php');}
     echo '';
     ?>
     
-    <div id="signinbox_index_web" style="position: absolute; top:16%;right:40%;">
-      <table align="center" border="0" WIDTH="90%" height="250">
+  <div id="signinbox_index_web" style="position: absolute; top:5%;right:36%;">
+      <table align="center" WIDTH="70%" height="400px">
         <form method="post" name="login_form" action="" onSubmit="return check();">
           <center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="" /></center>
           <tr>
@@ -146,12 +129,14 @@ header('location:index.php');}
         <tr>
           <td>&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>
         &emsp;</form>
-        <button class="submit2" onclick="window.location.href = 'signup.php';" >New User ?</button>
-      </td>
-    </tr>
+        </td>
+    </tr><br>
+    <tr><td>
+        <a class="link_index" href="signup.php" >Sign Up ?</a>
+      </td></tr>
     <tr>
       <td>&emsp;&emsp;
-        <button  class="submit2" onclick="window.location.href = 'forgot.php';" >Forgot password</button>
+        <a  class="link_index" href="forg.php" >Forgot password</a>
       </td>
     </tr>
   </table>
