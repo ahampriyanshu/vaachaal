@@ -19,6 +19,11 @@ include("essentials/database.php");
     <title>Delete Question</title>
   </head>
   <style type="text/css">
+  body{
+     background-size:     cover;               
+    background-repeat:   no-repeat;
+    background-position: center;
+  }
   .question_box {
   background: #f1f1f1;
   border: 2px solid #e2e2e2;

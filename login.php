@@ -8,7 +8,7 @@ header('location:index.php');}
 <html>
   <head>
     <meta name="description" content="GNDEC GATE FORUM">
-    <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
+    <meta name="keywords" content="gate,gateforum,gne,gndec,">
     <meta name="author" content="PriyanshuMay,priyanshumay">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,7 +17,7 @@ header('location:index.php');}
     height: 85%;
     width: 100%;
     overflow: hidden;
-    background-size:     cover;               
+    background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center;
     }
@@ -58,6 +58,19 @@ header('location:index.php');}
     box-shadow: 0 0 5px #888;
     border-radius: 4px;
     }
+    .link_index{
+
+
+    }
+    a{
+   color: green;   }
+    a:hover {
+    color: hotpink;   }
+   a:active {
+   color: blue;  }
+
+
+
     </style>
     <title>Login</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
@@ -80,60 +93,69 @@ header('location:index.php');}
     }
     echo '';
     ?>
-    
-  <div id="signinbox_index_web" style="position: absolute; top:5%;right:36%;">
-      <table align="center" WIDTH="70%" height="400px">
-        <form method="post" name="login_form" action="" onSubmit="return check();">
-          <center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="" /></center>
-          <tr>
-            <th><input class="login_text_index" type="text" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="20" size="25"   name="username" required /></th>
-          </tr>
-          <tr>
-            <th><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password"  required /></th>
-          </tr>
-          <?php
-          if(isset($found))
-          {
-          echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
-          }
-          ?>
-          <tr>
-            <td>&emsp;&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>
-          &emsp;&emsp;</form>
-          <button class="submit2" onclick="window.location.href = 'forgot.php';" >Forgot Password?</button>
-        </td>
-      </tr>
-      <tr>
-        <td>&nbsp;&emsp;&emsp;&emsp;&emsp;
-          <button  class="submit2" onclick="window.location.href = 'signup.php';" >New User?</button>
-        </td>
-      </tr>
-    </table>
-  </div >
-  <div id="signinbox_index_mob" >
-    <table align="center" border="0"  width ="75%" height="50%">
-      <form method="post" name="login_form" action="" onSubmit="return check();">
-        <center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="" /></center>
-        <tr>
-          <th><input class="login_text_index" type="TEXT" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="20" size="25"   name="username" required /></th>
-        </tr>
-        <tr>
-          <th><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password" required /></th>
-        </tr>
+
+<div id="signinbox_index_web" style="position: absolute; top:5%;right:36%;">
+  <br>
+<center><img class="logocircle" src="img/gnelogo.png"  title="logo" width="200px" height="200px" border="2px"/></center>
+ <centre><table align="center" WIDTH="90%" height="400px">
+ <form method="post" name="login_form" action="" >
+<tr>
+  <td><input class="login_text_index" type="text" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="20" size="25"   name="username" required />
+  </td>
+</tr>
+<tr>
+  <td><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password"  required />
+  </td>
+</tr>
+   <?php
+   if(isset($found))
+   {
+   echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
+   }
+   ?>
+<tr>
+  <td>
+  &emsp;&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>&emsp;&emsp;</form>
+  </td>
+</tr>
+<tr>
+  <td><a class="link_index" onclick="window.location.href = 'forgot.php';" >Forgot Password</a>
+  </td>
+  <td>&nbsp;&emsp;<a  class="link_index" onclick="window.location.href = 'signup.php';">Sign Up</a>
+  </td>
+</tr>
+</table></centre>
+</div>
+
+
+
+
+<div id="signinbox_index_mob" >
+  <center><img class="logocircle" src="img/1.png"  title="logo" width="240px" height="250px" /></center>
+  <table align="center" border="0"  width ="75%" height="50%">
+<form method="post" name="login_form" action="">
+<tr>
+  <th><input class="login_text_index" type="TEXT" placeholder="LOGIN ID"  maxlength="20" size="25" name="username" required />
+  </th>
+</tr>
+<tr>
+  <th><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password" required />
+  </th>
+</tr>
         <?php
         if(isset($found))
         {
         echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
         }
         ?>
-        <tr>
-          <td>&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>
+<tr>
+  <td>&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>
         &emsp;</form>
-        </td>
-    </tr><br>
-    <tr><td>
-        <a class="link_index" href="signup.php" >Sign Up ?</a>
-      </td></tr>
+  </td>
+</tr>
+<tr><td>
+      <a class="link_index" href="signup.php" >Sign Up ?</a>
+    </td></tr>
     <tr>
       <td>&emsp;&emsp;
         <a  class="link_index" href="forg.php" >Forgot password</a>

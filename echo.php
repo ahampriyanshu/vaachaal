@@ -13,7 +13,12 @@
     background-size: contain;
     }
 
-
+    .tech_used:hover{
+    transform: scale(1.2);
+    }
+    #bulb_index:hover{
+    transform: scale(1.01);
+    }
 <div class="abt_index" id ="abt_visibility" style="position: absolute; top:12%;left:5%; ">
       <img  id="bulb_index" src="img/bulb_on.png"   alt="logo"  width="500px"   height="500px;"
       onmouseover="this.src='img/bulb_on.png';"  onmouseout="this.src='img/bulb_off.png';" style="position:relative; top:-11%; left:21% ;  border="" />

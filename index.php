@@ -17,7 +17,7 @@ include("essentials/database.php");
         <style type="text/css">
         body{
         overflow-y: scroll;
-        background-color:#d6d6c2 ;
+        background-color:#f3f7f7 ;
         padding-left: 80px;
         padding-right: 80px;
         }

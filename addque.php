@@ -18,7 +18,7 @@
 <link href="forum.css" rel="stylesheet" type="text/css">
 <style>
 html, body {
-  background-color: #d6d6c2;
+  background-color: rgba(231,238,239,0.9);
   overflow-x: hidden;
   padding-left: 100px;
 }
@@ -90,6 +90,35 @@ html, body {
 <input type="submit" id="submit" value="Get answer"><br><br><br>
 <textarea name="content" class="question_text" cols="80" rows="10" placeholder="Enter Question" required></textarea>
 <br><br>
+
+--balloon-color: rgba(16,16,16,0.95);
+--balloon-font-size: 12px;
+--balloon-move: 4px;
+--color-bg: #f3f7f7;
+--color-bg-2: #e7eeef;
+--color-white: #fff;
+--color-shade-lighter: #f3f7f7;
+--color-shade-light: #e7eeef;
+--color-shade-medium: #b7c9cc;
+--color-shade-dark: #738f93;
+--color-text-light: #b7c9cc;
+--color-text-medium-dark: #39424e;
+--color-text-dark: #0e141e;
+--color-text-dark-faded: #576871;
+--modal-overlay-color: rgba(231,238,239,0.9);
+--active-tab-color: #000;
+--select-border-color: #b3b3b3;
+--font-family-text: OpenSans, Arial, Helvetica, sans-serif;
+--font-family-input: SourceCodePro, monaco, Courier, monospace;
+color: #39424e;
+-webkit-font-smoothing: antialiased;
+border: 0;
+font: inherit;
+font-size: 100%;
+margin: 0;
+outline: 0;
+padding: 0;
+vertical-align: baseline;
         <div class="select">
           &emsp;
             <label>Level of hardness</label>&nbsp;&nbsp;
