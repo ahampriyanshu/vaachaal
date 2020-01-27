@@ -21,12 +21,6 @@ header('location:index.php');}
     background-repeat:   no-repeat;
     background-position: center;
     }
-    .tech_used:hover{
-    transform: scale(1.2);
-    }
-    #bulb_index:hover{
-    transform: scale(1.01);
-    }
     #signinbox_index_web {
     background: #fff;
     border-radius: 4px;
@@ -54,23 +48,26 @@ header('location:index.php');}
     padding-right: 8px;
     min-height: 32px;
     margin-bottom: 8px;
-    border: 1px solid #e2e2e2;
-    box-shadow: 0 0 5px #888;
+    border:0.1px solid #e2e2e2;
+    box-shadow: 0 0 5px;
     border-radius: 4px;
     }
-    .link_index{
-
-
+    .login_text_index {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.4;
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height: 32px;
+    border-radius: 4px;
     }
+    .link_index{}
     a{
-   color: green;   }
+      color: green;   }
     a:hover {
     color: hotpink;   }
-   a:active {
-   color: blue;  }
-
-
-
+    a:active {
+    color: blue;  }
     </style>
     <title>Login</title>
     <link href="forum.css" rel="stylesheet" type="text/css">
@@ -93,75 +90,70 @@ header('location:index.php');}
     }
     echo '';
     ?>
-
-<div id="signinbox_index_web" style="position: absolute; top:5%;right:36%;">
-  <br>
-<center><img class="logocircle" src="img/gnelogo.png"  title="logo" width="200px" height="200px" border="2px"/></center>
- <centre><table align="center" WIDTH="90%" height="400px">
- <form method="post" name="login_form" action="" >
-<tr>
-  <td><input class="login_text_index" type="text" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="20" size="25"   name="username" required />
-  </td>
-</tr>
-<tr>
-  <td><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password"  required />
-  </td>
-</tr>
-   <?php
-   if(isset($found))
-   {
-   echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
-   }
-   ?>
-<tr>
-  <td>
-  &emsp;&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>&emsp;&emsp;</form>
-  </td>
-</tr>
-<tr>
-  <td><a class="link_index" onclick="window.location.href = 'forgot.php';" >Forgot Password</a>
-  </td>
-  <td>&nbsp;&emsp;<a  class="link_index" onclick="window.location.href = 'signup.php';">Sign Up</a>
-  </td>
-</tr>
+    <div id="signinbox_index_web" style="position: absolute; top:5%;right:36%;">
+      <br>
+      <center><img class="logocircle" src="img/gnelogo.png"  title="logo" width="200px" height="200px" border="2px"/></center>
+      <centre><table align="center" WIDTH="90%" height="400px">
+        <form method="post" name="login_form" action="" >
+          <tr>
+            <td><input class="login_text_index" type="text" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="20" size="25"   name="username" required />
+          </td>
+        </tr>
+        <tr>
+          <td><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password"  required />
+        </td>
+      </tr>
+      <?php
+      if(isset($found))
+      {
+      echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
+      }
+      ?>
+      <tr>
+        <td>
+          &emsp;&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>&emsp;&emsp;</form>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="link_index" onclick="window.location.href = 'forgot.php';" >Forgot Password</a>
+      </td>
+      <td>&nbsp;&emsp;<a  class="link_index" onclick="window.location.href = 'signup.php';">Sign Up</a>
+    </td>
+  </tr>
 </table></centre>
 </div>
-
-
-
-
 <div id="signinbox_index_mob" >
-  <center><img class="logocircle" src="img/1.png"  title="logo" width="240px" height="250px" /></center>
-  <table align="center" border="0"  width ="75%" height="50%">
-<form method="post" name="login_form" action="">
-<tr>
-  <th><input class="login_text_index" type="TEXT" placeholder="LOGIN ID"  maxlength="20" size="25" name="username" required />
+<center><img class="logocircle" src="img/1.png"  title="logo" width="240px" height="250px" /></center>
+<table align="center" border="0"  width ="75%" height="50%">
+  <form method="post" name="login_form" action="">
+    <tr>
+      <th><input class="login_text_index" type="TEXT" placeholder="LOGIN ID"  maxlength="20" size="25" name="username" required />
+    </th>
+  </tr>
+  <tr>
+    <th><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password" required />
   </th>
 </tr>
-<tr>
-  <th><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password" required />
-  </th>
-</tr>
-        <?php
-        if(isset($found))
-        {
-        echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
-        }
-        ?>
+<?php
+if(isset($found))
+{
+echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
+}
+?>
 <tr>
   <td>&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>
-        &emsp;</form>
-  </td>
+&emsp;</form>
+</td>
 </tr>
 <tr><td>
-      <a class="link_index" href="signup.php" >Sign Up ?</a>
-    </td></tr>
-    <tr>
-      <td>&emsp;&emsp;
-        <a  class="link_index" href="forg.php" >Forgot password</a>
-      </td>
-    </tr>
-  </table>
+<a class="link_index" href="signup.php" >Sign Up ?</a>
+</td></tr>
+<tr>
+<td>&emsp;&emsp;
+<a  class="link_index" href="forg.php" >Forgot password</a>
+</td>
+</tr>
+</table>
 </div >
 <script>
 function myFunction(y) {
