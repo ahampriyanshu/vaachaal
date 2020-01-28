@@ -14,6 +14,12 @@ include("essentials/database.php");
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link href="forum.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript">
+            window.onbeforeunload = function () {
+            document.location='signout.php';
+            }
+
+                </script>
         <style type="text/css">
         body{
         overflow-y: scroll;
