@@ -55,7 +55,7 @@
 
   -->
   </style>
-  <body background="img/back.jpg">
+  <body background="#f3f7f7">
     <?php
     include("header.php");
     include("panel.php");
