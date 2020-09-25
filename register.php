@@ -17,7 +17,6 @@ if (isset($_POST['submit'])) {
   $validation->validate('password', 'Password', 'required|min_len|6');
   $validation->validate('phone', 'Phone', 'uniqueEmail|userbase|required');
 
-
   if ($validation->run()) {
 
     $name = $validation->input('name');
@@ -31,6 +30,8 @@ if (isset($_POST['submit'])) {
     $url      = "http://" . $_SERVER['SERVER_NAME'] . "/vaachal/verifyEmail.php?confirmation=" . $code;
     $url2     = "http://" . $_SERVER['SERVER_NAME'] . "/vaachal/contact.php";
     $status   = 0;
+    date_default_timezone_set('Asia/Kolkata');
+    $date = date('m/d/Y h:i:s', time());
     $subject  = 'Please confirm your Email';
     $body = '<p style="color:#66FCF1; font-size: 32px;" > Hi ' . $name . '</p><p  style="color:grey; font-size: 16px;" > You are almost done.Click below to verify your email address</p> 
     <p><a style="background-color: #66FCF1;
@@ -47,13 +48,16 @@ if (isset($_POST['submit'])) {
     transition-duration: 0.4s;"
     href="' . $url . '">Verify Email</a></p><p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
 
-    if ($queries->query("INSERT INTO userbase (username,password,name,phone,email,code,status,datetym,last_login) VALUES
-     ('$password','$password','$name', '$email', '$password', '$phone', '$code', '$status', now()) ")) {
+    $run = mysqli_query($con, "INSERT INTO userbase (username,password,name,phone,email,code,status,datetym,last_login) VALUES
+    ('$username','$password','$name', '$phone','$email', '$code', '$status', '$date','$date')");
 
-      if ($sendEmail->send($name, $email, $subject, $body)) {
+    if ($run) {
+      $sendEmail->send($name, $email, $subject, $body);
         $_SESSION['accountCreated'] = "Your account has been created successfully. Please verify your email";
         header("location: login.php");
-      }
+    
+    } else {
+        echo "Error description: " . mysqli_error($con) ;
     }
   }
 }

@@ -22,7 +22,7 @@ if ($num == 1) {
     $sql=mysqli_query($con,"DELETE FROM userbase WHERE username='$username'");
    echo "<script>
     alert('We are sorry to see you go');
-document.location='signout.php';
+document.location='logout.php';
 </script>";
     
 } else {

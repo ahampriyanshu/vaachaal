@@ -11,13 +11,15 @@ $queries    = new queries;
 
 if (isset($_POST['submit'])) {
 
-  $validation->validate('email', 'Email', 'required');
+  $validation->validate('username', 'Username', 'required');
   $validation->validate("password", 'Password', 'required');
   if ($validation->run()) {
 
-    $email = $validation->input('email');
+    $username = $validation->input('username');
     $password = $validation->input('password');
-    if ($queries->query("SELECT * FROM userbase WHERE email = ? ", [$email])) {
+    date_default_timezone_set('Asia/Kolkata');
+    $date = date('m/d/Y h:i:s', time());
+    if ($queries->query("SELECT * FROM userbase WHERE username = ? ", [$username])) {
       if ($queries->count() > 0) {
         $row = $queries->fetch();
         $userId     = $row->id;
@@ -25,7 +27,7 @@ if (isset($_POST['submit'])) {
         $dbPassword = $row->password;
         $status     = $row->status;
         if ($status == 0) {
-          $_SESSION['notActive'] = "Please Verify your email first";
+          $_SESSION['notActive'] = "Please Verify your account first";
         } else 
         if ($status == 2) {
           $_SESSION['notActive'] = "This account has been deactivated by the user";
@@ -35,7 +37,7 @@ if (isset($_POST['submit'])) {
         } else
         if ($status == 1) {
           if (password_verify($password, $dbPassword)) {
-            $update = mysqli_query($connect, "UPDATE `userbase` SET `last_login` = NOW() WHERE `email` = '$email' ");
+            $update = mysqli_query($con, "UPDATE `userbase` SET `last_login` = '$date' WHERE `username` = '$username' ");
             $_SESSION['email'] = $email;
             header("location: index.php");
           } else {
@@ -70,7 +72,7 @@ if (isset($_POST['submit'])) {
       <div class="row">
         <div class="col-lg-12 login-section-wrapper">
           <div class="brand-wrapper">
-           <a href="index.php"><img src="img/logo_nav.png" alt="logo" class="logo"></a>
+           <a href="index.php"><img src="img/logo.png" alt="logo" class="logo"></a>
           </div>
 
           <?php if (isset($_SESSION['accountCreated'])) : ?>
@@ -99,10 +101,10 @@ if (isset($_POST['submit'])) {
             <h1 class="login-title">Welcome Back</h1>
             <form name="loginform" method="post" action="">
               <div class="form-group">
-                <label for="password">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Enter registered Email" required />
+                <label for="password">username</label>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Enter registered username" required />
                 <div class="error text-danger text-center">
-                  <?php if (!empty($validation->errors['email'])) : echo $validation->errors['email'];
+                  <?php if (!empty($validation->errors['username'])) : echo $validation->errors['username'];
                   endif; ?>
                 </div>
               </div>

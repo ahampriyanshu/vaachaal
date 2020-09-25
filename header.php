@@ -96,7 +96,7 @@ window.location.href = 'login.php';
     <button class=\"dropbutton_header\">My Account</button>
     <div class=\"dropdown_content_header\">
       <a href=\"dashboard.php\">Dashboard</a>
-      <a href=\"signout.php\">LogOut</a>
+      <a href=\"logout.php\">LogOut</a>
       
     </div>
   </div>";}

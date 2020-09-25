@@ -33,7 +33,7 @@ Linux - Go to /opt/lampp in terminal and run _./xampp start_
 **header.php**   - Header\
 **register.php**   - Signup page\
 **signuser.php** - Signip backend\
-**signout.php**  - Logout user and destroys all sessions\
+**logout.php**  - Logout user and destroys all sessions\
 **addque.php**   - Add question\
 **postque.php**  - Post question\
 **addans.php**   - Add answer \

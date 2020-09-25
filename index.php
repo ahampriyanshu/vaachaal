@@ -16,7 +16,7 @@ include("essentials/config.php");
         <link href="forum.css" rel="stylesheet" type="text/css">
         <script type="text/javascript">
             window.onbeforeunload = function () {
-            document.location='signout.php';
+            document.location='logout.php';
             }
 
                 </script>

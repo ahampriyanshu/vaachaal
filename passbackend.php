@@ -23,7 +23,7 @@ if ($num == 1) {
     $sql=mysqli_query($con,"UPDATE userbase SET password = '$newpassword' WHERE username='$username'");
    echo "<script>
     alert('Password successfully changed');
-document.location='signout.php';
+document.location='logout.php';
 </script>";
     
 } else {

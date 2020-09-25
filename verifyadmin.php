@@ -25,7 +25,7 @@ if ($num == 1) {
 } else {
     echo "<script>
     alert('Incorrect Password!Login again');
-    document.location='signout.php';
+    document.location='logout.php';
 </script>";  
 }
 

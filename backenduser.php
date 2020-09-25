@@ -35,7 +35,7 @@ $sql3=mysqli_query($con,"UPDATE questions SET username = '$newuser' WHERE userna
 $sql3=mysqli_query($con,"UPDATE answers SET username = '$newuser' WHERE username='$username'");
    echo "<script>
     alert('Username successfully changed');
-   document.location='signout.php';
+   document.location='logout.php';
    </script>";
 }
     
