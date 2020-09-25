@@ -1,11 +1,11 @@
 <?php  session_start(); ?>
 <?php
-if(!isset($_SESSION['loggedin'])){
+if(!isset($_SESSION['email'])){
 header('location:index.php');}
 ?>
 <?php
 include("header.php");
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -94,7 +94,7 @@ include("essentials/database.php");
   </style>
   <body background="img/back.jpg">
     <?php
-    $USR = $_SESSION['loggedin'];
+    $USR = $_SESSION['email'];
     $sql = "SELECT * FROM questions WHERE username = '$USR' ORDER BY datetym DESC ";
     $result = $con->query($sql);
     if ($result->num_rows > 0)

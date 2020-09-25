@@ -5,7 +5,7 @@ header('location:index.php');}
 ?>
 <?php
 include("adminpanel.php");
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <!DOCTYPE html>
 <html>

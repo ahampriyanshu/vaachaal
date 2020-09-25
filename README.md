@@ -11,12 +11,12 @@ The purpose of this website is to make online forum in which user can either a q
 ### How to run in local machine using apache2. 
 Unzip and paste the project folder in root directory of apache
 Start apache and mysql/mariaDB servers
-Configure localhost and password in database.php file 
+Configure localhost and password in config.php file 
 
 ### How to run in local machine using NGINX.
 Unzip and paste the project folder in root directory of NGINX
 Start NGINX and mysql/mariaDB servers
-Configure localhost and password in database.php file
+Configure localhost and password in config.php file
 
 ###  How to run using stacks of apache2 and NGINX
 Download the project and paste the project folder in htdocs in xampp or lampp folder.\
@@ -29,9 +29,9 @@ Linux - Go to /opt/lampp in terminal and run _./xampp start_
 **home.php**     - Home page\
 **panel.php**    - Responsive sidebar\
 **script.php**   - Alert about cookies and session policy\
-**database.php** - Database configuration file\
+**config.php** - Database configuration file\
 **header.php**   - Header\
-**signup.php**   - Signup page\
+**register.php**   - Signup page\
 **signuser.php** - Signip backend\
 **signout.php**  - Logout user and destroys all sessions\
 **addque.php**   - Add question\

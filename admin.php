@@ -1,4 +1,4 @@
-<?php include("essentials/database.php"); ?>
+<?php include("essentials/config.php"); ?>
 <?php include("adminpanel.php"); ?>
 <!DOCTYPE html>
 <html>
@@ -86,7 +86,7 @@ if(isset($submit))
   </tr>  
   <tr>
       <td>&nbsp;&emsp;&emsp;&emsp;&emsp;
-      <button class="submit2" onclick="window.location.href = 'signup.php';" >New User?</button>
+      <button class="submit2" onclick="window.location.href = 'register.php';" >New User?</button>
     </td>
 	</tr>
 </table>

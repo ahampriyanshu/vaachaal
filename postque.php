@@ -1,16 +1,16 @@
 <?php  session_start(); ?>
 <?php
-if(!isset($_SESSION['loggedin'])){
+if(!isset($_SESSION['email'])){
 header('location:index.php');}
 ?>
 <?php
-include 'essentials/database.php';
+include 'essentials/config.php';
 date_default_timezone_set('Asia/Kolkata');
 $content = $_POST['content'];
 $level = $_POST['level'];
 $tym = $_POST['tym'];
 $branch = $_POST['branch'];
-$username = $_SESSION["loggedin"];
+$username = $_SESSION["email"];
 $date = date('m/d/Y h:i:s', time());
 if (empty($content)) {
 	echo "<script>

@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-include("essentials/database.php"); ?>
+include("essentials/config.php"); ?>
 <?php
 date_default_timezone_set('Asia/Kolkata');
 $newuser = $_POST['username'];
@@ -18,7 +18,7 @@ $num = mysqli_num_rows($result);
 if ($num == 1) {
 echo "<script>
 alert('Username already taken');
-document.location='signup.php';
+document.location='register.php';
 </script>";
 }
 else {

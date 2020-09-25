@@ -1,12 +1,12 @@
 <?php  session_start(); ?>
 <?php
-if(!isset($_SESSION['loggedin'])){
+if(!isset($_SESSION['email'])){
 header('location:index.php');}
 ?>
 <?php
 include("header.php");
 include("panel.php");
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -106,7 +106,7 @@ include("essentials/database.php");
     <div id="user_info" style="position: absolute; top:11%;right:60%;">
       <center><img class="logocircle" src="img/user.png"  title="logo" width="150px" height="145px" border=""/></center><br><br>
       <?php
-      $username = $_SESSION["loggedin"];
+      $username = $_SESSION["email"];
       $sql = "SELECT user_id,username,password,name,security,phone,email,datetym FROM userbase WHERE username='$username'  ";
       $result = $con->query($sql);
       if ($result->num_rows > 0)

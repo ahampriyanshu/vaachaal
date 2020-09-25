@@ -1,5 +1,5 @@
 <?php
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <style type="text/css">
 <!--

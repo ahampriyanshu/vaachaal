@@ -1,12 +1,12 @@
 <?php session_start(); ?>
 <?php 
-    if(!isset($_SESSION['loggedin'])){
+    if(!isset($_SESSION['email'])){
     header('location:index.php');}
 ?>
 <?php
-include("essentials/database.php");
+include("essentials/config.php");
 
-        $username = $_SESSION['loggedin'];
+        $username = $_SESSION['email'];
         $id = $_POST['id'];
         
         $sql = "INSERT INTO questions (username,id) VALUES ('$username','$id')";

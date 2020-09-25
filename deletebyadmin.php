@@ -5,7 +5,7 @@
 ?>
 <?php
 include("adminpanel.php");
-include("essentials/database.php");
+include("essentials/config.php");
 
        $username = $_SESSION['user'];
         

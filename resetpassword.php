@@ -9,7 +9,7 @@
 
  $expires = date("U") + 1800;
  
- include("essentials/database.php");
+ include("essentials/config.php");
 
  $userEmail = $_POST["email"];
  $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";

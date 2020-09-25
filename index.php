@@ -2,7 +2,7 @@
 <?php
 include("essentials/script.php");
 include("header.php");
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,6 +1,6 @@
 <?php  session_start(); ?>
 <?php 
-    if(!isset($_SESSION['loggedin'])){
+    if(!isset($_SESSION['email'])){
     header('location:index.php');}
 ?>
 <?php 

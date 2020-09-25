@@ -4,7 +4,7 @@
     header('location:admin.php');}
 ?>
 <?php
-include("essentials/database.php");
+include("essentials/config.php");
 
         $username = $_SESSION['admin'];
         $superpass = $_POST['superpass'];
