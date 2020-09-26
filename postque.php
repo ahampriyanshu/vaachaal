@@ -1,6 +1,6 @@
 <?php  session_start(); ?>
 <?php
-if(!isset($_SESSION['email'])){
+if(!isset($_SESSION["loggedin"])){
 header('location:index.php');}
 ?>
 <?php
@@ -10,7 +10,7 @@ $content = $_POST['content'];
 $level = $_POST['level'];
 $tym = $_POST['tym'];
 $branch = $_POST['branch'];
-$username = $_SESSION["email"];
+$username = $_SESSION["loggedin"];
 $date = date('m/d/Y h:i:s', time());
 if (empty($content)) {
 	echo "<script>

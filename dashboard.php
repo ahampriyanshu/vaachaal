@@ -1,7 +1,7 @@
-<?php  session_start(); ?>
-<?php
-if(!isset($_SESSION['email'])){
-header('location:index.php');}
+<?php  session_start(); 
+if(!isset($_SESSION["loggedin"])){
+header('location:index.php');
+}
 ?>
 <?php
 include("header.php");
@@ -102,12 +102,12 @@ include("essentials/config.php");
   line-height: 1.5;
   }
   </style>
-  <body background="img/back.jpg">
+  <body >
     <div id="user_info" style="position: absolute; top:11%;right:60%;">
       <center><img class="logocircle" src="img/user.png"  title="logo" width="150px" height="145px" border=""/></center><br><br>
       <?php
-      $username = $_SESSION["email"];
-      $sql = "SELECT user_id,username,password,name,security,phone,email,datetym FROM userbase WHERE username='$username'  ";
+      $username = $_SESSION["loggedin"];
+      $sql = "SELECT user_id,username,password,name,phone,email,code,status,datetym,last_login FROM userbase WHERE username='$username'  ";
       $result = $con->query($sql);
       if ($result->num_rows > 0)
       while($row = $result->fetch_assoc()) :?>

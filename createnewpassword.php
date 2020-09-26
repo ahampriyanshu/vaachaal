@@ -12,7 +12,7 @@ include("essentials/config.php");
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Retrive Your Password</title>
 	</head>
-	<body background="img/back.jpg">
+	<body >
 
 	<?php
 	$selector = $_GET["selector"];

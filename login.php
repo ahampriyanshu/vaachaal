@@ -2,7 +2,7 @@
 session_start();
 require_once('essentials/config.php');
 include "loadClass.php";
-if (isset($_SESSION['email'])) : {
+if (isset($_SESSION["loggedin"])) : {
     header("location: index.php");
   }
 endif;
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
         if ($status == 1) {
           if (password_verify($password, $dbPassword)) {
             $update = mysqli_query($con, "UPDATE `userbase` SET `last_login` = '$date' WHERE `username` = '$username' ");
-            $_SESSION['email'] = $email;
+            $_SESSION["loggedin"] = $username ;
             header("location: index.php");
           } else {
             $validation->errors['password'] = "Sorry invalid password";
@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
           <?php unset($_SESSION['notActive']); ?>
 
           <div class="login-wrapper my-auto">
-            <h1 class="login-title">Welcome Back</h1>
+            <h1 class="login-title text-center">Welcome Back</h1>
             <form name="loginform" method="post" action="">
               <div class="form-group">
                 <label for="password">username</label>

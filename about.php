@@ -30,7 +30,7 @@
 }
 </style>
 </head>
-<body background="img/back.jpg">
+<body >
   <?php
   echo "<div class=\"abt\" style=\"position: absolute; top:12%;left:20%;\">
       <img class=\"img-circle\" style=\"position: absolute; top:2%;left:8%;\" src=\"img/IIT_B.png\"  width=\"170px\" height=\"130px\" />

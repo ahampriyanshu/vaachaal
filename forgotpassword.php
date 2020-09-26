@@ -12,7 +12,7 @@ include("essentials/config.php");
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Retrive Your Password</title>
 	</head>
-	<body background="img/back.jpg">
+	<body >
 		<div class="signinbox" style="position: absolute; top:12%; right:40%;">
 			<br>
 			<center><img class="logocircle" src="img/user.png"  title="logo" width="210px" height="200px" border="1" /></center><br><br>

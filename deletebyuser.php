@@ -1,6 +1,6 @@
 <?php  session_start(); ?>
 <?php
-if(!isset($_SESSION['email'])){
+if(!isset($_SESSION["loggedin"])){
 header('location:index.php');}
 ?>
 <?php
@@ -19,7 +19,7 @@ include("essentials/config.php");
 		<title>Delete User</title>
 		
 	</head>
-	<body background="img/back.jpg">
+	<body >
 		<div class="signinbox" style="position: absolute; top:16%;right:40%;">
 			<center><img class="logocircle" src="img/delete.png"  title="logo" width="210px" height="200px" border="0" /></center><br><br>
 			<center>

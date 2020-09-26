@@ -120,7 +120,7 @@ include("essentials/config.php");
  
     </style>
   </head>
-  <body background="img/back.jpg">
+  <body >
     <?php
     $sql = "SELECT user_id,username,password,name,security,phone,email,datetym FROM userbase";
     $result = $con->query($sql);

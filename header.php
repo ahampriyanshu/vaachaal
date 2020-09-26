@@ -80,9 +80,9 @@ window.location.href = 'login.php';
 };
 </script>
 <div class="top_bar_header_web">
-  <a href="index.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/Topbar.png"  title="college logo" width="230px" height="45px" /></a>
+  <a href="index.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/logo.png"  title="college logo" width="230px" height="45px" /></a>
   <?php
-  if(!isset($_SESSION['email'])){
+  if(!isset($_SESSION["loggedin"])){
   echo "<div style=\"position: absolute; top:12%;right:2%;\" class=\"dropdown_header\">
     <button class=\"dropbutton_header\">&emsp;&nbsp;Login&nbsp;&emsp;</button>
     <div class=\"dropdown_content_header\">
@@ -103,7 +103,7 @@ window.location.href = 'login.php';
   
   ?>
   <?php
-  if(!isset($_SESSION['email'])){
+  if(!isset($_SESSION["loggedin"])){
   echo "<button onclick=\"redirect();\" style=\"position: absolute; top:12%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
   else
   {

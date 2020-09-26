@@ -1,14 +1,12 @@
-<?php  session_start(); ?>
-<?php
-if(!isset($_SESSION['email'])){
-header('location:index.php');}
-?>
-<?php
+<?php  session_start(); 
+if(!isset($_SESSION["loggedin"])){
+header('location: index.php');
+}
 include 'essentials/config.php';
 date_default_timezone_set('Asia/Kolkata');
 $qid = $_POST['qid'];
 $content = $_POST['content'];
-$username = $_SESSION["email"];
+$username = $_SESSION["loggedin"];
 $date = date('m/d/Y h:i:s', time());
 $tym = $_POST['tym'];
 $level = $_POST['level'];

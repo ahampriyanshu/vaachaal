@@ -53,7 +53,7 @@
 }
 </style>
 </head>
-<body background="img/back.jpg">
+<body >
   <h><b><centre>Question asked by the user</centre></b></h>
   <br><br>
 <?php

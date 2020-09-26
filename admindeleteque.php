@@ -87,7 +87,7 @@ include("essentials/config.php");
   background-color: #DB4437;
   }
   </style>
-  <body background="img/back.jpg">
+  <body >
     <?php
     $USR = $_SESSION['user'];
     $sql = "SELECT * FROM questions WHERE username = '$USR' ORDER BY datetym DESC ";

@@ -2,7 +2,7 @@
 session_start();
 require_once('essentials/config.php');
 include "loadClass.php";
-if (isset($_SESSION['email'])) :
+if (isset($_SESSION["loggedin"])) :
   header("location: index.php");
 endif;
 $validation = new validation;
@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
       <div class="row">
         <div class="col-sm-6 login-section-wrapper">
           <div class="brand-wrapper">
-          <a href="index.php"><img src="img/logo_nav.png" alt="logo" class="logo"></a>
+          <a href="index.php"><img src="img/logo.png" alt="logo" class="logo"></a>
           </div>
           <div class="login-wrapper my-auto">
             <h1 class="login-title">Hello New User</h1>

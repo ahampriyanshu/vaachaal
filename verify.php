@@ -23,7 +23,7 @@ include("essentials/config.php");
 		<title>Admin Verify</title>
 		
 	</head>
-	<body background="img/back.jpg">
+	<body >
 	
 		<div class="signinbox" style="position: absolute; top:16%;right:40%;">
 			<center><img class="logocircle" style="padding-top: 5px;" src="img/admin.png"  title="logo" width="210px" height="200px" border="0" /></center><br><br>

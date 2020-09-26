@@ -1,12 +1,12 @@
 <?php session_start(); ?>
 <?php 
-    if(!isset($_SESSION['email'])){
+    if(!isset($_SESSION["loggedin"])){
     header('location:index.php');}
 ?>
 <?php
 include("essentials/config.php");
 
-       $username = $_SESSION['email'];
+       $username = $_SESSION["loggedin"];
         $password = $_POST['pass'];
         
         $sql = "INSERT INTO userbase (username,password)

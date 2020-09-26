@@ -1,6 +1,6 @@
 <?php  session_start(); ?>
 <?php
-if(!isset($_SESSION['email'])){
+if(!isset($_SESSION["loggedin"])){
 header('location:index.php');}
 ?>
 <?php
@@ -87,9 +87,9 @@ include("essentials/config.php");
   background-color: #DB4437;
   }
   </style>
-  <body background="img/back.jpg">
+  <body >
     <?php
-    $USR = $_SESSION['email'];
+    $USR = $_SESSION["loggedin"];
     $sql = "SELECT * FROM answers WHERE username = '$USR' ORDER BY datetym DESC ";
     $result = $con->query($sql);
     if ($result->num_rows > 0)

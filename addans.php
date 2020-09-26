@@ -1,7 +1,8 @@
 <?php session_start(); ?>
 <?php
-if(!isset($_SESSION['email'])){
-header('location:login.php');}
+if(!isset($_SESSION["loggedin"])){
+header('location: login.php');
+}
 ?>
 <?php
 include("header.php");

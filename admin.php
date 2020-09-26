@@ -34,7 +34,7 @@
 <title>Admin login</title>
 <link href="forum.css" rel="stylesheet" type="text/css">
 </head>
-<body background="img/back.jpg">	
+<body >	
 <?php
 extract($_POST);
 
