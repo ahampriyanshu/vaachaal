@@ -1,167 +1,11 @@
-<?php session_start();
-require("header.php");
-require("essentials/config.php");
-?>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="GNDEC GATE FORUM">
-    <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-    <meta name="author" content="PriyanshuMay,priyanshumay">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link href="forum.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript">
-        window.onbeforeunload = function() {
-            document.location = 'logout.php';
-        }
-    </script>
-    <style type="text/css">
-        body {
-            overflow-y: scroll;
-            background-color: #f3f7f7;
-            padding-left: 80px;
-            padding-right: 80px;
-        }
-
-        body::-webkit-scrollbar {
-            display: none;
-        }
-
-        .collapsible {
-            background-color: white;
-            cursor: pointer;
-            width: 100%;
-            padding: 50px;
-            border: none;
-            border-radius: 4px;
-            text-align: left;
-            font-size: 15px;
-        }
-
-        .active,
-        .collapsible:hover {
-            background-color: #e6ffff;
-            font-size: 110%;
-            color: red;
-        }
-
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: auto;
-            background-color: ;
-        }
-
-        #line {
-            border: 1px solid red;
-            border-radius: 2px;
-        }
-
-        #answer_button {
-            position: relative;
-            left: 40%;
-            background-color: #833AB4;
-            color: white;
-            padding-bottom: 3px;
-            padding: 11px;
-            font-size: 11px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            font-weight: light;
-            font-family: 'Trebuchet MS', sans-serif;
-            border-radius: 5%;
-        }
-
-        #answer_button:hover,
-        #answer_button:focus {
-            background-color: #DB4437;
-        }
-
-        #title {
-            line-height: 1.5;
-            color: #333;
-            tab-size: 4;
-            word-break: break-word;
-            text-align: left;
-            direction: ltr;
-            user-select: text;
-            font-size: 25px;
-            font-family: Courier new;
-        }
-
-        #anstitle {
-            line-height: 1.5;
-            color: black;
-            tab-size: 4;
-            word-break: break-word;
-            text-align: left;
-            direction: ltr;
-            user-select: text;
-            font-size: 15px;
-            font-family: Courier new;
-        }
-
-        #specs {
-            font-size: 12px;
-            font-family: courier new;
-            font-weight: bold;
-            color: #833AB4;
-        }
-
-        #details {
-            font-weight: bold;
-            color: red;
-            font-size: 12px;
-        }
-
-        #answer_box {
-            padding: 10px;
-            padding-bottom: 20px;
-            background-color: white;
-            width: 97%;
-            height: auto;
-        }
-
-        #answer_box:hover {
-            background-color: white;
-        }
-
-        #top_button_index {
-            font-family: bold;
-            display: none;
-            align-content: center;
-            box-shadow: 0 0 5px gray;
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 99;
-            font-size: 25px;
-            border: none;
-            outline: none;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            font-family: courier new;
-            border-radius: 50%;
-        }
-
-        #top_button_index:hover {
-            background-color: #833AB4;
-    </style>
-</head>
-
-<body>
+<?php require("header.php"); ?>
+<div class="container">
     <?php
     $sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions ORDER BY datetym DESC";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
         while ($row = $result->fetch_assoc()) : ?>
-        <button type="button" class="collapsible">
+        <button class="collapsible btn">
             <span id="title"><?php echo $row["content"]; ?></span><br>
             <hr id="line"><br>
             <span id="specs">Asked by </span>&nbsp;<span id="details"><?php echo $row["username"]; ?></span> &emsp;
@@ -224,6 +68,6 @@ require("essentials/config.php");
         }
     </script>
     <br><br>
+    </div>
 </body>
-
 </html>

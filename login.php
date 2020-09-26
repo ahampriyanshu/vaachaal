@@ -98,7 +98,6 @@ if (isset($_POST['submit'])) {
           <?php unset($_SESSION['notActive']); ?>
 
           <div class="login-wrapper my-auto">
-            <h1 class="login-title text-center">Welcome Back</h1>
             <form name="loginform" method="post" action="">
               <div class="form-group">
                 <label for="password">username</label>
@@ -118,10 +117,9 @@ if (isset($_POST['submit'])) {
               </div>
               <input name="submit" id="login" class="btn btn-block login-btn" type="submit" value="Login">
             </form>
-            <a href="forgotPassword.php" class="forgot-password-link">Forgot password?</a>
-            <p class="login-wrapper-footer-text">Don't have an account? <a href="register.php" class="text-reset">Register here</a></p>
-            <p class="login-wrapper-footer-text"><a href="index.php" class="text-reset">Back to Shopping</a></p>
-          </div>
+            <a href="forgotPassword.php" class="forgot-password-link ml-1">Forgot Password ?</a>
+  <a href="register.php" class="text-reset ml-5">New User ?</a>
+             </div>
         </div>
       </div>
     </div>

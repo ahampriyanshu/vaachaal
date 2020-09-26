@@ -1,5 +1,5 @@
 <?php
-include "dbConfig.php";
+include "loadClass.php";
 $verify = new verify;
 $verify->emailVerify();
 ?>

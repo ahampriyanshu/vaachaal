@@ -1,0 +1,31 @@
+body {
+  font-family: "Karla", sans-serif;
+background-color: #fff; 
+    }
+
+    body::-webkit-scrollbar {
+    display: none;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+  }
+  .logocircle{
+    border-radius: 50%;
+    border: 0;
+    }
+    .input_text {
+    width: 50%;
+    font-size: 15px;
+    line-height: 1.4;
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height: 32px;
+    margin-bottom: 8px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px #888;
+    border-radius: 4px;
+    }
