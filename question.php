@@ -1,24 +1,16 @@
-<?php session_start(); ?>
-<?php
+<?php include("header.php");
+
 if(!isset($_SESSION["loggedin"])){
 header('location: login.php');
 }
+$ID = $_GET['id'];
+if (!$ID) {
+  echo "<script>
+    document.location='index.php';
+    </script>";
+}
 ?>
-<?php
-include("header.php");
-include("essentials/config.php");
-?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-  <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,ahampriyanshu,gne,gndec,">
-  <meta name="author" content="ahampriyanshu,ahampriyanshu">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add answer</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
+    <!-- <style type="text/css">
     body{
     padding-top: 100px;
     overflow-x: hidden;
@@ -95,11 +87,10 @@ include("essentials/config.php");
     border: 2px solid red;
     border-radius: 5px;
     }
-    </style>
-  </head>
-  <body>
+    </style> -->
+    <div class="container">
+ <div class="col-lg-12">
     <?php
-    $ID = $_POST['id'];
     $sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions WHERE id = '$ID'";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
@@ -144,4 +135,7 @@ include("essentials/config.php");
     </div>
   </div>
 </div>
+  </div>
+  </div>
+  
 </body>

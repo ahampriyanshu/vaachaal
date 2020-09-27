@@ -100,19 +100,13 @@ include("header.php");
       <br>
       <div class="select">
         &emsp;
-        <label>Level of hardness</label>&nbsp;&nbsp;
+        <label>Topic</label>&nbsp;&nbsp;
         <select name="level" class="option">
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
           <option value="High">High</option>
         </select>
-        &emsp;&emsp;
-        <label>Time Required</label>&nbsp;&nbsp;
-        <select name="tym" class="option">
-          <option value="0-2 min">0-2 Min</option>
-          <option value="2-5 Min">2-5 Min</option>
-          <option value="5-10 Min">5-10 Min</option>min
-        </select>
+
         &emsp;&emsp;
 
         <label>Branch</label>&nbsp;&nbsp;
@@ -125,6 +119,16 @@ include("header.php");
           <option value="PE">PE</option>
           <option value="Misc">Misc</option>
         </select>
+        &emsp;&emsp;
+        <label>Minutes Read</label>&nbsp;&nbsp;
+        <select name="tym" class="option">
+          <option value="0-2 min">0-2 Min</option>
+          <option value="2-5 Min">2-5 Min</option>
+          <option value="5-10 Min">5-10 Min</option>min
+        </select>
+      
+
+     
       </div><br><br>
     </form>
   </div>

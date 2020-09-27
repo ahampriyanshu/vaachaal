@@ -1,20 +1,13 @@
-<?php session_start(); ?>
-<?php 
-    if(!isset($_SESSION["loggedin"])){
-    header('location:index.php');}
-?>
-<?php
+<?php session_start(); 
+if(!isset($_SESSION["loggedin"])){
+header('location:index.php');
+}
 include("essentials/config.php");
 
-       $username = $_SESSION["loggedin"];
-        $password = $_POST['pass'];
-        
-        $sql = "INSERT INTO userbase (username,password)
-VALUES ('$username','$password')";
+$username = $_SESSION["loggedin"];
+$password = $_POST['pass'];
 
-$q = "select * from userbase where username = '$username' && password = '$password' ";
-
-$result = mysqli_query($con,$q);
+$result = mysqli_query($con,"SELECT * FROM userbase WHERE username = '$username' && password = '$password' ");
 $num = mysqli_num_rows($result);
 
 if ($num == 1) {
@@ -31,5 +24,3 @@ document.location='logout.php';
     document.location='deletebyuser.php';
 </script>";  
 }
-
-?>

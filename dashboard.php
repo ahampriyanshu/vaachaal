@@ -1,26 +1,11 @@
-<?php  session_start(); 
+<?php include("header.php");
 if(!isset($_SESSION["loggedin"])){
-header('location:index.php');
+header('location: index.php');
 }
 ?>
-<?php
-include("header.php");
-
-include("essentials/config.php");
-?>
-<!DOCTYPE html>
-<html>
-  <link href="css/style.css" rel="stylesheet" type="text/css">
-  <head>
-    <meta charset="UTF-8">
-  <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,ahampriyanshu,gne,gndec,">
-  <meta name="author" content="ahampriyanshu,ahampriyanshu">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-  </head>
   <style type="text/css">
-  #info{
+
+  /* #info{
   overflow: none;
   padding-left: 5px;
   }
@@ -97,14 +82,14 @@ include("essentials/config.php");
     padding-left:3%;
   text-align: left;
   width: 94%;
-  overflow:
-  letter-spacing: -1px;
   line-height: 1.5;
-  }
+  } */
+
   </style>
-  <body >
+  <div class="container">
+  <div class="row text-center">
+  <div class="col-md-6">
     <div id="user_info" style="position: absolute; top:11%;right:60%;">
-      <center><img class="logocircle" src="img/user.png"  title="logo" width="150px" height="145px" border=""/></center><br><br>
       <?php
       $username = $_SESSION["loggedin"];
       $sql = "SELECT user_id,username,password,name,phone,email,code,status,datetym,last_login FROM userbase WHERE username='$username'  ";
@@ -142,6 +127,8 @@ include("essentials/config.php");
       <?php endwhile; ?>
       <br><br>
     </div>
+  </div>
+  <div class="col-md-6">
     <div class="setting" >
       <img class="logocircle" id="set" src="img/setting.png" width="60px" height="60px" border="" style="position: absolute; top:1%; left:23%;" />
       <a id="setopt" class="active"  >Settings</a>
@@ -153,5 +140,9 @@ include("essentials/config.php");
       <a id="changeopt" href="viewans.php">Delete Answer</a>
       <a id="changeopt" style="color: red; font-weight: bold;" href="deletebyuser.php">Delete Account</a>
     </div>
+      </div>
+      </div>
+  </div>
+      </div>
   </body>
 </html>
