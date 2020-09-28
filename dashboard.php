@@ -92,7 +92,7 @@ header('location: index.php');
     <div id="user_info" style="position: absolute; top:11%;right:60%;">
       <?php
       $username = $_SESSION["loggedin"];
-      $sql = "SELECT user_id,username,password,name,phone,email,code,status,datetym,last_login FROM userbase WHERE username='$username'  ";
+      $sql = "SELECT user_id,username,password,name,phone,email,code,status,created,last_login FROM userbase WHERE username='$username'  ";
       $result = $con->query($sql);
       if ($result->num_rows > 0)
       while($row = $result->fetch_assoc()) :?>
@@ -120,7 +120,7 @@ header('location: index.php');
           </tr>
           <tr>
             <td><span id="specs">Joined</span></td>
-            <td><span id="details"><?php echo $row["datetym"]; ?></span></td>
+            <td><span id="details"><?php echo $row["created"]; ?></span></td>
           </tr>
         </table>
       </div>

@@ -58,7 +58,7 @@
   <br><br>
 <?php
 $USR = $_POST['usr'];
-$sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions WHERE username = '$USR'";
+$sql = "SELECT id,content,level,tym,branch,username,created FROM questions WHERE username = '$USR'";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) 
@@ -69,7 +69,7 @@ if ($result->num_rows > 0)
                  Difficulty level estimated is <?php echo $row["level"]; ?>&emsp; 
                   Time alloted is <?php echo $row["tym"]; ?> &emsp;
                  Question comes under <?php echo $row["branch"]; ?><br><br>
-                 Posted On <?php echo $row["datetym"]; ?>&emsp;
+                 Posted On <?php echo $row["created"]; ?>&emsp;
                 <br><br>
             </form>
         </div><br><br>
@@ -80,7 +80,7 @@ endwhile;
   <br><br>
 <?php
 $USR = $_POST['usr'];
-$q = "SELECT aid,content,level,tym,datetym FROM answers WHERE username = '$USR'";
+$q = "SELECT aid,content,level,tym,created FROM answers WHERE username = '$USR'";
 $res = $con->query($q);
 
 if ($res->num_rows > 0) 
@@ -90,7 +90,7 @@ if ($res->num_rows > 0)
                 <br><?php echo $ro["content"]; ?><br><br> 
                  Difficulty level estimated is <?php echo $ro["level"]; ?> &emsp;
                   Time taken  <?php echo $ro["tym"]; ?><br><br>
-                 Posted On <?php echo $ro["datetym"]; ?>&emsp;
+                 Posted On <?php echo $ro["created"]; ?>&emsp;
                 <br><br>
             </form>
         </div><br><br>

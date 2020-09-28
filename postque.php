@@ -18,7 +18,7 @@ if (empty($content)) {
     document.location='index.php';
     </script>";
 }else{
-$sql = "INSERT INTO questions(content,level,tym,branch,username,datetym) VALUES ('$content','$level','$tym','$branch','$username','$date')";
+$sql = "INSERT INTO questions(content,level,tym,branch,username,created) VALUES ('$content','$level','$tym','$branch','$username','$date')";
 if ($con->query($sql) === TRUE)
 {
 header('location:index.php');

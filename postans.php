@@ -16,7 +16,7 @@ if (empty($content)) {
     document.location='index.php';
     </script>";
 }else{
-$sql = "INSERT INTO answers (id,content,username,datetym,tym,level) VALUES ('$qid','$content','$username','$date','$tym','$level')";
+$sql = "INSERT INTO answers (id,content,username,created,tym,level) VALUES ('$qid','$content','$username','$date','$tym','$level')";
 if ( $con -> query ($sql) === TRUE)
 {
 header('location:index.php');

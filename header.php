@@ -18,8 +18,9 @@ if ($_SESSION["loggedin"]) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Home</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.tiny.cloud/1/e98weoopbr4y4i7manqhwxun2tjft1j0herkn8cy9xismktc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body>
@@ -51,10 +52,10 @@ if ($_SESSION["loggedin"]) {
         <?php
         if (isset($_SESSION["loggedin"])) {
         ?>
-          <a class="btn btn-success my-2 ml-1" href="login.php">Ask</a>
+          <a class="btn btn-success my-2 ml-1" href="addque.php">Ask</a>
           <a class="btn btn-success my-2 ml-1" href="dashboard.php">My Account</a>
         <?php } else { ?>
-          <a class="btn btn-success my-2 ml-1" href="addque.php">Ask</a>
+          <a class="btn btn-success my-2 ml-1" href="login.php">Ask</a>
           <a class="btn btn-success my-2 ml-1" href="login.php">Login</a>
         <?php } ?>
       </div>

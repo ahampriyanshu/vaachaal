@@ -104,7 +104,7 @@ include("essentials/config.php");
 <body>
   <?php
   $username = $_SESSION["loggedin"];
-  $sql = "SELECT * FROM questions WHERE username = '$username' ORDER BY datetym DESC ";
+  $sql = "SELECT * FROM questions WHERE username = '$username' ORDER BY created DESC ";
   $result = $con->query($sql);
   if ($result->num_rows > 0)
     while ($row = $result->fetch_assoc()) : ?>
@@ -114,7 +114,7 @@ include("essentials/config.php");
       <span id="specs">time alloted is</span> &nbsp;<span id="details"><?php echo $row["tym"]; ?></span> &emsp;
       <span id="specs">difficulty level estimated is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["level"]; ?></span> &emsp;
       <span id="specs">question comes under</span> &nbsp;<span id="details"><?php echo $row["branch"]; ?></span><span id="specs"> branch</span>&emsp;
-      <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["datetym"]; ?></span><br>
+      <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["created"]; ?></span><br>
       <form method="post" action="delquebyuser.php"><br>
         <input type="submit" id="answer_button" value="Delete Question" />
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />

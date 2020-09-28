@@ -9,18 +9,6 @@ if (!$ID) {
     document.location='index.php';
     </script>";
 }
-$find_product_data = "SELECT * FROM product WHERE id = '$product_id'";
-$found_product_data = $connect->query($find_product_data);
-$product_id_array = $found_product_data->fetch_assoc();
-$product_section = $product_id_array['section'];
-$product_brand = $product_id_array['brand'];
-$product_category = $product_id_array['category'];
-$product_description = $product_id_array['description'];
-$product_title  = $product_id_array['name'];
-$product_image = $product_id_array['file'];
-$sql = "INSERT INTO search ( product_id, customer_id, section, brand, category, created) VALUES ('$product_id', '$customer_id', '$product_section', '$product_brand ','$product_category',NOW())";
-
-mysqli_query($connect, $sql);
 ?>
 <div class="container">
   <div class="col-lg-12 my-4">

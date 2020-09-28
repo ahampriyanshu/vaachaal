@@ -90,7 +90,7 @@ include("essentials/config.php");
   <body >
     <?php
     $USR = $_SESSION['user'];
-    $sql = "SELECT * FROM answers WHERE username = '$USR' ORDER BY datetym DESC ";
+    $sql = "SELECT * FROM answers WHERE username = '$USR' ORDER BY created DESC ";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) :?>
@@ -98,7 +98,7 @@ include("essentials/config.php");
       <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
       <span id="specs">time required is</span> &nbsp;<span id="details"><?php echo $row["tym"]; ?></span> &emsp;
       <span id="specs">difficulty level according to user is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["level"]; ?></span> &emsp;
-      <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["datetym"]; ?></span><br>
+      <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["created"]; ?></span><br>
       <form method="post" action="delansbyadmin.php"><br>
         <input  type="submit"  id="answer_button" value="Delete Answer"/>
         <input type="hidden" name="aid" value="<?php echo $row['aid']; ?>"/>
