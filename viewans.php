@@ -90,14 +90,14 @@ include("essentials/config.php");
   <body >
     <?php
     $USR = $_SESSION["loggedin"];
-    $sql = "SELECT * FROM answers WHERE username = '$USR' ORDER BY created DESC ";
+    $sql = "SELECT * FROM answer WHERE username = '$USR' ORDER BY created DESC ";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) :?>
     <div class="question_box" style="padding-left: 30px;">
       <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
-      <span id="specs">time required is</span> &nbsp;<span id="details"><?php echo $row["tym"]; ?></span> &emsp;
-      <span id="specs">difficulty level according to user is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["level"]; ?></span> &emsp;
+      <span id="specs">time required is</span> &nbsp;<span id="details"><?php echo $row["duration"]; ?></span> &emsp;
+      <span id="specs">difficulty category according to user is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["category"]; ?></span> &emsp;
       <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["created"]; ?></span><br>
       <form method="post" action="delansbyuser.php"><br>
         <input  type="submit"  id="answer_button" value="Delete Answer"/>

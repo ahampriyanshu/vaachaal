@@ -40,7 +40,10 @@ if ($_SESSION["loggedin"]) {
             <a class="nav-link" href="filter.php">Filter</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="mostViewed.php">Most Veiwed</a>
+            <a class="nav-link" href="mostViewed.php">Trending</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mostViewed.php">Feed</a>
           </li>
         </ul>
 

@@ -8,15 +8,15 @@ $qid = $_POST['qid'];
 $content = $_POST['content'];
 $username = $_SESSION["loggedin"];
 $date = date('m/d/Y h:i:s', time());
-$tym = $_POST['tym'];
-$level = $_POST['level'];
+$duration = $_POST['duration'];
+$category = $_POST['category'];
 if (empty($content)) {
 	echo "<script>
     alert('OOPs,it seems your answer is empty as your life');
     document.location='index.php';
     </script>";
 }else{
-$sql = "INSERT INTO answers (id,content,username,created,tym,level) VALUES ('$qid','$content','$username','$date','$tym','$level')";
+$sql = "INSERT INTO answer (id,content,username,created,duration,category) VALUES ('$qid','$content','$username','$date','$duration','$category')";
 if ( $con -> query ($sql) === TRUE)
 {
 header('location:index.php');

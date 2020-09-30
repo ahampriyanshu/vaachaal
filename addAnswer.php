@@ -13,7 +13,7 @@ if (!$ID) {
 <div class="container">
   <div class="col-lg-12 my-4">
     <?php
-    $sql = "SELECT id,content,level,tym,branch,username,created FROM questions WHERE id = '$ID'";
+    $sql = "SELECT id,content,category,duration,language,username,created FROM question WHERE id = '$ID'";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
       while ($row = $result->fetch_assoc()) : ?>
@@ -22,9 +22,9 @@ if (!$ID) {
         <p class="text-center"><span class="badge badge-light"> Asked by <?php echo $row["username"]; ?> on <?php echo $row["created"]; ?>
             </span></p>
             <p class="text-center"><span class="badge badge-light"> Tags</span>
-             <span class="badge badge-info"><?php echo $row["branch"]; ?> </span>
-            <span class="badge badge-warning"><?php echo $row["level"]; ?></span>
-            <span class="badge badge-secondary"><?php echo $row["tym"]; ?></span>
+             <span class="badge badge-info"><?php echo $row["language"]; ?> </span>
+            <span class="badge badge-warning"><?php echo $row["category"]; ?></span>
+            <span class="badge badge-secondary"><?php echo $row["duration"]; ?></span>
           </p>
       </div>
     <?php
@@ -42,14 +42,14 @@ if (!$ID) {
         <div class="container my-4">
           <div class="row">
             <div class="col-sm">
-              <select name="level" class="custom-select">
+              <select name="category" class="custom-select">
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
               </select>
             </div>
             <div class="col-sm">
-              <select name="tym" class="custom-select">
+              <select name="duration" class="custom-select">
                 <option value="0-2 min">0-2 Min</option>
                 <option value="2-5 Min">2-5 Min</option>
                 <option value="5-10 Min">5-10 Min</option>

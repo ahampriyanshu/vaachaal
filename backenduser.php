@@ -31,8 +31,8 @@ if ($num2 == 1) {
 else {     
  
 $sql2=mysqli_query($con,"UPDATE userbase SET username = '$newuser' WHERE username='$username'");
-$sql3=mysqli_query($con,"UPDATE questions SET username = '$newuser' WHERE username='$username'");
-$sql3=mysqli_query($con,"UPDATE answers SET username = '$newuser' WHERE username='$username'");
+$sql3=mysqli_query($con,"UPDATE question SET username = '$newuser' WHERE username='$username'");
+$sql3=mysqli_query($con,"UPDATE answer SET username = '$newuser' WHERE username='$username'");
    echo "<script>
     alert('Username successfully changed');
    document.location='logout.php';

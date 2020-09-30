@@ -3,29 +3,27 @@
 if (!isset($_SESSION["loggedin"])) {
   header('location: login.php');
 }
-$ID = $_GET['id'];
-if (!$ID) {
+$id = $_GET['id'];
+if (!$id) {
   echo "<script>
     document.location='index.php';
     </script>";
 }
-$find_product_data = "SELECT * FROM product WHERE id = '$product_id'";
-$found_product_data = $connect->query($find_product_data);
-$product_id_array = $found_product_data->fetch_assoc();
-$product_section = $product_id_array['section'];
-$product_brand = $product_id_array['brand'];
-$product_category = $product_id_array['category'];
-$product_description = $product_id_array['description'];
-$product_title  = $product_id_array['name'];
-$product_image = $product_id_array['file'];
-$sql = "INSERT INTO search ( product_id, customer_id, section, brand, category, created) VALUES ('$product_id', '$customer_id', '$product_section', '$product_brand ','$product_category',NOW())";
-
-mysqli_query($connect, $sql);
+$find_data = "SELECT * FROM question WHERE id = '$id'";
+$found_data = $con->query($find_data);
+$array = $found_data->fetch_assoc();
+$username = $array['username'];
+$duration = $array['duration'];
+$category = $array['category'];
+$language = $array['language'];
+$date = date('m/d/Y h:i:s', time());
+$con->query("INSERT INTO history ( id, username, category, language, duration, created) VALUES ('$id', '$username', '$category', '$language ','$duration', '$date')");
+$con->query("UPDATE question SET views = views + '1' WHERE id = " . $id);
 ?>
 <div class="container">
   <div class="col-lg-12 my-4">
     <?php
-    $sql = "SELECT id,content,level,tym,branch,username,created FROM questions WHERE id = '$ID'";
+    $sql = "SELECT id,content,category,duration,language,username,created FROM question WHERE id = '$id'";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
       while ($row = $result->fetch_assoc()) : ?>
@@ -34,9 +32,9 @@ mysqli_query($connect, $sql);
         <p class="text-center"><span class="badge badge-light"> Asked by <?php echo $row["username"]; ?> on <?php echo $row["created"]; ?>
             </span></p>
             <p class="text-center"><span class="badge badge-light"> Tags</span>
-             <span class="badge badge-info"><?php echo $row["branch"]; ?> </span>
-            <span class="badge badge-warning"><?php echo $row["level"]; ?></span>
-            <span class="badge badge-secondary"><?php echo $row["tym"]; ?></span>
+             <span class="badge badge-info"><?php echo $row["language"]; ?> </span>
+            <span class="badge badge-warning"><?php echo $row["category"]; ?></span>
+            <span class="badge badge-secondary"><?php echo $row["duration"]; ?></span>
           </p>
       </div>
     <?php
@@ -44,7 +42,7 @@ mysqli_query($connect, $sql);
     ?>
     <div class="col-lg-12 text-center">
       <form name="addform" action="postans.php" method="POST">
-        <input type="hidden" name="qid" value="<?php echo $ID; ?>">
+        <input type="hidden" name="qid" value="<?php echo $id; ?>">
         <div class="justify-content-center">
         <textarea name="content" cols="100" rows="10" required>
     Make sure you answer is precise and to the point.
@@ -54,14 +52,14 @@ mysqli_query($connect, $sql);
         <div class="container my-4">
           <div class="row">
             <div class="col-sm">
-              <select name="level" class="custom-select">
+              <select name="category" class="custom-select">
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
               </select>
             </div>
             <div class="col-sm">
-              <select name="tym" class="custom-select">
+              <select name="duration" class="custom-select">
                 <option value="0-2 min">0-2 Min</option>
                 <option value="2-5 Min">2-5 Min</option>
                 <option value="5-10 Min">5-10 Min</option>
@@ -73,11 +71,6 @@ mysqli_query($connect, $sql);
           </div>
         </div>
     </div>
-
-    <!-- <script src="essentials/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript">
-      CKEDITOR.replace('content');
-    </script> -->
     </form>
   </div>
 </div>

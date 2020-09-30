@@ -9,16 +9,16 @@ include("essentials/config.php");
         $user = $_SESSION['user'];
         $id = $_POST['id'];
         
-        $sql = "INSERT INTO questions (username,id) VALUES ('$user','$id')";
+        $sql = "INSERT INTO question (username,id) VALUES ('$user','$id')";
 
-$q = "select * from questions where username = '$user' && id = '$id' ";
+$q = "select * from question where username = '$user' && id = '$id' ";
 
 $result = mysqli_query($con,$q);
 $num = mysqli_num_rows($result);
 
 if ($num == 1) {
 
-    $sql=mysqli_query($con,"DELETE FROM questions WHERE id='$id'");
+    $sql=mysqli_query($con,"DELETE FROM question WHERE id='$id'");
    echo "<script>
     alert('Question successfully deleted');
 document.location='admindeleteque.php';

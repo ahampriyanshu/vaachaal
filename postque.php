@@ -7,9 +7,9 @@ header('location:index.php');}
 include 'essentials/config.php';
 date_default_timezone_set('Asia/Kolkata');
 $content = $_POST['content'];
-$level = $_POST['level'];
-$tym = $_POST['tym'];
-$branch = $_POST['branch'];
+$category = $_POST['category'];
+$duration = $_POST['duration'];
+$language = $_POST['language'];
 $username = $_SESSION["loggedin"];
 $date = date('m/d/Y h:i:s', time());
 if (empty($content)) {
@@ -18,7 +18,7 @@ if (empty($content)) {
     document.location='index.php';
     </script>";
 }else{
-$sql = "INSERT INTO questions(content,level,tym,branch,username,created) VALUES ('$content','$level','$tym','$branch','$username','$date')";
+$sql = "INSERT INTO question(content,category,duration,language,username,created) VALUES ('$content','$category','$duration','$language','$username','$date')";
 if ($con->query($sql) === TRUE)
 {
 header('location:index.php');
