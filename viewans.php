@@ -1,20 +1,20 @@
 <?php  session_start(); ?>
 <?php
-if(!isset($_SESSION['loggedin'])){
+if(!isset($_SESSION["loggedin"])){
 header('location:index.php');}
 ?>
 <?php
 include("header.php");
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <!DOCTYPE html>
 <html>
-  <link href="forum.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
   <head>
     <meta charset="UTF-8">
   <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
+  <meta name="keywords" content="gate,ahampriyanshu,gne,gndec,">
+  <meta name="author" content="ahampriyanshu,ahampriyanshu">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Answer</title>
   </head>
@@ -87,18 +87,18 @@ include("essentials/database.php");
   background-color: #DB4437;
   }
   </style>
-  <body background="img/back.jpg">
+  <body >
     <?php
-    $USR = $_SESSION['loggedin'];
-    $sql = "SELECT * FROM answers WHERE username = '$USR' ORDER BY datetym DESC ";
+    $USR = $_SESSION["loggedin"];
+    $sql = "SELECT * FROM answer WHERE username = '$USR' ORDER BY created DESC ";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) :?>
     <div class="question_box" style="padding-left: 30px;">
       <span id="title"><?php echo $row["content"]; ?></span><br><hr id="line"><br>
-      <span id="specs">time required is</span> &nbsp;<span id="details"><?php echo $row["tym"]; ?></span> &emsp;
-      <span id="specs">difficulty level according to user is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["level"]; ?></span> &emsp;
-      <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["datetym"]; ?></span><br>
+      <span id="specs">time required is</span> &nbsp;<span id="details"><?php echo $row["duration"]; ?></span> &emsp;
+      <span id="specs">difficulty category according to user is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["category"]; ?></span> &emsp;
+      <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["created"]; ?></span><br>
       <form method="post" action="delansbyuser.php"><br>
         <input  type="submit"  id="answer_button" value="Delete Answer"/>
         <input type="hidden" name="aid" value="<?php echo $row['aid']; ?>"/>

@@ -1,5 +1,5 @@
 <?php 
-include("essentials/database.php");
+include("essentials/config.php");
 
 $username = $_POST['username'];
 $phone  = $_POST['phone'];

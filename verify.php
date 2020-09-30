@@ -5,7 +5,7 @@ header('location:index.php');}
 ?>
 <?php
 include("adminpanel.php");
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <?php  
  $user = $_POST['user'];
@@ -13,17 +13,17 @@ include("essentials/database.php");
 ?>
 <!DOCTYPE html>
 <html>
-	<link href="forum.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<head>
 		<meta charset="UTF-8">
   <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
+  <meta name="keywords" content="gate,ahampriyanshu,gne,gndec,">
+  <meta name="author" content="ahampriyanshu,ahampriyanshu">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Admin Verify</title>
 		
 	</head>
-	<body background="img/back.jpg">
+	<body >
 	
 		<div class="signinbox" style="position: absolute; top:16%;right:40%;">
 			<center><img class="logocircle" style="padding-top: 5px;" src="img/admin.png"  title="logo" width="210px" height="200px" border="0" /></center><br><br>

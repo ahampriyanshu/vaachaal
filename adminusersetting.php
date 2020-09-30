@@ -5,18 +5,18 @@ header('location:index.php');}
 ?>
 <?php
 include("adminpanel.php");
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
   <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
+  <meta name="keywords" content="gate,ahampriyanshu,gne,gndec,">
+  <meta name="author" content="ahampriyanshu,ahampriyanshu">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin Home</title>
-        <link href="forum.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
         <style type="text/css">
         body{
         background-position:center;
@@ -77,7 +77,7 @@ include("essentials/database.php");
         }
         </style>
     </head>
-    <body background="img/back.jpg">
+    <body >
         <div class="setting_admin" >
             <img class="logocircle" id="set" src="img/setting.png" width="60px" height="60px" border="" style="position: absolute; top:6%; left:15%;" />
             <a id="setopt" class="active"  >Settings</a>

@@ -5,18 +5,18 @@ header('location:index.php');}
 ?>
 <?php
 include("adminpanel.php");
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <!DOCTYPE html>
 <html>
   <head>
   <meta charset="UTF-8">
   <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
+  <meta name="keywords" content="gate,ahampriyanshu,gne,gndec,">
+  <meta name="author" content="ahampriyanshu,ahampriyanshu">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Home</title>
-    <link href="forum.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
     
     body{
@@ -120,9 +120,9 @@ include("essentials/database.php");
  
     </style>
   </head>
-  <body background="img/back.jpg">
+  <body >
     <?php
-    $sql = "SELECT user_id,username,password,name,security,phone,email,datetym FROM userbase";
+    $sql = "SELECT user_id,username,password,name,security,phone,email,created FROM userbase";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) :?>
@@ -152,7 +152,7 @@ include("essentials/database.php");
           </tr>
           <tr>
             <td><span id="specs">Joined</span></td>
-            <td><span id="details"><?php echo $row["datetym"]; ?></span></td>
+            <td><span id="details"><?php echo $row["created"]; ?></span></td>
           </tr>
         </table>
         <div class="setting_admin" >

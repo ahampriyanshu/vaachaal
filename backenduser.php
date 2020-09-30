@@ -1,12 +1,12 @@
 <?php session_start(); ?>
 <?php 
-    if(!isset($_SESSION['loggedin'])){
+    if(!isset($_SESSION["loggedin"])){
     header('location:index.php');}
 ?>
 <?php
-include("essentials/database.php");
+include("essentials/config.php");
 
-        $username = $_SESSION['loggedin'];
+        $username = $_SESSION["loggedin"];
         $password = $_POST['pass'];
         $newuser = $_POST['newuser'];
         
@@ -31,11 +31,11 @@ if ($num2 == 1) {
 else {     
  
 $sql2=mysqli_query($con,"UPDATE userbase SET username = '$newuser' WHERE username='$username'");
-$sql3=mysqli_query($con,"UPDATE questions SET username = '$newuser' WHERE username='$username'");
-$sql3=mysqli_query($con,"UPDATE answers SET username = '$newuser' WHERE username='$username'");
+$sql3=mysqli_query($con,"UPDATE question SET username = '$newuser' WHERE username='$username'");
+$sql3=mysqli_query($con,"UPDATE answer SET username = '$newuser' WHERE username='$username'");
    echo "<script>
     alert('Username successfully changed');
-   document.location='signout.php';
+   document.location='logout.php';
    </script>";
 }
     

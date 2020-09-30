@@ -1,4 +1,4 @@
-<?php include("essentials/database.php"); ?>
+<?php include("essentials/config.php"); ?>
 <?php
 
 $username = $_POST['username'];

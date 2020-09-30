@@ -5,11 +5,11 @@
  $selector = bin2hex(random_bytes(8));
  $token    = random_bytes(32);
 
- $url = "https://lab.gdy.club/~priyanshumay/GATE/createnewpassword.php?selector=".$selector. "&validator=".bin2hex($token);
+ $url = "https://lab.gdy.club/~ahampriyanshu/GATE/createnewpassword.php?selector=".$selector. "&validator=".bin2hex($token);
 
  $expires = date("U") + 1800;
  
- include("essentials/database.php");
+ include("essentials/config.php");
 
  $userEmail = $_POST["email"];
  $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";

@@ -1,12 +1,12 @@
 <?php session_start(); ?>
 <?php 
-    if(!isset($_SESSION['loggedin'])){
+    if(!isset($_SESSION["loggedin"])){
     header('location:index.php');}
 ?>
 <?php
-include("essentials/database.php");
+include("essentials/config.php");
 
-       $username = $_SESSION['loggedin'];
+       $username = $_SESSION["loggedin"];
         $password = $_POST['pass'];
         $newpassword = $_POST['npass'];
         
@@ -23,7 +23,7 @@ if ($num == 1) {
     $sql=mysqli_query($con,"UPDATE userbase SET password = '$newpassword' WHERE username='$username'");
    echo "<script>
     alert('Password successfully changed');
-document.location='signout.php';
+document.location='logout.php';
 </script>";
     
 } else {

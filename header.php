@@ -1,112 +1,74 @@
-<style type="text/css">
-<!--
-.top_bar_header_web{
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-z-index: 5050;
-box-shadow: 0 0 5px #888;
-background-color: #fafafb;
-height: 65px;
-box-sizing: border-box;
-font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-border-bottom: 1px solid lightgrey;
+<?php session_start();
+error_reporting(E_ALL);
+require_once('essentials/config.php');
+date_default_timezone_set('Asia/Kolkata');
+if ($_SESSION["loggedin"]) {
+  $customer = $_SESSION["loggedin"];
+} else {
+  $customer = '0';
 }
-.top_bar_header_mob{
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-z-index: 5050;
-box-shadow: 0 0 5px #888;
-background-color: #fafafb;
-height: 53px;
-box-sizing: border-box;
-font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-border-bottom: 1px solid lightgrey;
-}
-.dropbutton_header {
-background-color: #4CAF50;
-color: white;
-padding: 11px;
-font-size: 12px;
-font-weight: bolder;
-border: none;
-cursor: pointer;
-font-family:'Trebuchet MS', sans-serif;
-border-radius: 5%;
-}
-.addq{
-background-color: #4CAF50;
-color: white;
-padding: 11px;
-font-size: 11px;
-border: none;
-cursor: pointer;
-font-family:'Trebuchet MS', sans-serif;
-border-radius: 5%;
-}
-.addq:hover{
-background-color: #833AB4;
-}
-.dropdown_header {
-position: relative;
-display: inline-block;
-}
-.dropdown_content_header {
-display: none;
-position: absolute;
-background-color: #f1f1f1;
-max-width: 100px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
-}
-.dropdown_content_header a {
-color: black;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-}
-.dropdown_content_header a:hover {background-color: #ddd;}
-.dropdown_header:hover .dropdown_content_header {display: block;}
-.dropdown_header:hover .dropbutton_header {background-color: #833AB4;}
-.show {display: block;}
--->
-</style>
-<script type="text/javascript">
-function redirect() {
-window.location.href = 'login.php';
-};
-</script>
-<div class="top_bar_header_web">
-  <a href="index.php"><img style="position: absolute;top:2%;left:12%;" class="img-topbar" src="img/Topbar.png"  title="college logo" width="230px" height="45px" /></a>
-  <?php
-  if(!isset($_SESSION['loggedin'])){
-  echo "<div style=\"position: absolute; top:12%;right:2%;\" class=\"dropdown_header\">
-    <button class=\"dropbutton_header\">&emsp;&nbsp;Login&nbsp;&emsp;</button>
-    <div class=\"dropdown_content_header\">
-      <a href=\"login.php\">Login</a>
-      <a href=\"signup.php\">SignUp</a>
-      <a href=\"admin.php\">Admin</a>
-    </div>
-  </div>";}
-  else{
-  echo "<div style=\"position: absolute; top:12%;right:2%;\" class=\"dropdown_header\">
-    <button class=\"dropbutton_header\">My Account</button>
-    <div class=\"dropdown_content_header\">
-      <a href=\"dashboard.php\">Dashboard</a>
-      <a href=\"signout.php\">LogOut</a>
-      
-    </div>
-  </div>";}
-  
-  ?>
-  <?php
-  if(!isset($_SESSION['loggedin'])){
-  echo "<button onclick=\"redirect();\" style=\"position: absolute; top:12%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
-  else
-  {
-  echo "<button onclick=\"window.location.href = 'addque.php';\" style=\"position: absolute; top:12%;right:10%;\" class=\"addq\"><b>Ask Question</b></button>";}
-  ?>
-</div>
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Forum for the people,by the people,to the people">
+  <meta name="keywords" content="php7,ahampriyanshu,forum,question,and,answer,gate,jee,mains,advance,clat,cat,aiims,neet,quora,stackoverflow">
+  <meta name="author" content="ahampriyanshu">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.tiny.cloud/1/e98weoopbr4y4i7manqhwxun2tjft1j0herkn8cy9xismktc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.php">Vaachal </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="filter.php">Filter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mostViewed.php">Trending</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mostViewed.php">Feed</a>
+          </li>
+        </ul>
+
+        <form class="form-inline  my-lg-0" action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search" aria-label="Search">
+          <button class=" my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+
+        <?php
+        if (isset($_SESSION["loggedin"])) {
+        ?>
+          <a class="btn btn-success my-2 ml-1" href="addque.php">Ask</a>
+          <a class="btn btn-success my-2 ml-1" href="dashboard.php">My Account</a>
+        <?php } else { ?>
+          <a class="btn btn-success my-2 ml-1" href="login.php">Ask</a>
+          <a class="btn btn-success my-2 ml-1" href="login.php">Login</a>
+        <?php } ?>
+      </div>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/77f6dfd46f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      function redirect() {
+        window.location.href = 'login.php';
+      };
+    </script>

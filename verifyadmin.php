@@ -4,7 +4,7 @@
     header('location:admin.php');}
 ?>
 <?php
-include("essentials/database.php");
+include("essentials/config.php");
 
         $username = $_SESSION['admin'];
         $superpass = $_POST['superpass'];
@@ -25,7 +25,7 @@ if ($num == 1) {
 } else {
     echo "<script>
     alert('Incorrect Password!Login again');
-    document.location='signout.php';
+    document.location='logout.php';
 </script>";  
 }
 

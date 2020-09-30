@@ -1,18 +1,18 @@
 <?php
-include("essentials/database.php");
+include("essentials/config.php");
 ?>
 <!DOCTYPE html>
 <html>
-	<link href="forum.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="description" content="GNDEC GATE FORUM">
-		<meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-		<meta name="author" content="PriyanshuMay,priyanshumay">
+		<meta name="keywords" content="gate,ahampriyanshu,gne,gndec,">
+		<meta name="author" content="ahampriyanshu,ahampriyanshu">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Retrive Your Password</title>
 	</head>
-	<body background="img/back.jpg">
+	<body >
 
 	<?php
 	$selector = $_GET["selector"];

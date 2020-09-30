@@ -4,7 +4,7 @@
     header('location:index.php');}
 ?> 
 <?php 
-          include("essentials/database.php");
+          include("essentials/config.php");
           include("adminpanel.php");
 ?>
 <!DOCTYPE html>
@@ -12,11 +12,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,priyanshumay,gne,gndec,">
-  <meta name="author" content="PriyanshuMay,priyanshumay">
+  <meta name="keywords" content="gate,ahampriyanshu,gne,gndec,">
+  <meta name="author" content="ahampriyanshu,ahampriyanshu">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link href="forum.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
 <style type="text/css">
   body{
     background-color: ;
@@ -53,12 +53,12 @@
 }
 </style>
 </head>
-<body background="img/back.jpg">
+<body >
   <h><b><centre>Question asked by the user</centre></b></h>
   <br><br>
 <?php
 $USR = $_POST['usr'];
-$sql = "SELECT id,content,level,tym,branch,username,datetym FROM questions WHERE username = '$USR'";
+$sql = "SELECT id,content,category,duration,language,username,created FROM question WHERE username = '$USR'";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) 
@@ -66,21 +66,21 @@ if ($result->num_rows > 0)
         <div class="question_box" style="padding-left: 30px;">
             <form >
                 <br><?php echo $row["content"]; ?> <br><br>
-                 Difficulty level estimated is <?php echo $row["level"]; ?>&emsp; 
-                  Time alloted is <?php echo $row["tym"]; ?> &emsp;
-                 Question comes under <?php echo $row["branch"]; ?><br><br>
-                 Posted On <?php echo $row["datetym"]; ?>&emsp;
+                 Difficulty category estimated is <?php echo $row["category"]; ?>&emsp; 
+                  Time alloted is <?php echo $row["duration"]; ?> &emsp;
+                 Question comes under <?php echo $row["language"]; ?><br><br>
+                 Posted On <?php echo $row["created"]; ?>&emsp;
                 <br><br>
             </form>
         </div><br><br>
         <?php 
 endwhile;
      ?>
-     <centre><h><b>Answers given by the user</b></h></centre>
+     <centre><h><b>answer given by the user</b></h></centre>
   <br><br>
 <?php
 $USR = $_POST['usr'];
-$q = "SELECT aid,content,level,tym,datetym FROM answers WHERE username = '$USR'";
+$q = "SELECT aid,content,category,duration,created FROM answer WHERE username = '$USR'";
 $res = $con->query($q);
 
 if ($res->num_rows > 0) 
@@ -88,9 +88,9 @@ if ($res->num_rows > 0)
         <div class="question_box" style="padding-left: 30px;">
             <form >
                 <br><?php echo $ro["content"]; ?><br><br> 
-                 Difficulty level estimated is <?php echo $ro["level"]; ?> &emsp;
-                  Time taken  <?php echo $ro["tym"]; ?><br><br>
-                 Posted On <?php echo $ro["datetym"]; ?>&emsp;
+                 Difficulty category estimated is <?php echo $ro["category"]; ?> &emsp;
+                  Time taken  <?php echo $ro["duration"]; ?><br><br>
+                 Posted On <?php echo $ro["created"]; ?>&emsp;
                 <br><br>
             </form>
         </div><br><br>

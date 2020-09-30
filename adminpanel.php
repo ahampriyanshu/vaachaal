@@ -96,7 +96,7 @@ window.location.href = 'index.php';
   <button class=\"dropbutton\">&emsp;Admin&emsp;</button>
   <div id=\"mydropd\" class=\"dropd-content\">
     <a href=\"index.php\">SignIn</a>
-    <a href=\"signup.php\">SignUp</a>
+    <a href=\"register.php\">SignUp</a>
   </div>
 </div>";
   }
@@ -104,7 +104,7 @@ window.location.href = 'index.php';
   <button class=\"dropbutton\">&emsp;Admin&emsp;</button>
   <div id=\"mydropd\" class=\"dropd-content\">
     <a href=\"adminhome.php\">Home</a>
-    <a href=\"signout.php\">LogOut</a>
+    <a href=\"logout.php\">LogOut</a>
   </div>
 </div>"; }
     
