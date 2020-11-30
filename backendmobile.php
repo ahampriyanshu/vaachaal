@@ -10,15 +10,15 @@ include("essentials/config.php");
        $password = $_POST['pass'];
        $newpassword = $_POST['newmob'];
         
-$sql = "INSERT INTO userbase (username,password) VALUES ('$username','$password') ";
-$q = "select * from userbase where username = '$username' && password = '$password' ";
+$sql = "INSERT INTO user (username,password) VALUES ('$username','$password') ";
+$q = "select * from user where username = '$username' && password = '$password' ";
 
 $result = mysqli_query($con,$q);
 $num = mysqli_num_rows($result);
 
 if ($num == 1) {
 
-    $sql=mysqli_query($con,"UPDATE userbase SET phone = '$newmob' WHERE username='$username'");
+    $sql=mysqli_query($con,"UPDATE user SET phone = '$newmob' WHERE username='$username'");
    echo "<script>
     alert('Mobile number successfully changed');
 document.location='home.php';

@@ -5,10 +5,10 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 global $username;
 
-$sql = "INSERT INTO userbase (username,password)
+$sql = "INSERT INTO user (username,password)
 VALUES ('$username', '$password')";
 
-$q = "select * from userbase where login = '$username' && pass = '$password'";
+$q = "select * from user where login = '$username' && pass = '$password'";
 
 $result = mysqli_query($con,$q);
 

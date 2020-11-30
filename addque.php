@@ -3,8 +3,8 @@ if (!isset($_SESSION["loggedin"])) {
   header('location:index.php');
 }
 ?>
+<script src="//cdn.ckeditor.com/4.15.1/full/ckeditor.js"></script>
 <div class="col-lg-12 text-center">
-
 <div class="col-lg-9 mx-auto my-4 text-center">
          <h2><span class="badge badge-light"><i class="fa fa-plus-square mr-2"></i>Add New Question</span></h2>
       </div>
@@ -12,25 +12,37 @@ if (!isset($_SESSION["loggedin"])) {
       <form name="addform" action="postque.php" method="POST">
         <input type="hidden" name="qid" value="<?php echo $id; ?>">
         <div class="container my-4">
-        <textarea name="content" cols="80" rows="15" required>
-    Make sure you question is precise and to the point.
-  </textarea>
+        <textarea name="content" required>  </textarea>
+        <script>
+        CKEDITOR.replace( 'content' );
+        </script>
         </div>
 
         <div class="container my-4">
           <div class="row">
             <div class="col-sm m-2">
               <select name="category" class="custom-select">
-                <option value="IT">IT</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
+                <option value="Tech">Tech</option>
+                <option value="Literature">Literature</option>
+                <option value="Web">Web</option>
+                <option value="Political">Political</option>
+                <option value="Maths">Maths</option>
+                <option value="Science">Science</option>
+                <option value="Histoy">Histoy</option>
+                <option value="Geography">Geography</option>
+                <option value="Economics">Economics</option>
+                <option value="Misc">Misc</option>
               </select>
             </div>
             <div class="col-sm m-2">
               <select name="language" class="custom-select">
-                <option value="Low">English</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
+                <option value="English">English</option>
+                <option value="हिन्दी">हिन्दी</option>
+                <option value="తెలుగు">తెలుగు</option>
+                <option value="தமிழ்">தமிழ்</option>
+                <option value="ಕನ್ನಡ">ಕನ್ನಡ</option>
+                <option value="ਪੰਜਾਬੀ">ਪੰਜਾਬੀ</option>
+                <option value="বাংলা">বাংলা</option>  
               </select>
             </div>
             <div class="col-sm m-2">
@@ -88,14 +100,4 @@ if (!isset($_SESSION["loggedin"])) {
     </form>
   </div> -->
 </body>
-<script>
-    tinymce.init({
-      selector: 'textarea',
-      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
-      toolbar_mode: 'floating',
-      tinycomments_mode: 'embedded',
-      tinycomments_author: 'Author name',
-    });
-  </script>
 </html>

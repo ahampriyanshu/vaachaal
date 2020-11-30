@@ -20,7 +20,6 @@ if ($_SESSION["loggedin"]) {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet" type="text/css">
-  <script src="https://cdn.tiny.cloud/1/e98weoopbr4y4i7manqhwxun2tjft1j0herkn8cy9xismktc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body>

@@ -122,7 +122,7 @@ include("essentials/config.php");
   </head>
   <body >
     <?php
-    $sql = "SELECT user_id,username,password,name,security,phone,email,created FROM userbase";
+    $sql = "SELECT user_id,username,password,name,security,phone,email,created FROM user";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) :?>

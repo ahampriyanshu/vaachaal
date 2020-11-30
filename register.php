@@ -12,10 +12,10 @@ $sendEmail  = new sendEmail;
 if (isset($_POST['submit'])) {
 
   $validation->validate('name', 'Full Name', 'required');
-  $validation->validate('username', 'Username', 'uniqueEmail|userbase|required');
-  $validation->validate('email', 'Email', 'uniqueEmail|userbase|required');
+  $validation->validate('username', 'Username', 'uniqueEmail|user|required');
+  $validation->validate('email', 'Email', 'uniqueEmail|user|required');
   $validation->validate('password', 'Password', 'required|min_len|6');
-  $validation->validate('phone', 'Phone', 'uniqueEmail|userbase|required');
+  $validation->validate('phone', 'Phone', 'uniqueEmail|user|required');
 
   if ($validation->run()) {
 
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
     transition-duration: 0.4s;"
     href="' . $url . '">Verify Email</a></p><p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
 
-    $run = mysqli_query($con, "INSERT INTO userbase (username,password,name,phone,email,code,status,created,last_login) VALUES
+    $run = mysqli_query($con, "INSERT INTO user (username,password,name,phone,email,code,status,created,last_login) VALUES
     ('$username','$password','$name', '$phone','$email', '$code', '$status', '$date','$date')");
 
     if ($run) {

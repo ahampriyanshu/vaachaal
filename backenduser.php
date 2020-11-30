@@ -10,16 +10,16 @@ include("essentials/config.php");
         $password = $_POST['pass'];
         $newuser = $_POST['newuser'];
         
-$sql = "INSERT INTO userbase (password,username)
+$sql = "INSERT INTO user (password,username)
 VALUES ('$password','$username')";
 
-$q1 = "select * from userbase where username = '$username' && password = '$password' ";
+$q1 = "select * from user where username = '$username' && password = '$password' ";
 
 $result1 = mysqli_query($con,$q1);
 $num1 = mysqli_num_rows($result1);
 
 if ($num1 == 1) {
-    $q2 = "select * from userbase where username = '$newuser'";
+    $q2 = "select * from user where username = '$newuser'";
 $result2 = mysqli_query($con,$q2);
 $num2 = mysqli_num_rows($result2);
 if ($num2 == 1) {
@@ -30,7 +30,7 @@ if ($num2 == 1) {
 } 
 else {     
  
-$sql2=mysqli_query($con,"UPDATE userbase SET username = '$newuser' WHERE username='$username'");
+$sql2=mysqli_query($con,"UPDATE user SET username = '$newuser' WHERE username='$username'");
 $sql3=mysqli_query($con,"UPDATE question SET username = '$newuser' WHERE username='$username'");
 $sql3=mysqli_query($con,"UPDATE answer SET username = '$newuser' WHERE username='$username'");
    echo "<script>
