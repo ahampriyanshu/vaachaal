@@ -32,7 +32,7 @@ $con->query("UPDATE question SET views = views + '1' WHERE id = " . $id);
           </span></p>
         <p class="text-center"><span class="badge badge-light"> Tags</span>
           <span class="badge badge-info"><?php echo $row["language"]; ?> </span>
-          <span class="badge badge-warning"><?php echo $row["category"]; ?></span>
+          <span class="badge badge-light"><?php echo $row["category"]; ?></span>
           <span class="badge badge-secondary"><?php echo $row["duration"]; ?></span>
         </p>
       </div>

@@ -32,15 +32,9 @@ if (!isset($_SESSION["loggedin"])) {
       <a href="deletebyuser.php" class="m-2 btn btn-sm btn-info">
         <i class="fas fa-bell mr-2"></i> <b>Deactivate Account</b></a>
     </div>
-    <div class="col-lg-12 mx-auto mt-5">
-      <div class="table-responsive">
-        <table class='table table-borderless text-center'>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>PRODUCT</th>
-            </tr>
-          </thead>
+    <div class="col-lg-6 mx-auto mt-5">
+      <div class="table-responsive mx-auto">
+        <table class='table table-borderless'>
           <tbody>
             <?php
             $username = $_SESSION["loggedin"];
