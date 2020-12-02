@@ -21,6 +21,6 @@ document.location='logout.php';
 } else {
     echo "<script>
     alert('Incorrect password! Please try again');
-    document.location='deletebyuser.php';
+    document.location='delAccount.php';
 </script>";  
 }

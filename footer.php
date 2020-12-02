@@ -44,7 +44,7 @@
       <div class="col-md-5 col-lg-4">
 
 
-        <p class="text-center text-md-right">MIT Licensed @
+        <p class="text-center text-dark text-md-right">MIT Licensed @
           <a href="https://github.com/ahampriyanshu">
             ahampriyanshu
           </a>
@@ -59,12 +59,12 @@
 
 
 </footer>
-
+</div>
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/77f6dfd46f.js" crossorigin="anonymous"></script>
+<script src="js/icons.js"></script>
 <script type="text/javascript">
   function redirect() {
     window.location.href = 'login.php';

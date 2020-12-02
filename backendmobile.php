@@ -27,7 +27,7 @@ document.location='home.php';
 } else {
     echo "<script>
     alert('Incorrect password! Please try again');
-    document.location='changemobile.php';
+    document.location='updateMobile.php';
 </script>";  
 }
 ?>

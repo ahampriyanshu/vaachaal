@@ -21,13 +21,13 @@ if ($num == 1) {
     $sql=mysqli_query($con,"DELETE FROM question WHERE id='$id'");
    echo "<script>
     alert('Question successfully deleted');
-document.location='viewque.php';
+document.location='delQuestion.php';
 </script>";
     
 } else {
     echo "<script>
     alert('Some error occured! Please try again');
-    document.location='viewque.php';
+    document.location='delQuestion.php';
 </script>";  
 }
 

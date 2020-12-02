@@ -21,13 +21,13 @@ if ($num == 1) {
     $sql=mysqli_query($con,"DELETE FROM answer WHERE aid='$aid'");
    echo "<script>
     alert('Answer successfully deleted');
-document.location='viewans.php';
+document.location='delAnswer.php';
 </script>";
     
 } else {
     echo "<script>
     alert('Some error occured! Please try again');
-    document.location='viewans.php';
+    document.location='delAnswer.php';
 </script>";  
 }
 

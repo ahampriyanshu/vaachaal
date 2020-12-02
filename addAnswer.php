@@ -31,7 +31,7 @@ if (!$ID) {
       endwhile;
     ?>
     <div class="col-lg-12 text-center">
-      <form name="addform" action="postans.php" method="POST">
+      <form name="addform" action="postAnswer.php" method="POST">
         <input type="hidden" name="qid" value="<?php echo $ID; ?>">
         <div class="justify-content-center">
         <textarea name="content" cols="100" rows="10" required>

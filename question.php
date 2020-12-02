@@ -41,7 +41,7 @@ $con->query("UPDATE question SET views = views + '1' WHERE id = " . $id);
     ?>
     <script src="//cdn.ckeditor.com/4.15.1/full/ckeditor.js"></script>
     <div class="col-lg-12 text-center">
-      <form name="addform" action="postans.php" method="POST">
+      <form name="addform" action="postAnswer.php" method="POST">
         <input type="hidden" name="qid" value="<?php echo $id; ?>">
         <div class="justify-content-center">
           <textarea name="content" required>  </textarea>

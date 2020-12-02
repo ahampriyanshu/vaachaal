@@ -25,7 +25,7 @@ $num2 = mysqli_num_rows($result2);
 if ($num2 == 1) {
     echo "<script>
     alert('Username already taken');
-    document.location='changeusername.php';
+    document.location='updateUsername.php';
 </script>";
 } 
 else {     
@@ -42,7 +42,7 @@ $sql3=mysqli_query($con,"UPDATE answer SET username = '$newuser' WHERE username=
 } else {
     echo "<script>
     alert('Incorrect Password! Please try again');
-    document.location='changeusername.php';
+    document.location='updateUsername.php';
 </script>";  
         
     

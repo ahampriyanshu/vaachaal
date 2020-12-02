@@ -25,7 +25,7 @@ header('location:index.php');
 }
 else
 {
-	header('location:addque.php');
+	header('location:addQuestion.php');
 echo "<script>alert('SORRY,some error occured!Please try again');</script>";
 }
 }
