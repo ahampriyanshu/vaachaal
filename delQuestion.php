@@ -30,71 +30,88 @@ if (!isset($_SESSION["loggedin"])) {
     </div>
 
     <div class="col-lg-12 mx-auto mt-5">
-                    <div class="table-responsive">
-                        <table class='table table-borderless text-center'>
-                            <thead>
-                                <tr>
-                                   
-                                    <th id="CONTENT" >CONTENT</th>
-                                    <th id="CATEGORY" >CATEGORY</th>
-                                    <th id="LANG" >LANG</th>
-                                    <th id="DURATION" >DURATION</th>
-                                    <th id="TIME" >TIME</th>
-                                    <th id="DELETE" >DELETE</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
+      <div class="table-responsive">
+        <table class='table table-borderless text-center'>
+          <thead>
+            <tr>
 
-$per_page = 12;
+              <th id="CONTENT">CONTENT</th>
+              <th id="CATEGORY">CATEGORY</th>
+              <th id="LANG">LANG</th>
+              <th id="DURATION">DURATION</th>
+              <th id="TIME">TIME</th>
+              <th id="DELETE">DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
 
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-} else {
-    $page = 1;
-}
+            $per_page = 12;
 
-$start_from = ($page-1) * $per_page;
+            if (isset($_GET['page'])) {
+              $page = $_GET['page'];
+            } else {
+              $page = 1;
+            }
 
-$username = $_SESSION["loggedin"];
-$query = "SELECT * FROM question WHERE username = '$username' ORDER BY created DESC LIMIT $start_from, $per_page";
-$result = $con->query($query);
-  if ($result->num_rows > 0) { 
-    while ($row = $result->fetch_assoc()) :
-                                ?>
+            $start_from = ($page - 1) * $per_page;
 
-                                    <tr>
-                                        
-                                        <td>
-                                            <span class="badge  badge-light"><?php echo $row['content'] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="badge  badge-light"><?php echo $row['category'] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="badge  badge-light"><?php echo $row['language'] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="badge  badge-light">&#x20B9;&nbsp;<?php echo $row['duration'] ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="badge  badge-light"><?php echo $row['created'] ?></span>
-                                        </td>
-                            
-                                        <td>
-                                        <form method="post" action="delquebyuser.php"><br>
-        <input type="submit" id="answer_button" value="Delete" >
-        <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
-      </form>
-                                        </td>
-                                    </tr>
-                                    <?php endwhile;
+            $username = $_SESSION["loggedin"];
+            $query = "SELECT * FROM question WHERE username = '$username' ORDER BY created DESC LIMIT $start_from, $per_page";
+            $result = $con->query($query);
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) :
+            ?>
+
+                <tr>
+
+                  <td>
+                    <span class="text-left badge  badge-light"><?php echo  mb_strimwidth($row["content"], 0, 40, "..."); ?></span>
+                  </td>
+                  <td>
+                    <span class="badge  badge-light"><?php echo $row['category'] ?></span>
+                  </td>
+                  <td>
+                    <span class="badge  badge-light"><?php echo $row['language'] ?></span>
+                  </td>
+                  <td>
+                    <span class="badge  badge-light"><?php echo $row['duration'] ?></span>
+                  </td>
+                  <td>
+                    <span class="badge  badge-light"><?php echo $row['created'] ?></span>
+                  </td>
+
+
+                  <form method="post" action="delquebyuser.php">
+                    <td>
+                      <input class="btn btn-danger btn-sm" type="submit" id="answer_button" value="Delete" />
+                    </td>
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                  </form>
+
+                </tr>
+            <?php endwhile;
             } ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+          </tbody>
+        </table>
+      </div>
 
+      <?php
+$query = "SELECT * FROM question WHERE username = '$username' ORDER BY created DESC";
+$result = mysqli_query($con, $query);
+$total_posts = mysqli_num_rows($result);
+$total_pages = ceil($total_posts / $per_page);
+$page_url = $_SERVER['PHP_SELF'];
+echo "<div class='text-center'><div class='pagination justify-content-center'><a href ='$page_url?page=1'>First</a>";
+for ($i = 1; $i <= $total_pages; $i++) : ?>
+<a class="<?php if ($page == $i) 
+{ echo 'active'; } ?>" href="<?php echo $page_url ?>?page=<?= $i; ?>"> <?= $i; ?> </a>
+<?php endfor;
+echo "<a href='$page_url?page=$total_pages'>Last</a></div></div>";
+?>
+
+    </div>
+    
   </div>
 </div>
 <?php include("footer.php"); ?>

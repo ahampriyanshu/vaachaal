@@ -30,7 +30,6 @@ if (isset($_POST['submit'])) {
     $url      = "http://" . $_SERVER['SERVER_NAME'] . "/vaachal/verifyEmail.php?confirmation=" . $code;
     $url2     = "http://" . $_SERVER['SERVER_NAME'] . "/vaachal/contact.php";
     $status   = 0;
-    date_default_timezone_set('Asia/Kolkata');
     $date = date('m/d/Y h:i:s', time());
     $subject  = 'Please confirm your Email';
     $body = '<p style="color:#66FCF1; font-size: 32px;" > Hi ' . $name . '</p><p  style="color:grey; font-size: 16px;" > You are almost done.Click below to verify your email address</p> 
@@ -49,7 +48,7 @@ if (isset($_POST['submit'])) {
     href="' . $url . '">Verify Email</a></p><p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
 
     $run = mysqli_query($con, "INSERT INTO user (username,password,name,phone,email,code,status,created,last_login) VALUES
-    ('$username','$password','$name', '$phone','$email', '$code', '$status', '$date','$date')");
+    ('$username','$password','$name', '$phone','$email', '$code', '$status', 'now()','now()')");
 
     if ($run) {
       $sendEmail->send($name, $email, $subject, $body);

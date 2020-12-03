@@ -2,27 +2,26 @@
 if (!isset($_SESSION["loggedin"])) {
   header('location: login.php');
 }
-$id = $_GET['id'];
-if (!$id) {
+$qid = $_GET['id'];
+if (!$qid) {
   echo "<script>
     document.location='index.php';
     </script>";
 }
-$find_data = "SELECT * FROM question WHERE id = '$id'";
+$find_data = "SELECT * FROM question WHERE id = '$qid'";
 $found_data = $con->query($find_data);
 $array = $found_data->fetch_assoc();
 $username = $array['username'];
 $duration = $array['duration'];
 $category = $array['category'];
 $language = $array['language'];
-$date = date('m/d/Y h:i:s', time());
-$con->query("INSERT INTO history ( id, username, category, language, duration, created) VALUES ('$id', '$username', '$category', '$language ','$duration', '$date')");
-$con->query("UPDATE question SET views = views + '1' WHERE id = " . $id);
+$con->query("INSERT INTO history ( id, username, category, language, duration, created) VALUES ('$qid', '$username', '$category', '$language ','$duration', 'now()')");
+$con->query("UPDATE question SET views = views + '1' WHERE id = " . $qid);
 ?>
 <div class="container">
   <div class="col-lg-12 my-4">
     <?php
-    $sql = "SELECT id,content,category,duration,language,username,created FROM question WHERE id = '$id'";
+    $sql = "SELECT id,content,category,duration,language,username,created FROM question WHERE id = '$qid'";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
      { while ($row = $result->fetch_assoc()) : ?>
@@ -42,7 +41,7 @@ $con->query("UPDATE question SET views = views + '1' WHERE id = " . $id);
     <script src="//cdn.ckeditor.com/4.15.1/full/ckeditor.js"></script>
     <div class="col-lg-12 text-center">
       <form name="addform" action="postAnswer.php" method="POST">
-        <input type="hidden" name="qid" value="<?php echo $id; ?>">
+        <input type="hidden" name="qid" value="<?php echo $qid; ?>">
         <div class="justify-content-center">
           <textarea name="content" required>  </textarea>
           <script>
@@ -53,20 +52,6 @@ $con->query("UPDATE question SET views = views + '1' WHERE id = " . $id);
 
     <div class="container my-4">
       <div class="row">
-        <div class="col-sm">
-          <select name="category" class="custom-select">
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-          </select>
-        </div>
-        <div class="col-sm">
-          <select name="duration" class="custom-select">
-            <option value="0-2 min">0-2 Min</option>
-            <option value="2-5 Min">2-5 Min</option>
-            <option value="5-10 Min">5-10 Min</option>
-          </select>
-        </div>
         <div class="col-sm">
           <button type="submit" name="submit" class="btn btn-success">Post Your Answer</button>
         </div>

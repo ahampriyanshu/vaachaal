@@ -122,7 +122,7 @@ include("essentials/config.php");
   </head>
   <body >
     <?php
-    $sql = "SELECT user_id,username,password,name,security,phone,email,created FROM user";
+    $sql = "SELECT uid,username,password,name,security,phone,email,created FROM user";
     $result = $con->query($sql);
     if ($result->num_rows > 0)
     while($row = $result->fetch_assoc()) :?>
@@ -132,7 +132,7 @@ include("essentials/config.php");
         <table id="table" border="0px" cellpadding="6px" cellspacing="0">
           <tr>
             <td><span id="specs">User ID</span></td>
-            <td><span id="details"><?php echo $row["user_id"]; ?></span></td>
+            <td><span id="details"><?php echo $row["uid"]; ?></span></td>
           </tr>
           <tr>
             <td><span id="specs">Username</span></td>
