@@ -32,5 +32,4 @@ include("essentials/config.php");
 			}
 			?><br><br>
 		</div>
-	</body>
-</html>
+	<?php include("footer.php"); ?>

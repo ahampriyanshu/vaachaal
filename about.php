@@ -44,5 +44,4 @@
       <img class=\"img-circle\" style=\"position: absolute; bottom:2%;left:5%;\" src=\"img/PSU.png\"  width=\"750px\" height=\"220px\" />
     </div>";
 ?>
-</body>
-</html>
+<?php include("footer.php"); ?>

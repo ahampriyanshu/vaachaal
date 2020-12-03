@@ -35,5 +35,4 @@ include("essentials/config.php");
 	<tr><th><button class="submit2" type="submit">Change Mobile </button></th></tr><br><br><br>
 	</form></center>
 </div>
-</body>
-</html>
+<?php include("footer.php"); ?>

@@ -19,14 +19,14 @@ if ($_SESSION["loggedin"]) {
   <title>Home</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="bg-light">
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.php">Vaachal</a>
+      <a style="font-weight: bolder; font-size:2em" class="navbar-brand" href="index.php">Vaachal</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,7 +41,7 @@ if ($_SESSION["loggedin"]) {
           </li>
         </ul>
 
-        <form class="form-inline  my-lg-0" action="/action_page.php">
+        <form class="form-inline my-lg-0" action="/action_page.php">
           <input type="text" placeholder="Search.." name="search" aria-label="Search">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>

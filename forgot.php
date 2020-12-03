@@ -51,5 +51,4 @@ include("essentials/config.php");
 					<tr><th><b><button class="submit2" name="submit" type="submit">Change Password</button></b></th></tr><br><br>
 				</form></center>
 			</div>
-		</body>
-	</html>
+<?php include("footer.php"); ?>

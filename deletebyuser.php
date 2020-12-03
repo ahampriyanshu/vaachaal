@@ -33,5 +33,4 @@ include("essentials/config.php");
 					<tr><th><button class="submit2" type="submit">Delete Account</button></th></tr></table><br><br>
 				</form></center>
 			</div>
-		</body>
-	</html>
+<?php include("footer.php"); ?>

@@ -46,5 +46,4 @@ if(document.passform.cpass.value!=document.passform.npass.value)
 	<tr><th><button class="submit2" type="submit">Change Username</button></th></tr><br><br><br>
 	</form></center>
 </div>
-</body>
-</html>
+<?php include("footer.php"); ?>

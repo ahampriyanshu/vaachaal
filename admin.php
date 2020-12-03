@@ -53,17 +53,8 @@ if(isset($submit))
   }
 }
 ?>
-    <div class="abt" style="position: absolute; top:12%;left:5%; ">
-      <img  id="bulb" src="img/bulb_on.png"   alt="logo"  width="500px"   height="500px;" 
-      onmouseover="this.src='img/bulb_on.png';"  onmouseout="this.src='img/bulb_off.png';" style="position:relative; top:-11%; left:21% ;  border="" />
-      <img class=' tech_used ' src='img/php.png'  style="position:absolute; left:13% ; bottom:3%; " title="logo" width="75px" height="60px" border="" />
-      <img class=" tech_used" src="img/css.png"  style="position:absolute; left:32% ; bottom:3%; " title="logo" width="50px" height="60px" border="" />
-      <img class=" tech_used" src="img/mysql.png"  style="position:absolute; left:47% ; bottom:3%; " title="logo" width="60px" height="60px" border="" />
-      <img class=" tech_used" src="img/html.png"  style="position:absolute; left:62% ; bottom:3%; " title="logo" width="60px" height="60px" border="" />
-      <img class=" tech_used" src="img/js.png"  style="position:absolute; left:77% ; bottom:3%; " title="logo" width="60px" height="60px" border="" />
-    </div>
   <div class="signinbox" style="position: absolute; top:16%;right:5%;">
-    <table align="center" border="0" WIDTH="80%" height="250">
+    <table>
 	 <form method="post" name="login_form" action="" >
 	<center><img class="logocircle" src="img/1.png"  title="logo" width="210px" height="200px" border="1" /></center>
 	<tr>
@@ -91,5 +82,4 @@ if(isset($submit))
 	</tr>
 </table>
   </div>
-</body>
-</html>
+<?php include("footer.php"); ?>

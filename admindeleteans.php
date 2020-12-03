@@ -107,5 +107,4 @@ include("essentials/config.php");
     <?php
     endwhile;
     ?>
-  </body>
-</html>
+  <?php include("footer.php"); ?>

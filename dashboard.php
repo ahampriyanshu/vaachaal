@@ -19,11 +19,6 @@ if (!isset($_SESSION["loggedin"])) {
       <a href="delAnswer.php" class="m-2 btn btn-sm btn-warning">
         <i class="far fa-trash-alt mr-2"></i><b>Delete Answer</b></a>
 
-      <a href="updateUsername.php" class="m-2 btn btn-sm btn-info">
-        <i class="fa fa-wrench mr-2"></i> <b>Change Username</b></a>
-
-      <a href="updateMobile.php" class="m-2 btn btn-sm btn-info">
-        <i class="fa fa-wrench mr-2"></i> <b>Change Mobile</b></a>
 
       <a href="delAccount.php" class="m-2 btn btn-sm btn-danger">
         <i class="far fa-trash-alt mr-2"></i> <b>Deactivate Account</b></a>
@@ -57,6 +52,10 @@ if (!isset($_SESSION["loggedin"])) {
                 <tr>
                   <td><span class="badge badge-light">Created</span></td>
                   <td><span class="badge badge-light"><?php echo $row["created"]; ?></span></td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-light">Last login</span></td>
+                  <td><span class="badge badge-light"><?php echo $row["last_login"]; ?></span></td>
                 </tr>
             <?php endwhile;
             } ?>

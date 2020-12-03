@@ -19,11 +19,6 @@ if (!isset($_SESSION["loggedin"])) {
       <a href="delAnswer.php" class="m-2 btn btn-sm btn-warning">
         <i class="far fa-trash-alt mr-2"></i><b>Delete Answer</b></a>
 
-      <a href="updateUsername.php" class="m-2 btn btn-sm btn-info">
-        <i class="fa fa-wrench mr-2"></i> <b>Change Username</b></a>
-
-      <a href="updateMobile.php" class="m-2 btn btn-sm btn-info">
-        <i class="fa fa-wrench mr-2"></i> <b>Change Mobile</b></a>
 
       <a href="delAccount.php" class="m-2 btn btn-sm btn-danger">
         <i class="far fa-trash-alt mr-2"></i> <b>Deactivate Account</b></a>

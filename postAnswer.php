@@ -16,7 +16,7 @@ $sql = "INSERT INTO answer (id,content,username,created) VALUES ('$qid','$conten
 
 if ( $con -> query ($sql) === TRUE)
 {
-header('location:index.php');
+header('location:addAnswer.php?id='.$qid);
 }
 else
 {

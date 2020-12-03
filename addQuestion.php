@@ -3,7 +3,7 @@ if (!isset($_SESSION["loggedin"])) {
   header('location:index.php');
 }
 ?>
-<script src="//cdn.ckeditor.com/4.15.1/full/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 <div class="col-lg-9 mx-auto text-center">
   <div class="my-4 text-center">
     <h2><span class="badge badge-dark"><i class="fa fa-plus-square mr-2"></i>Add New Question</span></h2>

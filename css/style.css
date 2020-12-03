@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -105,7 +105,8 @@ a {
   
   text-align: left;
   font-size: 25px;
-  color: gray;
+  color: black;
+  font-weight: bold;
   }
   .active, .questionDiv:hover {
 
