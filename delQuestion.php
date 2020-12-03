@@ -7,7 +7,7 @@ if (!isset($_SESSION["loggedin"])) {
 <div class="container">
   <div class="row">
     <div class="col-lg-9 mx-auto my-4 text-center">
-      <h2><span class="badge badge-dark">Manage Account</span></h2>
+      <h2><span class="badge badge-dark">Manage Question</span></h2>
     </div>
     <div class="mx-auto text-center">
       <a href="addQuestion.php" class="m-2 btn btn-sm btn-success">
