@@ -1,4 +1,4 @@
-<footer class="page-footer font-small mdb-color pt-4 fixed-bottom">
+<footer class="page-footer font-small mdb-color pt-4">
 
   <div class="container text-center text-md-left">
 
@@ -6,7 +6,6 @@
     <div class="row d-flex align-items-center">
 
       <div class="col-md-7 col-lg-8 ml-lg-0">
-
 
         <div class="text-center text-md-left">
           <ul class="list-unstyled list-inline">

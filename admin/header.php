@@ -25,5 +25,4 @@ date_default_timezone_set('Asia/Kolkata');
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a style="font-weight: bolder; font-size:2em" class="navbar-brand" href="index.php">Admin</a>
-      <a class="btn btn-success my-2 ml-1" href="logout.php">Logout</a>
     </nav>

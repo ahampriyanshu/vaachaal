@@ -2,7 +2,7 @@
 ?>
 <div class="col-md-8 col-sm-6 mx-auto">
     <?php
-    $sql = "SELECT * FROM question ORDER BY views DESC ";
+    $sql = "SELECT * FROM question ORDER BY views DESC LIMIT 0,12 ";
     $result = $con->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) : ?>
@@ -26,6 +26,10 @@
             </div>
     <?php endwhile;
     }
+else 
+{
+   echo '<h1 style="height:100vh;" class="text-center mt-5 mx-auto" >No results were found</h1>';
+}
     ?>
 </div>
 <?php include("footer.php"); ?>

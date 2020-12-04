@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('../essentials/config.php');
-if (isset($_SESSION["loggedin"])) : {
+if (isset($_SESSION["admin"])) : {
     header("location: index.php");
   }
 endif;
@@ -26,20 +26,20 @@ endif;
       <div class="row">
         <div class="col-lg-12 login-section-wrapper">
           <div class="brand-wrapper">
-          <img src="../img/logo.png" alt="logo" class="logo">
+            <img src="../img/logo.png" alt="logo" class="logo">
           </div>
 
           <?php
           extract($_POST);
-
           if (isset($submit)) {
-            $rs = mysqli_query($con, "select * from admin where login_id ='$username' and password='$password'");
+            $rs = mysqli_query($con, "SELECT * FROM admin WHERE admin ='$username' and password='$password'");
+            echo mysqli_error($con);
             if (mysqli_num_rows($rs) < 1) {
-              $found = "N";
+              $found = TRUE;
             } else {
               session_start();
               $_SESSION["admin"] = $username;
-              header('location:index.php');
+              header("location: index.php");
             }
           }
           ?>

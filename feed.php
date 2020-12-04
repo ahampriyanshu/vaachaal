@@ -32,10 +32,15 @@ if ($result === FALSE) {
                 </div>
             </a>
 
-        <?php } endwhile; ?>
+        <?php 
+    } else 
+    {
+       echo '<h1 style="height:100vh;" class="text-center mt-5 mx-auto" >No results were found</h1>';
+    } endwhile; ?>
 
     </div>
 
-<?php } ?>
+<?php }
+ ?>
 
 <?php include("footer.php"); ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('essentials/config.php');
-include "dbConfig.php";
+include "loadClass.php";
 if (isset($_SESSION['email'])) : {
     header("location: index.php");
   }
@@ -20,8 +20,8 @@ if (isset($_POST['submit'])) {
     $fullName = "User";
     $code     = rand();
     $code     = password_hash($code, PASSWORD_DEFAULT);
-    $url      = "https://" . $_SERVER['SERVER_NAME'] . "/aanav/verifyPassword.php?code=" . $code;
-    $url2     = "https://" . $_SERVER['SERVER_NAME'] . "/aanav/contact.php";
+    $url      = "https://" . $_SERVER['SERVER_NAME'] . "/vaachal/verifyPassword.php?code=" . $code;
+    $url2     = "https://ahampriyanshu.github.com";
     $status   = 0;
     $subject  = 'Please verify it is you';
     $body = '<p style="color:#66FCF1; font-size: 32px;" > Hi ' . $fullName . '</p><p  style="color:grey; font-size: 16px;" > You are almost done.Click below to set a new password</p> 
@@ -39,13 +39,12 @@ if (isset($_POST['submit'])) {
     transition-duration: 0.4s;"
     href="' . $url . '">Change Password</a></p><p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
 
-    $result = mysqli_query($connect, "UPDATE customer SET code='$code' WHERE email = '$email' AND status<=1 ");
+    $result = mysqli_query($con, "UPDATE user SET code='$code' WHERE email = '$email' AND status<=1 ");
 
     if ($result) {
-      if ($sendEmail->send($fullName, $email, $subject, $body)) {
+        $sendEmail->send($fullName, $email, $subject, $body);
         $_SESSION['accountCreated'] = " Please check your inbox to set new password";
         header("location: login.php");
-      }
     } else {
       $_SESSION['notActive'] = "Account doesn't exist";
       header("location: login.php");
@@ -74,9 +73,6 @@ if (isset($_POST['submit'])) {
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-6 login-section-wrapper">
-          <div class="brand-wrapper">
-            <img src="img/logo_nav.png" alt="logo" class="logo">
-          </div>
           <div class="login-wrapper my-auto">
             <h1 class="login-title">Hi there</h1>
             <form name="signupform" method="post">
@@ -91,7 +87,7 @@ if (isset($_POST['submit'])) {
 
               <input name="submit" id="login" class="btn btn-block login-btn" type="submit" value="Change Password">
             </form>
-            <p class="login-wrapper-footer-text">Already a customer&emsp;<a href="login.php" class="text-reset">Welcome Back</a></p>
+            <p class="login-wrapper-footer-text">Already a user&emsp;<a href="login.php" class="text-reset">Welcome Back</a></p>
           </div>
         </div>
       </div>

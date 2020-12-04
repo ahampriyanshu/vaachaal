@@ -1,15 +1,14 @@
 <?php
 session_start();
 require_once('essentials/config.php');
-include "dbConfig.php";
+include "loadClass.php";
 if (isset($_SESSION['email'])) : {
   header("location: index.php");
 }
 endif;
 if(isset($_GET['code']) && $_GET['code'] != '0'){
 $code = $_GET['code'];
-
-$verify = mysqli_query($connect, "SELECT * FROM customer WHERE code='$code' and status <= 1");
+$verify = mysqli_query($connect, "SELECT * FROM user WHERE code='$code' and status <= 1");
 if (mysqli_num_rows($verify) < 1) {
   header('location: login.php');
 }
@@ -32,9 +31,9 @@ if (isset($_POST['submit'])) {
 
         if ($newpass == $cnfrmpass) {
             $newpass = password_hash($newpass, PASSWORD_DEFAULT);
-            $update = mysqli_query($connect, "UPDATE customer SET password = '$newpass' WHERE code='$code' ");
+            $update = mysqli_query($connect, "UPDATE user SET password = '$newpass' WHERE code='$code' ");
             if ($update){
-            $deleteCode = mysqli_query($connect, "UPDATE customer SET code = 0 WHERE code='$code' ");
+            $deleteCode = mysqli_query($connect, "UPDATE user SET code = 0 WHERE code='$code' ");
             header("location:login.php");
             }
             else

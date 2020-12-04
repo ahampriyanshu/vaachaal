@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 		  $row = $queries->fetch();
 		  $dbPassword = $row->password;
 			if (password_verify($password, $dbPassword)) {
-			  $update = mysqli_query($con, "DELETE FROM user WHERE username='$username'");
+			  $update = mysqli_query($con, "UPDATE user SET status = 2 WHERE username='$username'");
 			  echo "<script>
     alert('We are sorry to see you go');
 document.location='logout.php';

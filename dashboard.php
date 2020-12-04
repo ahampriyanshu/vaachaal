@@ -3,7 +3,6 @@ if (!isset($_SESSION["loggedin"])) {
   header('location: index.php');
 }
 ?>
-
 <div class="container">
   <div class="row">
     <div class="col-lg-9 mx-auto my-4 text-center">
@@ -54,11 +53,11 @@ if (!isset($_SESSION["loggedin"])) {
                 </tr>
                 <tr>
                   <td><span class="badge badge-light">Created</span></td>
-                  <td><span class="badge badge-light"><?php echo $row["created"]; ?></span></td>
+                  <td><span class="badge badge-light"><?php echo  time_elapsed_string($row["created"]); ?></span></td>
                 </tr>
                 <tr>
                   <td><span class="badge badge-light">Last login</span></td>
-                  <td><span class="badge badge-light"><?php echo $row["last_login"]; ?></span></td>
+                  <td><span class="badge badge-light"><?php echo time_elapsed_string($row["last_login"]); ?></span></td>
                 </tr>
             <?php endwhile;
             } ?>
