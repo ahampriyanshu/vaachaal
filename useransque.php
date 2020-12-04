@@ -5,7 +5,7 @@
 ?> 
 <?php 
           include("essentials/config.php");
-          include("adminpanel.php");
+          include("header.php");
 ?>
 <!DOCTYPE html>
 <html>

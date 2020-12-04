@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
     href="' . $url . '">Verify Email</a></p><p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
 
     $run = mysqli_query($con, "INSERT INTO user (username,password,name,phone,email,code,status,created,last_login) VALUES
-    ('$username','$password','$name', '$phone','$email', '$code', '$status', 'now()','now()')");
+    ('$username','$password','$name', '$phone','$email', '$code', '$status', now() , now() )");
 
     if ($run) {
       $sendEmail->send($name, $email, $subject, $body);

@@ -1,9 +1,9 @@
 <?php session_start();
 error_reporting(E_ALL);
 if(!isset($_SESSION['admin'])){
-  header('location:index.php');
+  header('location:login.php');
   }
-require_once('essentials/config.php');
+require_once('../essentials/config.php');
 date_default_timezone_set('Asia/Kolkata');
 ?>
 <!DOCTYPE html>
@@ -15,10 +15,10 @@ date_default_timezone_set('Asia/Kolkata');
   <meta name="author" content="ahampriyanshu">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Admin</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="bg-light">

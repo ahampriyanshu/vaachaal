@@ -4,7 +4,7 @@ if(!isset($_SESSION['superadmin'])){
 header('location:index.php');}
 ?>
 <?php
-include("adminpanel.php");
+include("header.php");
 include("essentials/config.php");
 ?>
 <!DOCTYPE html>
@@ -100,7 +100,7 @@ include("essentials/config.php");
       <span id="specs">difficulty category estimated is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["category"]; ?></span> &emsp;
       <span id="specs">question comes under</span> &nbsp;<span id="details"><?php echo $row["language"]; ?></span><span id="specs"> language</span>&emsp;
       <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["created"]; ?></span><br>
-      <form method="post" action="delquebyadmin.php"><br>
+      <form method="post" action="delquebylogin.php"><br>
         <input  type="submit"  id="answer_button" value="Delete Question"/>
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>"/>
       </form>

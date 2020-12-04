@@ -4,7 +4,7 @@ if(!isset($_SESSION['superadmin'])){
 header('location:index.php');}
 ?>
 <?php
-include("adminpanel.php");
+include("header.php");
 include("essentials/config.php");
 ?>
 <!DOCTYPE html>
@@ -99,7 +99,7 @@ include("essentials/config.php");
       <span id="specs">time required is</span> &nbsp;<span id="details"><?php echo $row["duration"]; ?></span> &emsp;
       <span id="specs">difficulty category according to user is</span>&nbsp;&nbsp;<span id="details"><?php echo $row["category"]; ?></span> &emsp;
       <span id="specs">posted on</span> &nbsp;<span id="details"><?php echo $row["created"]; ?></span><br>
-      <form method="post" action="delansbyadmin.php"><br>
+      <form method="post" action="delansbylogin.php"><br>
         <input  type="submit"  id="answer_button" value="Delete Answer"/>
         <input type="hidden" name="aid" value="<?php echo $row['aid']; ?>"/>
       </form>

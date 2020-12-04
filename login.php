@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
         } else
         if ($status == 1) {
           if (password_verify($password, $dbPassword)) {
-            $update = mysqli_query($con, "UPDATE `user` SET `last_login` = 'now()' WHERE `username` = '$username' ");
+            $update = mysqli_query($con, "UPDATE `user` SET `last_login` = now() WHERE `username` = '$username' ");
             $_SESSION["loggedin"] = $username ;
             header("location: index.php");
           } else {

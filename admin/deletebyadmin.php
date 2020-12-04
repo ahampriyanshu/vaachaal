@@ -4,7 +4,7 @@
     header('location:index.php');}
 ?>
 <?php
-include("adminpanel.php");
+include("header.php");
 include("essentials/config.php");
 
        $username = $_SESSION['user'];
@@ -21,7 +21,7 @@ if ($num == 1) {
     $sql=mysqli_query($con,"DELETE FROM user WHERE username='$username'");
    echo "<script>
     alert('User Deleted successfully');
-document.location='adminhome.php';
+document.location='index.php';
 </script>";
     
 } else {

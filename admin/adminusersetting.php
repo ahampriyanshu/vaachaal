@@ -1,4 +1,4 @@
-<?php include("adminpanel.php"); ?>
+<?php include("header.php"); ?>
         <div class="setting_admin" >
             <img class="logocircle" id="set" src="img/setting.png" width="60px" height="60px" border="" style="position: absolute; top:6%; left:15%;" />
             <a id="setopt" class="active"  >Settings</a>

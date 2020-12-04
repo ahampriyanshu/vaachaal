@@ -1,7 +1,4 @@
 <?php include("header.php");
-if (!isset($_SESSION["loggedin"])) {
-  header('location: login.php');
-}
 $qid = $_GET['id'];
 if (!$qid) {
   echo "<script>
@@ -11,11 +8,7 @@ if (!$qid) {
 $find_data = "SELECT * FROM question WHERE id = '$qid'";
 $found_data = $con->query($find_data);
 $question = $found_data->fetch_assoc();
-$username = $question['username'];
-$duration = $question['duration'];
-$category = $question['category'];
-$language = $question['language'];
-$con->query("INSERT INTO history ( qid, username, created) VALUES ('$qid',  '$username', 'now()')");
+$con->query("INSERT INTO history ( qid, username, created) VALUES ('$qid',  '$username', now())");
 $con->query("UPDATE question SET views = views + 1 WHERE id = " . $qid);
 ?>
 <div class="container">
@@ -49,7 +42,10 @@ $con->query("UPDATE question SET views = views + 1 WHERE id = " . $qid);
           </div>
       <?php endwhile;
       }
-      ?>
+    
+
+if (isset($_SESSION["loggedin"])) { ?>
+
     <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
       <form name="addform" action="postAnswer.php" method="POST">
         <input type="hidden" name="qid" value="<?php echo $qid; ?>">
@@ -63,5 +59,9 @@ $con->query("UPDATE question SET views = views + 1 WHERE id = " . $qid);
     </div>
   </div>
   </form>
+
+<?php } else { ?>
+  <a class="btn btn-success text-center mt-3" href="login.php">Add Your Answer</a>
+<?php }  ?>    
 </div>
 <?php include("footer.php"); ?>

@@ -20,8 +20,11 @@ if (!isset($_SESSION["loggedin"])) {
         <i class="far fa-trash-alt mr-2"></i><b>Delete Answer</b></a>
 
 
-      <a href="delAccount.php" class="m-2 btn btn-sm btn-danger">
+        <a href="delAccount.php" class="m-2 btn btn-sm btn-danger">
         <i class="far fa-trash-alt mr-2"></i> <b>Deactivate Account</b></a>
+
+        <a href="logout.php" class="m-2 btn btn-sm btn-danger">
+        <i class="far fa-trash-alt mr-2"></i> <b>Logout</b></a>
     </div>
 
     <div class="col-lg-12 mx-auto mt-5">

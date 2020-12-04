@@ -1,12 +1,11 @@
 <?php session_start();
 error_reporting(E_ALL);
 require_once('essentials/config.php');
-date_default_timezone_set('Asia/Kolkata');
-if ($_SESSION["loggedin"]) {
-  $user = $_SESSION["loggedin"];
-} else {
-  $user = '0';
-}
+if (isset($_SESSION["loggedin"])) { 
+  $username = $_SESSION["loggedin"];
+  } else{
+    $username = 'guest';
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +24,7 @@ if ($_SESSION["loggedin"]) {
 
 <body class="bg-light">
   <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav style="font-weight: 700;" class="navbar navbar-expand-lg navbar-light">
       <a style="font-weight: bolder; font-size:2em" class="navbar-brand" href="index.php">Vaachal</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,12 +39,10 @@ if ($_SESSION["loggedin"]) {
             <a class="nav-link" href="feed.php">Feed</a>
           </li>
         </ul>
-
         <form class="form-inline my-lg-0" action="/action_page.php">
           <input type="text" placeholder="Search.." name="search" aria-label="Search">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-
         <?php
         if (isset($_SESSION["loggedin"])) {
         ?>
