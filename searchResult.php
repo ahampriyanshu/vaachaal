@@ -30,12 +30,12 @@ $query = htmlspecialchars($query);
     }
     else 
 {
-    echo '<h1 class="text-center mt-5 mx-auto" >No results were found</h1>';
+    echo '<h1 style="height:100vh;" class="text-center mt-5 mx-auto" >No results were found</h1>';
 }
 }
 else 
 {
-    echo '<h1 class="text-center mt-5 mx-auto" >Enter 4 characters atleast</h1>';
+    echo '<h1 style="height:100vh;" class="text-center mt-5 mx-auto" >Enter 4 characters atleast</h1>';
 }
 ?>
 </div>

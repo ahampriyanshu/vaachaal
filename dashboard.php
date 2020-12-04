@@ -16,7 +16,7 @@ if (!isset($_SESSION["loggedin"])) {
       <a href="manageQuestion.php" class="m-2 btn btn-sm btn-warning">
         <i class="far fa-trash-alt mr-2"></i><b>Manage Question</b></a>
 
-      <a href="ManageAnswer.php" class="m-2 btn btn-sm btn-warning">
+      <a href="manageAnswer.php" class="m-2 btn btn-sm btn-warning">
         <i class="far fa-trash-alt mr-2"></i><b>Manage Answer</b></a>
 
         <a href="delAccount.php" class="m-2 btn btn-sm btn-danger">

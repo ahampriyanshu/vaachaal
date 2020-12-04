@@ -3,7 +3,7 @@
 $result = mysqli_query($con, "SELECT DISTINCT(id) FROM history WHERE username = '$username' ORDER BY id DESC LIMIT 0,12");
 if ($result === FALSE) {
     mysqli_close($con);
-    echo '<h1 class="text-center mt-5 mx-auto" >Nothing that we can suggest right now </h1>';
+    echo '<h1 style="height:100vh;" class="text-center mt-5 mx-auto" >Nothing that we can suggest right now </h1>';
 } else {
 ?>
     <div class="col-md-8 col-sm-6 mx-auto">

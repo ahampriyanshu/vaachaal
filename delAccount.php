@@ -1,35 +1,59 @@
-<?php  session_start(); ?>
-<?php
-if(!isset($_SESSION["loggedin"])){
-header('location:index.php');}
+<?php include("header.php");
+include "loadClass.php";
+if (!isset($_SESSION["loggedin"])) {
+	header('location: index.php');
+}
 ?>
+
 <?php
-include("header.php");
-include("essentials/config.php");
-?>
-<!DOCTYPE html>
-<html>
-	<link href="css/style.css" rel="stylesheet" type="text/css">
-	<head>
-		<meta charset="UTF-8">
-  <meta name="description" content="GNDEC GATE FORUM">
-  <meta name="keywords" content="gate,ahampriyanshu,gne,gndec,">
-  <meta name="author" content="ahampriyanshu,ahampriyanshu">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Delete User</title>
+$queries    = new queries;
+
+
+if (isset($_POST['submit'])) {
+  
+	  $password = $_POST['password'];
+	  echo $password;
+
+	  if ($queries->query("SELECT * FROM user WHERE username = ? ", [$username])) {
+		if ($queries->count() > 0) {
+		  $row = $queries->fetch();
+		  $dbPassword = $row->password;
+			if (password_verify($password, $dbPassword)) {
+			  $update = mysqli_query($con, "DELETE FROM user WHERE username='$username'");
+			  echo "<script>
+    alert('We are sorry to see you go');
+document.location='logout.php';
+</script>";
+			} else {
+				echo "<script>
+				alert('Incorrect Password');
+			document.location='logout.php';
+			</script>";
+			}
+		  }
+		} else {
+			echo "<script>
+			alert('Suspicios activity');
+		document.location='logout.php';
+		</script>";
+		}
+	  }
+
+  ?>
+
+<div class="d-flex align-items-center justify-content-center">
+        <div style="height:100vh; padding-top:10vh;">
+			
+		<img class="logocircle" src="img/delete.png" title="logo" width="210px" height="200px" alt="trash" />
+	<form  action="" name="passform" method="POST">
+
+		<div class="form-group mt-2">
 		
-	</head>
-	<body >
-		<div class="signinbox" style="position: absolute; top:16%;right:40%;">
-			<img class="logocircle" src="img/delete.png"  title="logo" width="210px" height="200px" />		
-			<table>
-				<form action="backenddelbyuser.php" name="passform" method="POST" >
-					<tr><th>
-					<input class="login_text_box"  type="password" name="pass" placeholder="Password" required></th></tr>
-					<tr>
-						<th>&emsp;</th>
-					</tr>
-					<tr><th><button class="submit2" type="submit">Delete Account</button></th></tr></table><br><br>
-				</form>
-			</div>
+			<input type="password" class="form-control" name="password" placeholder="Password">
+		</div>
+		<button type="submit" name="submit" class="btn btn-danger">Delete Account</button>
+	</form>
+
+		</div>
+	  </div>
 <?php include("footer.php"); ?>

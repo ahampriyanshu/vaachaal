@@ -60,7 +60,7 @@ for ($i = 1; $i <= $total_pages; $i++) : ?>
 echo "<a href='$page_url?page=$total_pages'>Last</a></div></div>";
 } else 
 {
-   echo '<h1 class="text-center mt-5 mx-auto" >No results were found</h1>';
+   echo '<h1 style="height:100vh;" class="text-center mt-5 mx-auto" >No results were found</h1>';
 }
 ?>
 

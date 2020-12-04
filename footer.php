@@ -1,4 +1,4 @@
-<footer style="z-index: 999;" class="page-footer font-small mdb-color pt-4">
+<footer style="z-index: 999;" class="bg-light page-footer font-small mdb-color pt-4">
 
   <div class="container text-center text-md-left">
 

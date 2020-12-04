@@ -3,8 +3,8 @@ session_start();
 require_once('essentials/config.php');
 include "dbConfig.php";
 if (isset($_SESSION['email'])) : {
-  header("location: index.php");
-}
+    header("location: index.php");
+  }
 endif;
 $validation = new validation;
 $queries    = new queries;
@@ -39,20 +39,17 @@ if (isset($_POST['submit'])) {
     transition-duration: 0.4s;"
     href="' . $url . '">Change Password</a></p><p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
 
-    $result = mysqli_query($connect,"UPDATE customer SET code='$code' WHERE email = '$email' AND status<=1 ");
-    
-    if ( $result) {
+    $result = mysqli_query($connect, "UPDATE customer SET code='$code' WHERE email = '$email' AND status<=1 ");
 
-        if ($sendEmail->send($fullName, $email, $subject, $body)) {
-            $_SESSION['accountCreated'] = " Please check your inbox to set new password";
-            header("location: login.php");
-          }
-        
+    if ($result) {
+      if ($sendEmail->send($fullName, $email, $subject, $body)) {
+        $_SESSION['accountCreated'] = " Please check your inbox to set new password";
+        header("location: login.php");
+      }
     } else {
-       $_SESSION['notActive'] = "Account doesn't exist";
-            header("location: login.php");
+      $_SESSION['notActive'] = "Account doesn't exist";
+      header("location: login.php");
     }
-    
   }
 }
 
@@ -104,5 +101,4 @@ if (isset($_POST['submit'])) {
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
-
 </html>

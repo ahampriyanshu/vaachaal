@@ -3,7 +3,7 @@ if(!isset($_SESSION["loggedin"])){
 header('location: index.php');
 }
 include 'essentials/config.php';
-$qid = $_POST['qid'];
+$id = $_POST['id'];
 $content = $_POST['content'];
 $username = $_SESSION["loggedin"];
 if (empty($content)) {
@@ -12,11 +12,11 @@ if (empty($content)) {
     document.location='index.php';
     </script>";
 }else{
-$sql = "INSERT INTO answer (id,content,username,created) VALUES ('$qid','$content','$username',now())";
+$sql = "INSERT INTO answer (id,content,username,created) VALUES ('$id','$content','$username',now())";
 
 if ( $con -> query ($sql) === TRUE)
 {
-header('location:addAnswer.php?id='.$qid);
+header('location:addAnswer.php?id='.$id);
 }
 else
 {
