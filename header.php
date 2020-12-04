@@ -1,74 +1,125 @@
 <?php session_start();
 error_reporting(E_ALL);
 require_once('essentials/config.php');
-date_default_timezone_set('Asia/Kolkata');
-if ($_SESSION["loggedin"]) {
-  $customer = $_SESSION["loggedin"];
+if (isset($_SESSION["loggedin"])) {
+  $username = $_SESSION["loggedin"];
 } else {
-  $customer = '0';
+  $username = 'guest';
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta content="text/html; charset=utf-8" />
   <meta name="description" content="Forum for the people,by the people,to the people">
   <meta name="keywords" content="php7,ahampriyanshu,forum,question,and,answer,gate,jee,mains,advance,clat,cat,aiims,neet,quora,stackoverflow">
   <meta name="author" content="ahampriyanshu">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Home</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet" type="text/css">
-  <script src="https://cdn.tiny.cloud/1/e98weoopbr4y4i7manqhwxun2tjft1j0herkn8cy9xismktc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
-<body>
+<body class="bg-light">
   <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.php">Vaachal </a>
+    <nav style="font-weight: 700; " class="navbar bg-light navbar-expand-lg navbar-light">
+      <a style="font-weight: bolder; font-size:2em" class="navbar-brand" href="index.php">Vaachal</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
+
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link" href="trending.php">Trending</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="filter.php">Filter</a>
+            <a class="nav-link" href="feed.php">Feed</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mostViewed.php">Trending</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mostViewed.php">Feed</a>
-          </li>
+
+          <?php
+          if (isset($_SESSION["loggedin"])) {
+          ?>
+            <li class="nav-item">
+              <a class="nav-link" href="addQuestion.php">Ask</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.php">My Account</a>
+            </li>
+          <?php } else { ?>
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Ask</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Login</a>
+            </li>
+          <?php } ?>
         </ul>
 
-        <form class="form-inline  my-lg-0" action="/action_page.php">
-          <input type="text" placeholder="Search.." name="search" aria-label="Search">
+        <button type="button" class="btn btn-success mr-2" data-toggle="modal" data-target="#filterModal">
+          Filter
+        </button>
+
+
+        <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="filterModalLabel">Filters</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form name="addform" class="my-2" action="filterResult.php" method="POST" enctype="multipart/form-data">
+
+                  <div class="form-group p-2">
+                    <select name="category" class="form-control">
+                      <option value="Tech">Tech</option>
+                      <option value="Literature">Literature</option>
+                      <option value="Web">Web</option>
+                      <option value="Political">Political</option>
+                      <option value="Maths">Maths</option>
+                      <option value="Science">Science</option>
+                      <option value="Histoy">Histoy</option>
+                      <option value="Geography">Geography</option>
+                      <option value="Economics">Economics</option>
+                      <option value="Misc">Misc</option>
+                    </select>
+                  </div>
+                  <div class="form-group p-2">
+                    <select name="language" class="form-control">
+                      <option value="English">English</option>
+                      <option value="हिन्दी">हिन्दी</option>
+                      <option value="తెలుగు">తెలుగు</option>
+                      <option value="தமிழ்">தமிழ்</option>
+                      <option value="ಕನ್ನಡ">ಕನ್ನಡ</option>
+                      <option value="ਪੰਜਾਬੀ">ਪੰਜਾਬੀ</option>
+                      <option value="বাংলা">বাংলা</option>
+                    </select>
+                  </div>
+                  <div class="form-group p-2">
+                    <select name="duration" class="form-control">
+                      <option value="0-2 min">0-2 Min</option>
+                      <option value="2-5 Min">2-5 Min</option>
+                      <option value="5-10 Min">5-10 Min</option>
+                    </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" name="query" class="btn btn-primary">Go</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="form-inline my-lg-0" action="searchResult.php" method="GET">
+          <input type="text" placeholder="Search.." name="query" aria-label="Search">
           <button class=" my-sm-0" type="submit"><i class="fa fa-search"></i></button>
         </form>
-
-        <?php
-        if (isset($_SESSION["loggedin"])) {
-        ?>
-          <a class="btn btn-success my-2 ml-1" href="addque.php">Ask</a>
-          <a class="btn btn-success my-2 ml-1" href="dashboard.php">My Account</a>
-        <?php } else { ?>
-          <a class="btn btn-success my-2 ml-1" href="login.php">Ask</a>
-          <a class="btn btn-success my-2 ml-1" href="login.php">Login</a>
-        <?php } ?>
       </div>
     </nav>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/77f6dfd46f.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      function redirect() {
-        window.location.href = 'login.php';
-      };
-    </script>

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -65,3 +65,50 @@ a {
       clear: both;
       display: table;
     }
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+.pagination {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.pagination a {
+  color: grey;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.pagination a.active {
+  background-color: gray;
+  color: white;
+
+}
+
+.pagination a:hover:not(.active) {
+  background-color: gray;
+  color: white;
+}
+
+.questionDiv {
+  cursor: pointer;
+  
+  text-align: left;
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+  }
+  .active, .questionDiv:hover {
+
+  color: black;
+  }

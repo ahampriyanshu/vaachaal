@@ -17,9 +17,7 @@ if (isset($_POST['submit'])) {
 
     $username = $validation->input('username');
     $password = $validation->input('password');
-    date_default_timezone_set('Asia/Kolkata');
-    $date = date('m/d/Y h:i:s', time());
-    if ($queries->query("SELECT * FROM userbase WHERE username = ? ", [$username])) {
+    if ($queries->query("SELECT * FROM user WHERE username = ? ", [$username])) {
       if ($queries->count() > 0) {
         $row = $queries->fetch();
         $userId     = $row->id;
@@ -37,7 +35,7 @@ if (isset($_POST['submit'])) {
         } else
         if ($status == 1) {
           if (password_verify($password, $dbPassword)) {
-            $update = mysqli_query($con, "UPDATE `userbase` SET `last_login` = '$date' WHERE `username` = '$username' ");
+            $update = mysqli_query($con, "UPDATE `user` SET `last_login` = now() WHERE `username` = '$username' ");
             $_SESSION["loggedin"] = $username ;
             header("location: index.php");
           } else {
@@ -127,5 +125,4 @@ if (isset($_POST['submit'])) {
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</body>
-</html>
+<?php include("footer.php"); ?>
