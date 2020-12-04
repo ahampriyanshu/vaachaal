@@ -1,15 +1,15 @@
 <?php include("header.php");
-$qid = $_GET['id'];
-if (!$qid) {
+$id = $_GET['id'];
+if (!$id) {
   echo "<script>
     document.location='index.php';
     </script>";
 }
-$find_data = "SELECT * FROM question WHERE id = '$qid'";
+$find_data = "SELECT * FROM question WHERE id = '$id'";
 $found_data = $con->query($find_data);
 $question = $found_data->fetch_assoc();
-$con->query("INSERT INTO history ( qid, username, created) VALUES ('$qid',  '$username', now())");
-$con->query("UPDATE question SET views = views + 1 WHERE id = " . $qid);
+$con->query("INSERT INTO history ( id, username, created) VALUES ('$id',  '$username', now())");
+$con->query("UPDATE question SET views = views + 1 WHERE id = " . $id);
 ?>
 <div class="container">
   <div class="col-lg-12 my-4">
@@ -27,7 +27,7 @@ $con->query("UPDATE question SET views = views + 1 WHERE id = " . $qid);
     </div>
     <div class="col-lg-8 col-sm-6 mx-auto">
       <?php
-      $sql = "SELECT * FROM answer where id = $qid ORDER BY created DESC";
+      $sql = "SELECT * FROM answer where id = $id ORDER BY created DESC";
       $result = $con->query($sql);
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) : ?>
@@ -48,7 +48,7 @@ if (isset($_SESSION["loggedin"])) { ?>
 
     <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
       <form name="addform" action="postAnswer.php" method="POST">
-        <input type="hidden" name="qid" value="<?php echo $qid; ?>">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
         <div class="justify-content-center">
           <textarea name="content" required>  </textarea>
           <script>

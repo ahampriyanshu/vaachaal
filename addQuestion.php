@@ -18,8 +18,8 @@ if (!isset($_SESSION["loggedin"])) {
 
     <div class="container mx-auto my-4">
       <div class="row">
-        <div class="col-sm m-2">
-          <select name="category" class="custom-select">
+        <div class="form-group col-sm m-2">
+          <select name="category" class="form-control">
             <option value="Tech">Tech</option>
             <option value="Literature">Literature</option>
             <option value="Web">Web</option>
@@ -32,8 +32,8 @@ if (!isset($_SESSION["loggedin"])) {
             <option value="Misc">Misc</option>
           </select>
         </div>
-        <div class="col-sm m-2">
-          <select name="language" class="custom-select">
+        <div class="form-group col-sm m-2">
+          <select name="language" class="form-control">
             <option value="English">English</option>
             <option value="हिन्दी">हिन्दी</option>
             <option value="తెలుగు">తెలుగు</option>
@@ -43,8 +43,8 @@ if (!isset($_SESSION["loggedin"])) {
             <option value="বাংলা">বাংলা</option>
           </select>
         </div>
-        <div class="col-sm m-2">
-          <select name="duration" class="custom-select">
+        <div class="form-group col-sm m-2">
+          <select name="duration" class="form-control">
             <option value="0-2 min">0-2 Min</option>
             <option value="2-5 Min">2-5 Min</option>
             <option value="5-10 Min">5-10 Min</option>

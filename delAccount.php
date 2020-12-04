@@ -21,8 +21,7 @@ include("essentials/config.php");
 	</head>
 	<body >
 		<div class="signinbox" style="position: absolute; top:16%;right:40%;">
-			<center><img class="logocircle" src="img/delete.png"  title="logo" width="210px" height="200px" border="0" /></center><br><br>
-			<center>
+			<img class="logocircle" src="img/delete.png"  title="logo" width="210px" height="200px" />		
 			<table>
 				<form action="backenddelbyuser.php" name="passform" method="POST" >
 					<tr><th>
@@ -31,6 +30,6 @@ include("essentials/config.php");
 						<th>&emsp;</th>
 					</tr>
 					<tr><th><button class="submit2" type="submit">Delete Account</button></th></tr></table><br><br>
-				</form></center>
+				</form>
 			</div>
 <?php include("footer.php"); ?>

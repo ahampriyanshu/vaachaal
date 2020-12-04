@@ -1,4 +1,4 @@
-<footer class="page-footer font-small mdb-color pt-4">
+<footer class="page-footer font-small mdb-color pt-4 fixed-bottom">
 
   <div class="container text-center text-md-left">
 
@@ -11,27 +11,27 @@
         <div class="text-center text-md-left">
           <ul class="list-unstyled list-inline">
             <li class="list-inline-item">
-              <a href="https://github.com/ahampriyanshu" class="btn-floating btn-sm rgba-white-slight mx-1">
+              <a href="https://github.com/ahampriyanshu" rel="noopener noreferrer" target="_blank" class="btn-floating rgba-white-slight mx-1">
                 <i class="fab fa-github"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://twitter.com/ahampriyanshu" class="btn-floating btn-sm rgba-white-slight mx-1">
+              <a href="https://twitter.com/ahampriyanshu" rel="noopener noreferrer" target="_blank" class="btn-floating rgba-white-slight mx-1">
                 <i class="fab fa-twitter"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="" class="btn-floating btn-sm rgba-white-slight mx-1">
+              <a href="https://wa.me/919917956610?text=Hi%20Priyanshu" rel="noopener noreferrer" target="_blank" class="btn-floating rgba-white-slight mx-1">
                 <i class="fab fa-whatsapp"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://reddit.com/user/ahampriyanshu" class="btn-floating btn-sm rgba-white-slight mx-1">
+              <a href="https://reddit.com/user/ahampriyanshu" rel="noopener noreferrer" target="_blank" class="btn-floating rgba-white-slight mx-1">
                 <i class="fab fa-reddit"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://linkedin.com/in/ahampriyanshu" class="btn-floating btn-sm rgba-white-slight mx-1">
+              <a href="https://linkedin.com/in/ahampriyanshu" rel="noopener noreferrer" target="_blank" class="btn-floating rgba-white-slight mx-1">
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </li>

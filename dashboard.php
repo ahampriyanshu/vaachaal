@@ -13,18 +13,18 @@ if (!isset($_SESSION["loggedin"])) {
       <a href="addQuestion.php" class="m-2 btn btn-sm btn-success">
         <i class="fa fa-plus-square mr-2"></i> <b>Add New Question</b></a>
 
-      <a href="delQuestion.php" class="m-2 btn btn-sm btn-warning">
-        <i class="far fa-trash-alt mr-2"></i><b>Delete Question</b></a>
+      <a href="manageQuestion.php" class="m-2 btn btn-sm btn-warning">
+        <i class="far fa-trash-alt mr-2"></i><b>Manage Question</b></a>
 
-      <a href="delAnswer.php" class="m-2 btn btn-sm btn-warning">
-        <i class="far fa-trash-alt mr-2"></i><b>Delete Answer</b></a>
-
+      <a href="ManageAnswer.php" class="m-2 btn btn-sm btn-warning">
+        <i class="far fa-trash-alt mr-2"></i><b>Manage Answer</b></a>
 
         <a href="delAccount.php" class="m-2 btn btn-sm btn-danger">
         <i class="far fa-trash-alt mr-2"></i> <b>Deactivate Account</b></a>
 
         <a href="logout.php" class="m-2 btn btn-sm btn-danger">
-        <i class="far fa-trash-alt mr-2"></i> <b>Logout</b></a>
+        <i class="fas fa-sign-out-alt mr-2"></i><b>Logout</b></a>
+        
     </div>
     <div class="col-lg-6 mx-auto mt-5 text-center">
       <div style="font-size: larger;" class="table-responsive mx-auto">
