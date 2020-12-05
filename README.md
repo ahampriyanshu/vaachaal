@@ -1,4 +1,4 @@
-# Ojas
+# Vaachaal
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://ahampriyanshu.000webhostapp.com/vaachaal)
