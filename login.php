@@ -1,129 +1,177 @@
+<?php   session_start(); ?>
 <?php
-session_start();
-require_once('essentials/config.php');
-include "loadClass.php";
-if (isset($_SESSION["loggedin"])) : {
-    header("location: index.php");
-  }
-endif;
-$validation = new validation;
-$queries    = new queries;
-
-if (isset($_POST['submit'])) {
-
-  $validation->validate('username', 'Username', 'required');
-  $validation->validate("password", 'Password', 'required');
-  if ($validation->run()) {
-
-    $username = $validation->input('username');
-    $password = $validation->input('password');
-    if ($queries->query("SELECT * FROM user WHERE username = ? ", [$username])) {
-      if ($queries->count() > 0) {
-        $row = $queries->fetch();
-        $userId     = $row->id;
-        $userName   = $row->fullName;
-        $dbPassword = $row->password;
-        $status     = $row->status;
-        if ($status == 0) {
-          $_SESSION['notActive'] = "Please Verify your account first";
-        } else 
-        if ($status == 2) {
-          $_SESSION['notActive'] = "This account has been deactivated by the user";
-        } else
-        if ($status == 3) {
-          $_SESSION['notActive'] = "This account has been deactivated by the admin";
-        } else
-        if ($status == 1) {
-          if (password_verify($password, $dbPassword)) {
-            $update = mysqli_query($con, "UPDATE `user` SET `last_login` = now() WHERE `username` = '$username' ");
-            $_SESSION["loggedin"] = $username ;
-            header("location: index.php");
-          } else {
-            $validation->errors['password'] = "Sorry invalid password";
-          }
-        }
-      } else {
-        $validation->errors['username'] = "Sorry invalid username";
-      }
+if(isset($_SESSION['loggedin'])){
+header('location:index.php');}
+?>
+<?php include("essentials/database.php"); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="GNDEC GATE FORUM">
+    <meta name="keywords" content="gate,gateforum,gne,gndec,">
+    <meta name="author" content="PriyanshuMay,priyanshumay">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    html,body{
+    padding: 0px;
+    height: 85%;
+    width: 100%;
+    overflow: hidden;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center;
     }
-  }
+    #signinbox_index_web {
+    background: #fff;
+    border-radius: 4px;
+    padding-top: 2px;
+    width: 380px;
+    position: absolute;
+    }
+    #signinbox_index_mob {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    }
+    .inva{
+    font-family: courier new;
+    font-weight: bold;
+    color:#333;
+    }
+    .login_text_index {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.4;
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height: 32px;
+    margin-bottom: 8px;
+    border:0.1px solid #e2e2e2;
+    box-shadow: 0 0 5px;
+    border-radius: 4px;
+    }
+    .login_text_index {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.4;
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height: 32px;
+    border-radius: 4px;
+    }
+    .link_index{}
+    a{
+      color: green;   }
+    a:hover {
+    color: hotpink;   }
+    a:active {
+    color: blue;  }
+    </style>
+    <title>Login</title>
+    <link href="forum.css" rel="stylesheet" type="text/css">
+  </head>
+  <body background="img/backgne.jpg">
+    <?php
+    extract($_POST);
+    if(isset($submit))
+    {
+    $rs=mysqli_query($con,"select * from userbase where username='$username' and password='$password'");
+    if(mysqli_num_rows($rs)<1)
+    {
+    $found="N";
+    }
+    else
+    {
+    $_SESSION["loggedin"] = $username ;
+    header('location:index.php');
+    }
+    }
+    echo '';
+    ?>
+    <div id="signinbox_index_web" style="position: absolute; top:5%;right:36%;">
+      <br>
+      <center><img class="logocircle" src="img/gnelogo.png"  title="logo" width="200px" height="200px" border="2px"/></center>
+      <centre><table align="center" WIDTH="90%" height="400px">
+        <form method="post" name="login_form" action="" >
+          <tr>
+            <td><input class="login_text_index" type="text" title="enter your regitered LOGIN ID"  placeholder="LOGIN ID"  maxlength="20" size="25"   name="username" required />
+          </td>
+        </tr>
+        <tr>
+          <td><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password"  required />
+        </td>
+      </tr>
+      <?php
+      if(isset($found))
+      {
+      echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
+      }
+      ?>
+      <tr>
+        <td>
+          &emsp;&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>&emsp;&emsp;</form>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="link_index" onclick="window.location.href = 'forgot.php';" >Forgot Password</a>
+      </td>
+      <td>&nbsp;&emsp;<a  class="link_index" onclick="window.location.href = 'signup.php';">Sign Up</a>
+    </td>
+  </tr>
+</table></centre>
+</div>
+<div id="signinbox_index_mob" >
+<center><img class="logocircle" src="img/1.png"  title="logo" width="240px" height="250px" /></center>
+<table align="center" border="0"  width ="75%" height="50%">
+  <form method="post" name="login_form" action="">
+    <tr>
+      <th><input class="login_text_index" type="TEXT" placeholder="LOGIN ID"  maxlength="20" size="25" name="username" required />
+    </th>
+  </tr>
+  <tr>
+    <th><input class="login_text_index" type="password"  placeholder="ENTER PASSWORD" name="password" required />
+  </th>
+</tr>
+<?php
+if(isset($found))
+{
+echo '<span class="inva" style=""><center>Invalid Username or password</center></span>';
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login</title>
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/login.css">
-</head>
-
-<body>
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12 login-section-wrapper">
-          <div class="brand-wrapper mb-2">
-           <a href="index.php"><img src="img/logo.png" alt="logo" class="logo"></a>
-          </div>
-
-          <?php if (isset($_SESSION['accountCreated'])) : ?>
-            <div class="alert alert-success">
-              <?php echo $_SESSION['accountCreated']; ?>
-            </div>
-          <?php endif; ?>
-          <?php unset($_SESSION['accountCreated']); ?>
-
-          <?php if (isset($_SESSION['emailVerified'])) : ?>
-            <div class="alert alert-success">
-              <?php echo $_SESSION['emailVerified']; ?>
-            </div>
-          <?php endif; ?>
-          <?php unset($_SESSION['emailVerified']); ?>
-
-
-          <?php if (isset($_SESSION['notActive'])) : ?>
-            <div class="alert alert-danger">
-              <?php echo $_SESSION['notActive']; ?>
-            </div>
-          <?php endif; ?>
-          <?php unset($_SESSION['notActive']); ?>
-
-          <div class="login-wrapper my-auto">
-            <form name="loginform" method="post" action="">
-              <div class="form-group">
-                <label for="password">username</label>
-                <input type="text" name="username" id="username" class="form-control" placeholder="Enter registered username" required />
-                <div class="error text-danger text-center">
-                  <?php if (!empty($validation->errors['username'])) : echo $validation->errors['username'];
-                  endif; ?>
-                </div>
-              </div>
-              <div class="form-group mb-4">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your passsword" required />
-                <div class="error text-danger text-center">
-                  <?php if (!empty($validation->errors['password'])) : echo $validation->errors['password'];
-                  endif; ?>
-                </div>
-              </div>
-              <input name="submit" id="login" class="btn btn-block login-btn" type="submit" value="Login">
-            </form>
-            <a href="forgotPassword.php" class="forgot-password-link ml-1">Forgot Password ?</a>
-  <a href="register.php" class="text-reset ml-5">New User ?</a>
-             </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<tr>
+  <td>&emsp;<input class="submit" type="submit" name="submit" Value="Login"/>
+&emsp;</form>
+</td>
+</tr>
+<tr><td>
+<a class="link_index" href="signup.php" >Sign Up ?</a>
+</td></tr>
+<tr>
+<td>&emsp;&emsp;
+<a  class="link_index" href="forg.php" >Forgot password</a>
+</td>
+</tr>
+</table>
+</div >
+<script>
+function myFunction(y) {
+if (y.matches) {
+document.getElementById("abt_visibility").style.display = "none";
+document.getElementById("signinbox_index_web").style.display = "none";
+document.getElementById("signinbox_index_mob").style.display = "block";
+document.body.style.background = "none";
+}else{
+document.getElementById("signinbox_index_web").style.display = "block";
+document.getElementById("signinbox_index_mob").style.display = "none";
+document.getElementById("abt_visibility").style.display = "block";
+document.body.style.background = "url(img/back.jpg)";
+}
+}
+var y = window.matchMedia("(max-width: 420px)")
+myFunction(y)
+y.addListener(myFunction)
+</script>
 </body>
 </html>

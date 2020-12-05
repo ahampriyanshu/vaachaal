@@ -1,0 +1,79 @@
+body {
+padding-top: 70px;
+}
+.logocircle{
+border-radius: 50%;
+border: 0;
+}
+.submit {
+background-color:#4CAF50;
+color: white;
+padding: 11px;
+font-size: 11px;
+border: none;
+cursor: pointer;
+font-weight: normal;
+font-family:'Trebuchet MS', sans-serif;
+border-radius: 5%;
+}
+.submit:hover, .submit:focus {
+background-color: #833AB4;
+}
+.submit2 {
+background-color:#833AB4;
+color: white;
+padding: 11px;
+font-size: 11px;
+border: none;
+cursor: pointer;
+font-weight: light;
+font-family:'Trebuchet MS', sans-serif;
+border-radius: 5%;
+}
+.submit2:hover, .submit2:focus {
+background-color: #4CAF50;
+}
+.signinbox {
+background: #fff;
+border: 1px solid #e2e2e2;
+box-shadow: 0 0 5px #888;
+border-radius: 4px;
+padding-top: 2px;
+width: 280px;
+position: absolute;
+overflow-y: hidden;
+}
+.signinbox2 {
+background: #fff;
+border: 1px solid #e2e2e2;
+box-shadow: 0 0 5px #888;
+border-radius: 4px;
+width: 400px;
+position: relative;
+bottom: initial;
+margin: auto;
+overflow-y: hidden;
+}
+.login_text_box {
+width: 100%;
+font-size: 15px;
+line-height: 1.4;
+padding-left: 8px;
+padding-right: 8px;
+min-height: 32px;
+border: 1px solid #e2e2e2;
+box-shadow: 0 0 5px #888;
+border-radius: 4px;
+}
+.input_text {
+width: 50%;
+font-size: 15px;
+line-height: 1.4;
+padding-left: 8px;
+padding-right: 8px;
+min-height: 32px;
+margin-bottom: 8px;
+border: 1px solid #e2e2e2;
+box-shadow: 0 0 5px #888;
+border-radius: 4px;
+}
