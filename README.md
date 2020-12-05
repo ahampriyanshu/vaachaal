@@ -1,6 +1,6 @@
 # GNE_GATE_FORUM
 
-http://ahampriyanshu.000webhost.com/vaachal
+http://ahampriyanshu.000webhost.com/vaachaal
 
 ***
 

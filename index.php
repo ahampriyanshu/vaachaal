@@ -21,7 +21,6 @@ $start_from = ($page - 1) * $per_page;
                 <div class="col-lg-12 my-5">
 
                     <span class="bagde questionDiv"><?php echo mb_strimwidth($row["content"], 0, 200, "..."); ?></span>
-
                     <p class="text-left mt-2">
                         <span class="badge badge-secondary"><?php echo $row["language"]; ?> </span>
                         <span class="badge badge-secondary"><?php echo $row["category"]; ?></span>

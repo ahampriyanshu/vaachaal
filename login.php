@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
           }
         }
       } else {
-        $validation->errors['email'] = "Sorry invalid email";
+        $validation->errors['username'] = "Sorry invalid username";
       }
     }
   }
@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12 login-section-wrapper">
-          <div class="brand-wrapper">
+          <div class="brand-wrapper mb-2">
            <a href="index.php"><img src="img/logo.png" alt="logo" class="logo"></a>
           </div>
 
@@ -125,4 +125,5 @@ if (isset($_POST['submit'])) {
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<?php include("footer.php"); ?>
+</body>
+</html>

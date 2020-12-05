@@ -27,8 +27,8 @@ if (isset($_POST['submit'])) {
     $password = password_hash($password, PASSWORD_DEFAULT);
     $code     = rand();
     $code     = password_hash($code, PASSWORD_DEFAULT);
-    $url      = "http://" . $_SERVER['SERVER_NAME'] . "/vaachal/verifyEmail.php?confirmation=" . $code;
-    $url2     = "http://" . $_SERVER['SERVER_NAME'] . "/vaachal/contact.php";
+    $url      = "http://" . $_SERVER['SERVER_NAME'] . "/vaachaal/verifyEmail.php?confirmation=" . $code;
+    $url2     = "http://" . $_SERVER['SERVER_NAME'] . "/vaachaal/contact.php";
     $status   = 0;
     $date = date('m/d/Y h:i:s', time());
     $subject  = 'Please confirm your Email';
@@ -45,7 +45,9 @@ if (isset($_POST['submit'])) {
     cursor: pointer;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;"
-    href="' . $url . '">Verify Email</a></p><p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
+    href="' . $url . '">Verify Email</a></p>
+    <p>Or copy this link :'.$url.'</p>
+    <p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
 
     $run = mysqli_query($con, "INSERT INTO user (username,password,name,phone,email,code,status,created,last_login) VALUES
     ('$username','$password','$name', '$phone','$email', '$code', '$status', now() , now() )");
@@ -146,5 +148,4 @@ if (isset($_POST['submit'])) {
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
-
 </html>

@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     $fullName = "User";
     $code     = rand();
     $code     = password_hash($code, PASSWORD_DEFAULT);
-    $url      = "https://" . $_SERVER['SERVER_NAME'] . "/vaachal/verifyPassword.php?code=" . $code;
+    $url      = "https://" . $_SERVER['SERVER_NAME'] . "/vaachaal/resetPassword.php?code=" . $code;
     $url2     = "https://ahampriyanshu.github.com";
     $status   = 0;
     $subject  = 'Please verify it is you';
@@ -37,14 +37,16 @@ if (isset($_POST['submit'])) {
     cursor: pointer;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;"
-    href="' . $url . '">Change Password</a></p><p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
+    href="' . $url . '">Change Password</a></p>
+    <p>Or copy this link :'.$url.'</p>
+    <p  style="color:red; font-size: 10px;" > Need Help ? <a  href="' . $url2 . '">Contact Us</a></p>';
 
     $result = mysqli_query($con, "UPDATE user SET code='$code' WHERE email = '$email' AND status<=1 ");
 
     if ($result) {
-        $sendEmail->send($fullName, $email, $subject, $body);
-        $_SESSION['accountCreated'] = " Please check your inbox to set new password";
-        header("location: login.php");
+      if  ($sendEmail->send($fullName, $email, $subject, $body))
+{        $_SESSION['accountCreated'] = " Please check your inbox to set new password";
+        header("location: login.php");}
     } else {
       $_SESSION['notActive'] = "Account doesn't exist";
       header("location: login.php");

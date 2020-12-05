@@ -4,7 +4,7 @@ if (!isset($_SESSION["loggedin"])) {
 }
 ?>
 <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
-<div class="col-lg-9 mx-auto text-center">
+<div class="col-lg-9 mx-auto text-center" style="height:100vh; padding-top:5vh;">
   <div class="my-4 text-center">
     <h2><span class="badge badge-dark"><i class="fa fa-plus-square mr-2"></i>Add New Question</span></h2>
   </div>
@@ -23,6 +23,7 @@ if (!isset($_SESSION["loggedin"])) {
             <option value="Tech">Tech</option>
             <option value="Literature">Literature</option>
             <option value="Web">Web</option>
+            <option value="Sports">Sports</option>
             <option value="Political">Political</option>
             <option value="Maths">Maths</option>
             <option value="Science">Science</option>
